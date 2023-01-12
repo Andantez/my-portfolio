@@ -15,24 +15,32 @@ type AccentNumber = {
   accentType: 'number';
   accentText: '01.' | '02.' | '03.';
 };
-type HeadingText = {
+
+type HeadingOwnProps<T extends React.ElementType> = {
   headingText: string;
   title: Title;
+  as?: T;
 };
-type HeadingProps = HeadingText & (AccentDot | AccentNumber);
 
-const Heading = ({
+type HeadingProps<T extends React.ElementType> = HeadingOwnProps<T> &
+  (AccentDot | AccentNumber) &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof HeadingOwnProps<T>>;
+
+const Heading = <T extends React.ElementType = 'h1'>({
   accentType,
   accentText,
   headingText,
   title,
-}: HeadingProps) => {
+  as,
+  ...rest
+}: HeadingProps<T>) => {
+  const Component = as || 'h1';
   if (accentType === 'number') {
     return (
       <section className={section}>
-        <h1 className={header}>
+        <Component className={header} {...rest}>
           <span className={accent}>{accentText}</span> {headingText}
-        </h1>
+        </Component>
         <div className={pageTitle}>{title}</div>
       </section>
     );

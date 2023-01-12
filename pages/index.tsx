@@ -22,6 +22,7 @@ export default function Home() {
         overflow="hiddenX"
       >
         <Heading
+          as='h2'
           accentType="number"
           accentText="01."
           headingText="Some things I've build."

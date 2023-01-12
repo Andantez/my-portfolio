@@ -7,6 +7,6 @@ export const lora = Lora({
 
 export const merriweather = Merriweather({
   subsets: ['latin'],
-  weight: ['400', '700', '900'],
+  weight: ['400', '700', '900', '300'],
   variable: '--ff-text',
 });
