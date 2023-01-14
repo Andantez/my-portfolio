@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { formContainer, inputWrapper, inputLabel, formInput, formButton } from './ContactForm.css';
 
 type FormInputs = {
   name: string;
@@ -6,37 +7,62 @@ type FormInputs = {
   subject: string;
   message: string;
 };
+
 const ContactForm = (): JSX.Element => {
   const { register, handleSubmit } = useForm<FormInputs>();
-
+  
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log(data);
     // TODO: to be implemented
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'grid' }}>
-      <div>
-        <label htmlFor="name">Name</label>
-        <input type="text" id="name" {...register('name')} />
+    <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
+      <div className={inputWrapper}>
+        <label className={inputLabel.required} htmlFor="name">
+          Name
+        </label>
+        <input
+          className={formInput.base}
+          type="text"
+          id="name"
+          {...register('name')}
+        />
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" {...register('email')} />
+      <div className={inputWrapper}>
+        <label className={inputLabel.required} htmlFor="email">
+          Email
+        </label>
+        <input
+          className={formInput.base}
+          type="email"
+          id="email"
+          {...register('email')}
+        />
       </div>
-      <div>
-        <label htmlFor="subject">Subject</label>
-        <input type="text" id="subject" {...register('subject')} />
+      <div className={inputWrapper}>
+        <label className={inputLabel.required} htmlFor="subject">
+          Subject
+        </label>
+        <input
+          className={formInput.base}
+          type="text"
+          id="subject"
+          {...register('subject')}
+        />
       </div>
-      <div>
-        <label htmlFor="message">Message</label>
+      <div className={inputWrapper}>
+        <label className={inputLabel.required} htmlFor="message">
+          Message
+        </label>
         <textarea
+          className={formInput.textArea}
           id="message"
           cols={30}
-          rows={10}
+          rows={5}
           {...register('message')}
         ></textarea>
       </div>
-      <button type="submit">Send your message</button>
+      <button className={formButton} type="submit">Send your message</button>
     </form>
   );
 };
