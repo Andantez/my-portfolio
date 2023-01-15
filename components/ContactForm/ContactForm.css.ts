@@ -59,9 +59,9 @@ export const inputWrapper = style({
         '&:nth-child(4)': {
           gridArea: 'message',
         },
-      }
-    }
-  }
+      },
+    },
+  },
 });
 
 const labelBase = style({
@@ -110,8 +110,8 @@ const formInputTextArea = style({
 
 export const formInput = styleVariants({
   base: [formInputBase],
-  textArea: [formInputBase, formInputTextArea]
-})
+  textArea: [formInputBase, formInputTextArea],
+});
 
 export const formButton = style({
   fontFamily: 'var(--ff-text)',
@@ -128,7 +128,7 @@ export const formButton = style({
       placeSelf: 'flex-start',
     },
     'screen and (min-width: 75rem)': {
-      fontSize: fs300
+      fontSize: fs300,
     },
   },
 });

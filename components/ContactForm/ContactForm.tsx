@@ -1,5 +1,11 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { formContainer, inputWrapper, inputLabel, formInput, formButton } from './ContactForm.css';
+import {
+  formContainer,
+  inputWrapper,
+  inputLabel,
+  formInput,
+  formButton,
+} from './ContactForm.css';
 
 type FormInputs = {
   name: string;
@@ -10,7 +16,7 @@ type FormInputs = {
 
 const ContactForm = (): JSX.Element => {
   const { register, handleSubmit } = useForm<FormInputs>();
-  
+
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log(data);
     // TODO: to be implemented
@@ -62,7 +68,9 @@ const ContactForm = (): JSX.Element => {
           {...register('message')}
         ></textarea>
       </div>
-      <button className={formButton} type="submit">Send your message</button>
+      <button className={formButton} type="submit">
+        Send your message
+      </button>
     </form>
   );
 };

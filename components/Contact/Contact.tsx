@@ -1,7 +1,11 @@
 import ContactForm from '../ContactForm';
 import { Grid, Heading } from '../ui';
 import { lineBreak } from './Contact.css';
-import { aboutSubHeading, accent, noTextDecoration } from '../../styles/SharedStyles.css';
+import {
+  aboutSubHeading,
+  accent,
+  noTextDecoration,
+} from '../../styles/SharedStyles.css';
 import Link from 'next/link';
 const Contact = (): JSX.Element => {
   return (
@@ -36,4 +40,3 @@ const Contact = (): JSX.Element => {
 };
 
 export default Contact;
-

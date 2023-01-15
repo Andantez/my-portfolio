@@ -83,10 +83,10 @@ const baseAccent = style({
 });
 
 export const accent = styleVariants({
-  base:[ baseAccent],
-  bold: [baseAccent, {fontWeight: fwBold}]
-})
+  base: [baseAccent],
+  bold: [baseAccent, { fontWeight: fwBold }],
+});
 
 export const noTextDecoration = style({
-  textDecoration: 'none'
-})
+  textDecoration: 'none',
+});

@@ -14,7 +14,7 @@ const About = ({ children }: AboutProps): JSX.Element => {
       columnsMediaBreakpoint={600}
     >
       <Heading
-        as='h2'
+        as="h2"
         accentType="number"
         accentText="02."
         title="About"
