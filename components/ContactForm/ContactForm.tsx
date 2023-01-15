@@ -6,7 +6,8 @@ import {
   formInput,
   formButton,
 } from './ContactForm.css';
-
+import { REGEX } from '../../lib/constVariables';
+import { charsLeft } from '../../lib/helpers';
 type FormInputs = {
   name: string;
   email: string;
@@ -15,7 +16,18 @@ type FormInputs = {
 };
 
 const ContactForm = (): JSX.Element => {
-  const { register, handleSubmit } = useForm<FormInputs>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInputs>({
+    defaultValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+  });
 
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log(data);
@@ -31,8 +43,14 @@ const ContactForm = (): JSX.Element => {
           className={formInput.base}
           type="text"
           id="name"
-          {...register('name')}
+          {...register('name', {
+            minLength: {
+              value: 2,
+              message: 'Minimum length is 2',
+            },
+          })}
         />
+        {errors.name && <small>{errors.name.message}</small>}
       </div>
       <div className={inputWrapper}>
         <label className={inputLabel.required} htmlFor="email">
@@ -42,11 +60,19 @@ const ContactForm = (): JSX.Element => {
           className={formInput.base}
           type="email"
           id="email"
-          {...register('email')}
+          // autoComplete="email"
+          {...register('email', {
+            pattern: {
+              value: REGEX,
+              message:
+                'Enter a valid email address e.g in the format user@domain.com',
+            },
+          })}
         />
+        {errors.email && <small>{errors.email.message}</small>}
       </div>
       <div className={inputWrapper}>
-        <label className={inputLabel.required} htmlFor="subject">
+        <label className={inputLabel.notRequired} htmlFor="subject">
           Subject
         </label>
         <input
@@ -65,8 +91,17 @@ const ContactForm = (): JSX.Element => {
           id="message"
           cols={30}
           rows={5}
-          {...register('message')}
+          {...register('message', {
+            minLength: {
+              value: 15,
+              message: 'Min length is 15',
+            },
+            validate: {
+              charsLeft,
+            },
+          })}
         ></textarea>
+        {errors.message && <small>{errors.message.message}</small>}
       </div>
       <button className={formButton} type="submit">
         Send your message
