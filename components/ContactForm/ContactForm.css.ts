@@ -11,6 +11,7 @@ import {
   gap150,
   textColor,
   titleTextColor,
+  errorColor
 } from '../../styles/vars.css';
 
 export const formContainer = style({
@@ -89,7 +90,7 @@ const formInputTextArea = style({
   resize: 'vertical',
 });
 const inputError = style({
-  border: '1px solid #D90404',
+  border: `1px solid ${errorColor}`,
   ':focus': {
     outline: 0,
   },
@@ -124,8 +125,7 @@ export const formButton = style({
 export const formError = style({
   fontFamily: 'var(--ff-text)',
   fontSize: fs100,
-  color: '#D90404',
-  // minHeight: '18px'
+  color: errorColor,
 })
 
 export const wrapper = style({
