@@ -5,6 +5,7 @@ import {
   accentColor,
   titleTextColor,
   placeholderTextColor,
+  errorColor,
   fwLight,
   fwRegular,
   fwBold,
@@ -39,6 +40,7 @@ globalStyle(':root', {
     [accentColor]: '#FF4250',
     [titleTextColor]: '#F8F8F8',
     [placeholderTextColor]: '#DBDBDB',
+    [errorColor]: '#D90404',
     [fwLight]: '300',
     [fwRegular]: '400',
     [fwBold]: '700',
@@ -76,6 +78,7 @@ globalStyle('body[data-theme="light"]', {
     [textColor]: '#0D0D0D',
     [backgroundColor]: '#FFFFFF',
     [titleTextColor]: '#F8F8F8',
+    [errorColor]: '#D90404',
   },
 });
 
@@ -84,6 +87,7 @@ globalStyle('body[data-theme="dark"]', {
     [textColor]: '#FFFFFF',
     [backgroundColor]: '#0D0D0D',
     [titleTextColor]: '#363636',
+    [errorColor]: '#FF4250',
   },
 });
 

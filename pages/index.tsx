@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import About from '../components/About';
+import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
 import { Grid, Heading } from '../components/ui';
@@ -21,7 +22,7 @@ export default function Home() {
         overflow="hiddenX"
       >
         <Heading
-          as='h2'
+          as="h2"
           accentType="number"
           accentText="01."
           headingText="Some things I've build."
@@ -44,6 +45,7 @@ export default function Home() {
           More About Me
         </Link>
       </About>
+      <Contact />
     </>
   );
 }

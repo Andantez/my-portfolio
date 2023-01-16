@@ -1,5 +1,6 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import {
+  accentColor,
   fs400,
   fs450,
   fs500,
@@ -10,6 +11,7 @@ import {
   textColor,
 } from './vars.css';
 
+// TODO: rename the variables.
 export const aboutSubHeading = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwRegular,
@@ -74,4 +76,17 @@ export const aboutLink = style({
       fontSize: fs450,
     },
   },
+});
+
+const baseAccent = style({
+  color: accentColor,
+});
+
+export const accent = styleVariants({
+  base: [baseAccent],
+  bold: [baseAccent, { fontWeight: fwBold }],
+});
+
+export const noTextDecoration = style({
+  textDecoration: 'none',
 });
