@@ -28,7 +28,7 @@ export const formContainer = style({
       marginLeft: 0,
       marginRight: 0,
     },
-    'screen and (min-width: 46.875rem)': {
+    'screen and (min-width: 64rem)': {
       gridTemplateAreas: `
         'name email'
         'subject subject'
@@ -44,24 +44,6 @@ export const formContainer = style({
 export const inputWrapper = style({
   display: 'grid',
   gap: '.5rem',
-  '@media': {
-    'screen and (min-width: 46.875rem)': {
-      selectors: {
-        '&:nth-child(1)': {
-          gridArea: 'name',
-        },
-        '&:nth-child(2)': {
-          gridArea: 'email',
-        },
-        '&:nth-child(3)': {
-          gridArea: 'subject',
-        },
-        '&:nth-child(4)': {
-          gridArea: 'message',
-        },
-      },
-    },
-  },
 });
 
 const labelBase = style({
@@ -99,18 +81,23 @@ const formInputBase = style({
   borderRadius: '0.25rem',
   caretColor: textColor,
   ':focus': {
-    border: '1px solid transparent',
-    outline: `2px solid ${textColor}`,
+    outline: `1px solid ${textColor}`,
   },
 });
 
 const formInputTextArea = style({
   resize: 'vertical',
 });
-
+const inputError = style({
+  border: '1px solid #D90404',
+  ':focus': {
+    outline: 0,
+  },
+});
 export const formInput = styleVariants({
   base: [formInputBase],
   textArea: [formInputBase, formInputTextArea],
+  inputError: [formInputBase, inputError]
 });
 
 export const formButton = style({
@@ -129,6 +116,35 @@ export const formButton = style({
     },
     'screen and (min-width: 75rem)': {
       fontSize: fs300,
+    },
+  },
+});
+
+
+export const formError = style({
+  fontFamily: 'var(--ff-text)',
+  fontSize: fs100,
+  color: '#D90404',
+  // minHeight: '18px'
+})
+
+export const wrapper = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      selectors: {
+        '&:nth-child(1)': {
+          gridArea: 'name',
+        },
+        '&:nth-child(2)': {
+          gridArea: 'email',
+        },
+        '&:nth-child(3)': {
+          gridArea: 'subject',
+        },
+        '&:nth-child(4)': {
+          gridArea: 'message',
+        },
+      },
     },
   },
 });
