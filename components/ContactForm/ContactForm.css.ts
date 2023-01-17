@@ -98,6 +98,7 @@ const inputError = style({
 export const formInput = styleVariants({
   base: [formInputBase],
   textArea: [formInputBase, formInputTextArea],
+  textAreaError: [formInputBase, formInputTextArea, inputError],
   inputError: [formInputBase, inputError],
 });
 

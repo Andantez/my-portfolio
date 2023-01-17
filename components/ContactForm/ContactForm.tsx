@@ -8,8 +8,8 @@ import {
   formError,
   wrapper,
 } from './ContactForm.css';
-import { REGEX } from '../../lib/constVariables';
-import { charsLeft } from '../../lib/helpers';
+import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
+import { useEffect } from 'react';
 
 type FormInputs = {
   name: string;
@@ -22,7 +22,9 @@ const ContactForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
+    watch,
+    reset,
   } = useForm<FormInputs>({
     defaultValues: {
       name: '',
@@ -32,11 +34,18 @@ const ContactForm = (): JSX.Element => {
     },
   });
 
+  const charactersLeft = MAX_MESSAGE_LENGTH - watch('message').length;
+
   const onSubmit: SubmitHandler<FormInputs> = (data) => {
     console.log(data);
     // TODO: to be implemented
   };
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset();
+    }
+  }, [isSubmitSuccessful, reset]);
   return (
     <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={wrapper}>
@@ -49,6 +58,7 @@ const ContactForm = (): JSX.Element => {
             type="text"
             id="name"
             {...register('name', {
+              required: true,
               minLength: {
                 value: 2,
                 message: 'Please supply a valid name',
@@ -69,6 +79,7 @@ const ContactForm = (): JSX.Element => {
             id="email"
             autoComplete="email"
             {...register('email', {
+              required: 'Please enter an email address',
               pattern: {
                 value: REGEX,
                 message:
@@ -99,22 +110,27 @@ const ContactForm = (): JSX.Element => {
             Message
           </label>
           <textarea
-            className={formInput.textArea}
+            className={
+              errors.message ? formInput.textAreaError : formInput.textArea
+            }
             id="message"
             cols={30}
             rows={5}
             {...register('message', {
+              required: true,
               minLength: {
                 value: 15,
                 message: 'Min length is 15',
               },
-              validate: {
-                charsLeft,
-              },
+              maxLength: MAX_MESSAGE_LENGTH,
             })}
           ></textarea>
         </div>
-        <span className={formError}>{errors?.message?.message}</span>
+        <div>
+          <span className={formError}>{errors?.message?.message}</span>
+          {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
+          <span> Number of characters left {charactersLeft}</span>
+        </div>
       </div>
       <button className={formButton} type="submit">
         Send your message
