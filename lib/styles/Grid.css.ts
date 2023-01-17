@@ -11,6 +11,11 @@ export const grid = recipe({
       auto: { height: 'auto' },
       '100vh': { height: '100vh' },
     },
+    minHeight: {
+      '100%': { minHeight: '100%' },
+      auto: { minHeight: 'auto' },
+      '100vh': { minHeight: '100vh' },
+    },
     padding: {
       noPadding: {
         padding: 0,
