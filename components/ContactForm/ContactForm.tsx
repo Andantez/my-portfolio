@@ -6,7 +6,7 @@ import {
   formInput,
   formButton,
   formError,
-  wrapper
+  wrapper,
 } from './ContactForm.css';
 import { REGEX } from '../../lib/constVariables';
 import { charsLeft } from '../../lib/helpers';

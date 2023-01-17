@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <Grid
       gap="small"
-      height="100%"
+      minHeight="100%"
       padding="smallLeftAndRight"
       columnsMediaBreakpoint={600}
       placeContent="center"
