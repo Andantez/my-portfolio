@@ -16,26 +16,31 @@ export const accent = style({
 });
 
 export const pageTitle = style({
-  position: 'absolute',
-  top: '-4.5rem',
-  left: 0,
-  fontSize: fs800,
-  color: titleTextColor,
-  zIndex: -1,
-  lineHeight: 0.875,
-  fontWeight: fwBold,
+  display: 'none',
   '@media': {
+    'screen and (min-width: 34.375rem)': {
+      display: 'block',
+      position: 'absolute',
+      top: '-4.5rem',
+      left: 0,
+      zIndex: -1,
+      fontSize: fs800,
+      lineHeight: 0.875,
+      fontWeight: fwBold,
+      color: titleTextColor,
+    },
     'screen and (min-width: 37.5rem)': {
-      left: '-3rem',
+      left: '-2rem',
     },
     'screen and (min-width: 64rem)': {
       fontSize: fs900,
       top: '-7.5rem',
+      left: '-3rem',
     },
     'screen and (min-width: 87.5rem)': {
-      fontSize: 325,
-      top: '-13.3rem',
-      left: '-5.5rem',
+      // fontSize: 325,
+      // top: '-13.3rem',
+      left: '-4rem',
     },
   },
 });
@@ -56,11 +61,10 @@ export const header = style({
 export const section = style({
   position: 'relative',
   fontFamily: 'var(--ff-heading)',
-  paddingLeft: '1rem',
   '@media': {
     'screen and (min-width: 37.5rem)': {
       paddingLeft: 0,
-      gridColumn: '2/ span 10',
+      gridColumn: '2/ -1',
     },
   },
 });

@@ -11,7 +11,7 @@ import {
   gap150,
   textColor,
   titleTextColor,
-  errorColor
+  errorColor,
 } from '../../styles/vars.css';
 
 export const formContainer = style({
@@ -98,7 +98,7 @@ const inputError = style({
 export const formInput = styleVariants({
   base: [formInputBase],
   textArea: [formInputBase, formInputTextArea],
-  inputError: [formInputBase, inputError]
+  inputError: [formInputBase, inputError],
 });
 
 export const formButton = style({
@@ -121,12 +121,11 @@ export const formButton = style({
   },
 });
 
-
 export const formError = style({
   fontFamily: 'var(--ff-text)',
   fontSize: fs100,
   color: errorColor,
-})
+});
 
 export const wrapper = style({
   '@media': {

@@ -4,7 +4,7 @@ import { grid } from '../../lib/styles/Grid.css';
 
 export const heroParagraph = style({
   fontFamily: 'var(--ff-text)',
-  paddingLeft: '2rem',
+  paddingLeft: '1rem',
   color: textColor,
   '@media': {
     'screen and (min-width: 37.5rem)': {
@@ -23,7 +23,7 @@ export const heroParagraph = style({
 
 globalStyle(`${grid()} a[data-link="nav"]`, {
   maxWidth: 'fit-content',
-  marginLeft: '2rem',
+  marginLeft: '1rem',
   fontWeight: fwBold,
   textDecoration: 'underline',
   textUnderlineOffset: 5,
