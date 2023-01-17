@@ -6,7 +6,7 @@ type AboutProps = {
 const About = ({ children }: AboutProps): JSX.Element => {
   return (
     <Grid
-      height="100%"
+      minHeight="100%"
       placeContent="center"
       gap="small"
       padding="smallLeftAndRight"
