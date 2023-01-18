@@ -9,9 +9,8 @@ import {
   wrapper,
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { FormInputs } from '../../lib/types/form';
-
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -28,12 +27,26 @@ const ContactForm = (): JSX.Element => {
       message: '',
     },
   });
-
+  const [showNotification, setShowNotification] = useState(false);
   const charactersLeft = MAX_MESSAGE_LENGTH - watch('message').length;
 
-  const onSubmit: SubmitHandler<FormInputs> = (data) => {
-    console.log(data);
-    // TODO: to be implemented
+  const onSubmit: SubmitHandler<FormInputs> = async (data) => {
+    try {
+      const res = await (
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+      ).json();
+      if (res.status === 'success') {
+        setShowNotification(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -130,6 +143,10 @@ const ContactForm = (): JSX.Element => {
       <button className={formButton} type="submit">
         Send your message
       </button>
+      {/* next line is temporary */}
+      {showNotification && (
+        <h3>Thank You. I will get back at you as soon as possible!</h3>
+      )}
     </form>
   );
 };
