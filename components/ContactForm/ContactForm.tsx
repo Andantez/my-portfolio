@@ -10,13 +10,8 @@ import {
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect } from 'react';
+import type { FormInputs } from '../../lib/types/form';
 
-type FormInputs = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
 
 const ContactForm = (): JSX.Element => {
   const {
