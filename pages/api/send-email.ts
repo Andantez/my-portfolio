@@ -1,13 +1,29 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import sgMail from '@sendgrid/mail';
+import { createMailTemplate } from '../../lib/helpers';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 
-  return res.status(201).json({
-    status: 'success',
-    message: 'Thank You. I will get back at you as soon as possible!',
-  });
+  try {
+    const msg = createMailTemplate(req.body);
+    await sgMail.send(msg);
+    return res.status(200).json({
+      status: 'success',
+      message: 'Contact email sent successfully!',
+    });
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ status: 'failed', message: 'Internal server error' });
+  }
 }
