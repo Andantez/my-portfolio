@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import sgMail from '@sendgrid/mail';
-import { createMailTemplate } from '../../lib/helpers';
+import { createMailTemplate, isValidFormData } from '../../lib/helpers';
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
@@ -11,6 +11,12 @@ export default async function handler(
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
+
+  const formErrors = isValidFormData(req.body);
+
+  if (formErrors !== true) {
+    return res.status(422).json({ status: 'invalid data', errors: formErrors });
   }
 
   try {
