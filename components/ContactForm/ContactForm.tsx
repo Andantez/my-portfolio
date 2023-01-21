@@ -10,7 +10,7 @@ import {
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
-import type { FormInputs } from '../../lib/types/form';
+import type { FormInputs, Error } from '../../lib/types/form';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -19,6 +19,7 @@ const ContactForm = (): JSX.Element => {
     formState: { errors, isSubmitSuccessful },
     watch,
     reset,
+    setError,
   } = useForm<FormInputs>({
     defaultValues: {
       name: '',
@@ -41,6 +42,14 @@ const ContactForm = (): JSX.Element => {
           body: JSON.stringify(data),
         })
       ).json();
+
+      if (res.status === 'invalid data') {
+        res.errors.forEach(({ name, type, message }: Error) => {
+          if (message) {
+            setError(name, { type, message });
+          }
+        });
+      }
       if (res.status === 'success') {
         setShowNotification(true);
       }
@@ -66,7 +75,7 @@ const ContactForm = (): JSX.Element => {
             type="text"
             id="name"
             {...register('name', {
-              required: true,
+              required: 'Please supply a valid name',
               minLength: {
                 value: 2,
                 message: 'Please supply a valid name',
@@ -125,11 +134,7 @@ const ContactForm = (): JSX.Element => {
             cols={30}
             rows={5}
             {...register('message', {
-              required: true,
-              minLength: {
-                value: 15,
-                message: 'Min length is 15',
-              },
+              required: "Don't be shy! Write something",
               maxLength: MAX_MESSAGE_LENGTH,
             })}
           ></textarea>
