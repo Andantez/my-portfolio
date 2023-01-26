@@ -14,3 +14,5 @@ export { default as Rails } from './Rails';
 export { default as PostgreSQL } from './PostgreSQL';
 export { default as Sass } from './Sass';
 export { default as Devise } from './Devise';
+export { default as Linkedin } from './Linkedin';
+export { default as Github } from './Github';
