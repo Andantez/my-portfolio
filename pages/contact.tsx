@@ -1,6 +1,11 @@
 import Contact from '../components/Contact';
+// TODO: styling 
 const ContactPage = () => {
-  return <Contact />;
+  return (
+    <div>
+      <Contact />
+    </div>
+  );
 };
 
 export default ContactPage;
