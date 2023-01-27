@@ -1,4 +1,5 @@
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
+import { gap300 } from '../../../styles/vars.css';
 
 export const flex = recipe({
   base: {
@@ -8,7 +9,6 @@ export const flex = recipe({
     '@media': {
       'screen and (min-width: 87.5rem)': {
         padding: '0 !important',
-        gap: '3rem',
       },
     },
   },
@@ -277,6 +277,43 @@ export const flex = recipe({
         '@media': {
           'screen and (min-width: 75rem)': {
             padding: '0 2rem',
+          },
+        },
+      },
+    },
+    gapMediaBreakPoint: {
+      gap3At600: {
+        '@media': {
+          'screen and (min-width: 37.5rem)': {
+            gap: gap300,
+          },
+        },
+      },
+      gap3At900: {
+        '@media': {
+          'screen and (min-width: 56.25rem)': {
+            gap: gap300,
+          },
+        },
+      },
+      gap3At1024: {
+        '@media': {
+          'screen and (min-width: 64rem)': {
+            gap: gap300,
+          },
+        },
+      },
+      gap3At1200: {
+        '@media': {
+          'screen and (min-width: 75rem)': {
+            gap: gap300,
+          },
+        },
+      },
+      gap3At1400: {
+        '@media': {
+          'screen and (min-width: 87.5rem)': {
+            gap: gap300,
           },
         },
       },
