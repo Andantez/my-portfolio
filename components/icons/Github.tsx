@@ -1,4 +1,4 @@
-import { textColor } from "../../styles/vars.css";
+import { textColor } from '../../styles/vars.css';
 
 const Github = ({
   width = 35,

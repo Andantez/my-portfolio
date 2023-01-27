@@ -1,9 +1,9 @@
-import { style } from "@vanilla-extract/css";
-import { fs100, fs200, textColor } from "../../styles/vars.css";
+import { style } from '@vanilla-extract/css';
+import { fs100, fs200, textColor } from '../../styles/vars.css';
 
 export const footerWrapper = style({
-  padding: '1rem 0'
-})
+  padding: '2rem 0',
+});
 export const footerSpan = style({
   fontFamily: 'var(--ff-heading)',
 
@@ -12,6 +12,6 @@ export const footerSpan = style({
   '@media': {
     'screen and (min-width: 64rem)': {
       fontSize: fs200,
-    }
-  }
-})
+    },
+  },
+});

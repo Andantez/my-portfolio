@@ -6,7 +6,7 @@ import MainLayout from '../components/layout/MainLayout';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MainLayout>
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </MainLayout>
   );
 }
