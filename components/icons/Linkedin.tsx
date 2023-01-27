@@ -1,3 +1,5 @@
+import { textColor } from "../../styles/vars.css";
+
 const Linkedin = ({
   width = 35,
   height = 35,
@@ -5,7 +7,7 @@ const Linkedin = ({
   return (
     <svg
       fill="none"
-      stroke="currentColor"
+      stroke={textColor}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
