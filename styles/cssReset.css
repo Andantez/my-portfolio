@@ -61,7 +61,3 @@ li {
 #__next {
   isolation: isolate;
 }
-
-#__next > div {
-  height: 100%;
-}
