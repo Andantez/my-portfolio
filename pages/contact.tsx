@@ -1,5 +1,5 @@
 import Contact from '../components/Contact';
-// TODO: styling 
+// TODO: styling
 const ContactPage = () => {
   return (
     <div>

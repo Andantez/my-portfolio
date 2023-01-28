@@ -5,3 +5,4 @@ export { default as Grid } from './Grid';
 export { default as ProjectStack } from './ProjectStack';
 export { default as ProjectLinks } from './ProjectLinks';
 export { default as Flex } from './Flex';
+export { default as Socials } from './Socials';
