@@ -94,6 +94,11 @@ export const grid = recipe({
         },
       },
     },
+    position: {
+      relative: {
+        position: 'relative',
+      },
+    },
   },
 });
 
