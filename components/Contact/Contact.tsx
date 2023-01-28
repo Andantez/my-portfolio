@@ -1,5 +1,5 @@
 import ContactForm from '../ContactForm';
-import { Grid, Heading } from '../ui';
+import { Grid, Heading, Socials } from '../ui';
 import { lineBreak } from './Contact.css';
 import {
   aboutSubHeading,
@@ -16,6 +16,7 @@ const Contact = (): JSX.Element => {
       padding="smallLeftAndRight"
       overflow="hiddenX"
       columnsMediaBreakpoint={600}
+      position="relative"
     >
       <Heading
         as="h2"
@@ -35,6 +36,7 @@ const Contact = (): JSX.Element => {
         </Link>
       </h3>
       <ContactForm />
+      <Socials />
     </Grid>
   );
 };
