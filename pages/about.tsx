@@ -1,5 +1,6 @@
-import { Grid, Heading } from '../components/ui';
+import { Grid, Heading, ProjectStack } from '../components/ui';
 import { aboutSubHeading } from '../styles/SharedStyles.css';
+import { skillList } from '../data';
 
 const AboutPage = () => {
   return (
@@ -51,19 +52,14 @@ const AboutPage = () => {
         </section>
         <section>
           <h3>Skills</h3>
-          {/* This is temporary. To be replaced with icons */}
           <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>NextJs</li>
-            <li>React</li>
-            <li>Ruby</li>
-            <li>Rails</li>
-            <li>MongoDB</li>
-            <li>SWR</li>
-            <li>Framer Motion</li>
-            <li>NextAuth</li>
+            {skillList.map(({ name, icon: Icon }) => {
+              return (
+                <li key={name}>
+                  <ProjectStack name={name} Icon={Icon} />;
+                </li>
+              );
+            })}
           </ul>
         </section>
       </div>
