@@ -16,3 +16,6 @@ export { default as Sass } from './Sass';
 export { default as Devise } from './Devise';
 export { default as Linkedin } from './Linkedin';
 export { default as Github } from './Github';
+export { default as HTML } from './HTML';
+export { default as CSS } from './CSS';
+export { default as JavaScript } from './JavaScript';
