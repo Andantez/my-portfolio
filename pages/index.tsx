@@ -45,7 +45,15 @@ export default function Home() {
           More About Me
         </Link>
       </About>
-      <Contact />
+      <Contact>
+        <Heading
+          as="h2"
+          accentType="number"
+          accentText="03."
+          title="Contact"
+          headingText="Get in touch"
+        />
+      </Contact>
     </>
   );
 }
