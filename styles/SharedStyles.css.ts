@@ -90,3 +90,17 @@ export const accent = styleVariants({
 export const noTextDecoration = style({
   textDecoration: 'none',
 });
+
+export const contactPageWrapper = style({
+  minHeight: '100%',
+  paddingTop: '7.5rem',
+  paddingBottom: '3rem',
+  '@media': {
+    'screen and (min-width: 34.375rem)': {
+      paddingTop: '11rem',
+    },
+    'screen and (min-width: 64rem)': {
+      paddingTop: '13rem',
+    },
+  },
+});

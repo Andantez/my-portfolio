@@ -1,5 +1,5 @@
 import ContactForm from '../ContactForm';
-import { Grid, Heading, Socials } from '../ui';
+import { Grid, Socials } from '../ui';
 import { lineBreak } from './Contact.css';
 import {
   aboutSubHeading,
@@ -7,24 +7,22 @@ import {
   noTextDecoration,
 } from '../../styles/SharedStyles.css';
 import Link from 'next/link';
-const Contact = (): JSX.Element => {
+
+type ContactProps = {
+  children: React.ReactNode;
+};
+const Contact = ({ children }: ContactProps): JSX.Element => {
   return (
     <Grid
       minHeight="100%"
       placeContent="center"
       gap="small"
       padding="smallLeftAndRight"
-      overflow="hiddenX"
+      // overflow="hiddenX"
       columnsMediaBreakpoint={600}
       position="relative"
     >
-      <Heading
-        as="h2"
-        accentType="number"
-        accentText="03."
-        title="Contact"
-        headingText="Get in touch"
-      />
+      {children}
       <h3 className={aboutSubHeading}>
         Get in touch by filling the form below <br className={lineBreak} />
         or just send an{' '}
