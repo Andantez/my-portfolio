@@ -91,7 +91,7 @@ export const noTextDecoration = style({
   textDecoration: 'none',
 });
 
-export const contactPageWrapper = style({
+export const pageContainer = style({
   minHeight: '100%',
   paddingTop: '7.5rem',
   paddingBottom: '3rem',
