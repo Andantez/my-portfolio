@@ -1,10 +1,10 @@
 import Contact from '../components/Contact';
 import { Heading } from '../components/ui';
-import { contactPageWrapper } from '../styles/SharedStyles.css';
+import { pageContainer } from '../styles/SharedStyles.css';
 // TODO: styling
 const ContactPage = () => {
   return (
-    <div className={contactPageWrapper}>
+    <div className={pageContainer}>
       <Contact>
         <Heading
           as="h1"
