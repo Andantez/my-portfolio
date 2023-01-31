@@ -40,11 +40,11 @@ const SingleProject = ({
       <article className={projectInfo}>
         <h2 className={projectName}>{name}</h2>
         <p className={projectDescription}>{description}</p>
-        <div className={projectStack}>
+        <ul className={projectStack}>
           {stack.map((stk) => (
             <ProjectStack key={stk.name} name={stk.name} Icon={stk.icon} />
           ))}
-        </div>
+        </ul>
         <ProjectLinks liveUrl="/" sourceUrl="/" />
       </article>
       <div className={projectImgWrapper[panelColor]}>

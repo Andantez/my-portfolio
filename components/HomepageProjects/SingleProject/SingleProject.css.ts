@@ -52,6 +52,7 @@ export const projectStack = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: gap150,
+  padding: 0,
   '@media': {
     'screen and (min-width: 46.875rem)': {
       justifyContent: 'center',
