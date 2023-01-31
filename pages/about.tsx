@@ -1,6 +1,7 @@
 import { Grid, Heading, ProjectStack } from '../components/ui';
-import { aboutSubHeading } from '../styles/SharedStyles.css';
 import { skillList } from '../data';
+import { aboutSubHeading } from '../styles/SharedStyles.css';
+import { sectionHeader, sectionContainer, sectionParagraph, sectionWrapper } from '../styles/AboutPage.css';
 
 const AboutPage = () => {
   return (
@@ -22,10 +23,10 @@ const AboutPage = () => {
         Hello I&apos;m Kaloyan Atanasov, Front-End developer.
         <br /> I love problem solving and I like making cool interactive things.
       </h2>
-      <div>
-        <section>
-          <h3>Background</h3>
-          <p>
+      <div className={sectionContainer}>
+        <section className={sectionWrapper}>
+          <h3 className={sectionHeader}>Background</h3>
+          <p className={sectionParagraph}>
             I&apos;ve always been fascinated with animations and cool UI effects
             I&apos;ve seen on the web. Having had an opportunity in recent years
             i decided to pursue a carrier in web development. I took part in
@@ -33,25 +34,25 @@ const AboutPage = () => {
             learning journey. I followed with React and NextJs.{' '}
           </p>
         </section>
-        <section>
-          <h3>Future Goals</h3>
-          <p>
+        <section className={sectionWrapper}>
+          <h3 className={sectionHeader}>Future Goals</h3>
+          <p className={sectionParagraph}>
             One of my next moves is to learn Vue.Js and Svelte to widen my
             Front-End skills. I&apos;m also planning to jump into the Back-End
             world
           </p>
         </section>
-        <section>
-          <h3>My Hobbies</h3>
-          <p>
+        <section className={sectionWrapper}>
+          <h3 className={sectionHeader}>My Hobbies</h3>
+          <p className={sectionParagraph}>
             When I&apos;m not coding, I enjoy playing computer games and watch
             movies. I also recently took on reading again which was a childhood
             hobby of mine. I also enjoy playing bowling and darts (I&apos;m not
             that great at it though).
           </p>
         </section>
-        <section>
-          <h3>Skills</h3>
+        <section className={sectionWrapper}>
+          <h3 className={sectionHeader}>Skills</h3>
           <ul>
             {skillList.map(({ name, icon: Icon }) => {
               return (
