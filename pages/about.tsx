@@ -1,7 +1,13 @@
 import { Grid, Heading, ProjectStack } from '../components/ui';
 import { skillList } from '../data';
 import { aboutSubHeading } from '../styles/SharedStyles.css';
-import { sectionHeader, sectionContainer, sectionParagraph, sectionWrapper } from '../styles/AboutPage.css';
+import {
+  sectionHeader,
+  sectionContainer,
+  sectionParagraph,
+  sectionWrapper,
+  skillsUL,
+} from '../styles/AboutPage.css';
 
 const AboutPage = () => {
   return (
@@ -10,7 +16,6 @@ const AboutPage = () => {
       placeContent="center"
       gap="small"
       padding="smallLeftAndRight"
-      overflow="hiddenX"
       columnsMediaBreakpoint={600}
     >
       <Heading
@@ -53,13 +58,9 @@ const AboutPage = () => {
         </section>
         <section className={sectionWrapper}>
           <h3 className={sectionHeader}>Skills</h3>
-          <ul>
+          <ul className={skillsUL}>
             {skillList.map(({ name, icon: Icon }) => {
-              return (
-                <li key={name}>
-                  <ProjectStack name={name} Icon={Icon} />;
-                </li>
-              );
+              return <ProjectStack key={name} name={name} Icon={Icon} />;
             })}
           </ul>
         </section>
