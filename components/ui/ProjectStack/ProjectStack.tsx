@@ -10,10 +10,10 @@ type ProjectStackProps = {
 };
 const ProjectStack = ({ name, Icon }: ProjectStackProps): JSX.Element => {
   return (
-    <div className={stackWrapper}>
+    <li className={stackWrapper}>
       {Icon && <Icon width={20} height={20} />}
       <p className={stackName}>{name}</p>
-    </div>
+    </li>
   );
 };
 
