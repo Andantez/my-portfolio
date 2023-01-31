@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { fs300, fs400, fs500, fwLight, gap200 } from './vars.css';
+import { fs300, fs400, fs500, fwLight, gap200, textColor } from './vars.css';
 
 export const sectionContainer = style({
   display: 'grid',
@@ -48,6 +48,7 @@ export const sectionParagraph = style({
 export const sectionWrapper = style({
   display: 'grid',
   gap: '0.75rem',
+  color: textColor,
 });
 
 export const skillsUL = style({
