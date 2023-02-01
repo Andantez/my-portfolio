@@ -1,10 +1,9 @@
 import Contact from '../components/Contact';
-import { Heading } from '../components/ui';
-import { pageContainer } from '../styles/SharedStyles.css';
-// TODO: styling
+import { Container, Heading } from '../components/ui';
+
 const ContactPage = () => {
   return (
-    <div className={pageContainer}>
+    <Container>
       <Contact>
         <Heading
           as="h1"
@@ -14,7 +13,7 @@ const ContactPage = () => {
           headingText="Contact"
         />
       </Contact>
-    </div>
+    </Container>
   );
 };
 

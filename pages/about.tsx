@@ -1,6 +1,6 @@
-import { Grid, Heading, ProjectStack } from '../components/ui';
+import { Grid, Heading, ProjectStack, Container } from '../components/ui';
 import { skillList } from '../data';
-import { aboutSubHeading, pageContainer } from '../styles/SharedStyles.css';
+import { aboutSubHeading } from '../styles/SharedStyles.css';
 import {
   sectionHeader,
   sectionContainer,
@@ -11,7 +11,7 @@ import {
 
 const AboutPage = () => {
   return (
-    <div className={pageContainer}>
+    <Container>
       <Grid
         minHeight="100%"
         placeContent="center"
@@ -68,7 +68,7 @@ const AboutPage = () => {
           </section>
         </div>
       </Grid>
-    </div>
+    </Container>
   );
 };
 
