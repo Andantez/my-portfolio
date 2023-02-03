@@ -1,9 +1,7 @@
-import { style, styleVariants } from "@vanilla-extract/css";
-import { browserDot } from "../../../../styles/vars.css";
-
+import { style, styleVariants } from '@vanilla-extract/css';
+import { browserDot } from '../../../../styles/vars.css';
 
 export const baseDot = style({
-  display: 'block',
   width: '6px',
   height: '6px',
   borderRadius: '50%',
@@ -51,5 +49,8 @@ export const dotVariants = styleVariants({
 
 export const dotsContainer = style({
   display: 'flex',
-  gap: '.25rem'
-})
+  gap: '.25rem',
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+});

@@ -1,1 +1,1 @@
-export { default } from './BrowserDots'
+export { default } from './BrowserDots';

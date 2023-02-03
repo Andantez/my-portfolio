@@ -1,5 +1,7 @@
+import { addressBar } from './AddressBar.css';
+
 const AddressBar = () => {
-  return <span>bar</span>;
+  return <span className={addressBar}></span>;
 };
 
 export default AddressBar;
