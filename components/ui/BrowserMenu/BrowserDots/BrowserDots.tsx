@@ -1,4 +1,4 @@
-import { dotVariants, dotsContainer } from "./Menu.css";
+import { dotVariants, dotsContainer } from "./BrowserDots.css";
 
 const BrowserDots = () => {
   return (
