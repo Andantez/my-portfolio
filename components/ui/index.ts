@@ -7,3 +7,4 @@ export { default as ProjectLinks } from './ProjectLinks';
 export { default as Flex } from './Flex';
 export { default as Socials } from './Socials';
 export { default as Container } from './Container';
+export { default as BrowserMenu } from './BrowserMenu';

@@ -1,5 +1,5 @@
 // import type { Projects } from '../../../data/projects';
-import { ProjectStack, ProjectLinks, Flex } from '../../ui';
+import { ProjectStack, ProjectLinks, Flex, BrowserMenu } from '../../ui';
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import {
@@ -48,6 +48,7 @@ const SingleProject = ({
         <ProjectLinks liveUrl="/" sourceUrl="/" />
       </article>
       <div className={projectImgWrapper[panelColor]}>
+        <BrowserMenu />
         <Image
           src={image}
           alt={name}
