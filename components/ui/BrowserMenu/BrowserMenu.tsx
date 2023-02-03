@@ -1,6 +1,14 @@
-import { dotVariants } from './BrowserMenu.css';
+import BrowserDots from './BrowserDots';
+import AddressBar from './AddressBar';
+import { browserMenuContainer } from './BrowserMenu.css';
+
 const BrowserMenu = () => {
-  return <div className={dotVariants.red}>Menu</div>;
+  return (
+    <div className={browserMenuContainer}>
+      <BrowserDots />
+      <AddressBar />
+    </div>
+  );
 };
 
 export default BrowserMenu;
