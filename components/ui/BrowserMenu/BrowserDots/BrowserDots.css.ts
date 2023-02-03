@@ -4,17 +4,27 @@ import { browserDot } from "../../../../styles/vars.css";
 
 export const baseDot = style({
   display: 'block',
-  width: '5px',
-  height: '5px',
+  width: '6px',
+  height: '6px',
   borderRadius: '50%',
-})
+  '@media': {
+    'screen and (min-width: 37.5rem)': {
+      width: '8px',
+      height: '8px',
+    },
+    'screen and (min-width: 75rem)': {
+      width: '10px',
+      height: '10px',
+    },
+  },
+});
 
 export const dotVariants = styleVariants({
   red: [
     baseDot,
     {
       vars: {
-        [browserDot]: 'red',
+        [browserDot]: '#FF5F56',
       },
       backgroundColor: browserDot,
     },
@@ -23,7 +33,7 @@ export const dotVariants = styleVariants({
     baseDot,
     {
       vars: {
-        [browserDot]: 'yellow',
+        [browserDot]: '#FFBD2E',
       },
       backgroundColor: browserDot,
     },
@@ -32,7 +42,7 @@ export const dotVariants = styleVariants({
     baseDot,
     {
       vars: {
-        [browserDot]: 'green',
+        [browserDot]: '#27C93F',
       },
       backgroundColor: browserDot,
     },
@@ -41,4 +51,5 @@ export const dotVariants = styleVariants({
 
 export const dotsContainer = style({
   display: 'flex',
+  gap: '.25rem'
 })
