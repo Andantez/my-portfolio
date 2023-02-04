@@ -12,6 +12,7 @@ import {
   textColor,
   titleTextColor,
   errorColor,
+  placeholderTextColor,
 } from '../../styles/vars.css';
 
 export const formContainer = style({
@@ -148,3 +149,17 @@ export const wrapper = style({
     },
   },
 });
+
+
+export const scrollbar = style({
+  '::-webkit-scrollbar': {
+    width: '.75rem'
+  },
+  '::-webkit-scrollbar-track': {
+    backgroundColor: titleTextColor,
+  },
+  '::-webkit-scrollbar-thumb': {
+    backgroundColor: placeholderTextColor,
+    borderRadius: '.75rem'
+  }
+})

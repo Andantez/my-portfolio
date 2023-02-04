@@ -7,6 +7,7 @@ import {
   formButton,
   formError,
   wrapper,
+  scrollbar
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
@@ -127,9 +128,9 @@ const ContactForm = (): JSX.Element => {
             Message
           </label>
           <textarea
-            className={
+            className={`${
               errors.message ? formInput.textAreaError : formInput.textArea
-            }
+            } ${scrollbar}`}
             id="message"
             cols={30}
             rows={5}
