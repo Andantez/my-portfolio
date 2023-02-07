@@ -42,7 +42,7 @@ export const formContainer = style({
     },
   },
 });
-
+// ------------------> To be moved
 const labelBase = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
@@ -97,7 +97,7 @@ export const formInput = styleVariants({
   textAreaError: [formInputBase, formInputTextArea, inputError],
   inputError: [formInputBase, inputError],
 });
-
+// <------------------
 export const formButton = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
