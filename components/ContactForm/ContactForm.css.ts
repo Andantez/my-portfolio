@@ -43,11 +43,6 @@ export const formContainer = style({
   },
 });
 
-export const inputWrapper = style({
-  display: 'grid',
-  gap: '.5rem',
-});
-
 const labelBase = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
@@ -150,16 +145,15 @@ export const wrapper = style({
   },
 });
 
-
 export const scrollbar = style({
   '::-webkit-scrollbar': {
-    width: '.75rem'
+    width: '.75rem',
   },
   '::-webkit-scrollbar-track': {
     backgroundColor: titleTextColor,
   },
   '::-webkit-scrollbar-thumb': {
     backgroundColor: placeholderTextColor,
-    borderRadius: '.75rem'
-  }
-})
+    borderRadius: '.75rem',
+  },
+});

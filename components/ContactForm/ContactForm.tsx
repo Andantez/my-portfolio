@@ -1,17 +1,17 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   formContainer,
-  inputWrapper,
   inputLabel,
   formInput,
   formButton,
   formError,
   wrapper,
-  scrollbar
+  scrollbar,
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
+import InputWrapper from './InputWrapper';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -67,7 +67,7 @@ const ContactForm = (): JSX.Element => {
   return (
     <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={wrapper}>
-        <div className={inputWrapper}>
+        <InputWrapper>
           <label className={inputLabel.required} htmlFor="name">
             Name
           </label>
@@ -83,11 +83,11 @@ const ContactForm = (): JSX.Element => {
               },
             })}
           />
-        </div>
+        </InputWrapper>
         <span className={formError}>{errors?.name?.message}</span>
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
+        <InputWrapper>
           <label className={inputLabel.required} htmlFor="email">
             Email
           </label>
@@ -105,11 +105,11 @@ const ContactForm = (): JSX.Element => {
               },
             })}
           />
-        </div>
+        </InputWrapper>
         <span className={formError}>{errors?.email?.message}</span>
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
+        <InputWrapper>
           <label className={inputLabel.notRequired} htmlFor="subject">
             Subject
           </label>
@@ -119,11 +119,11 @@ const ContactForm = (): JSX.Element => {
             id="subject"
             {...register('subject')}
           />
-        </div>
+        </InputWrapper>
         {/* <span className={formError}>{errors?.subject?.message}</span> */}
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
+        <InputWrapper>
           <label className={inputLabel.required} htmlFor="message">
             Message
           </label>
@@ -139,7 +139,7 @@ const ContactForm = (): JSX.Element => {
               maxLength: MAX_MESSAGE_LENGTH,
             })}
           ></textarea>
-        </div>
+        </InputWrapper>
         <div>
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
