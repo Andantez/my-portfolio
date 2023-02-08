@@ -8,6 +8,7 @@ import {
   fwLight,
   textColor,
   titleTextColor,
+  placeholderTextColor,
 } from '../../../styles/vars.css';
 
 const labelBase = style({
@@ -63,4 +64,17 @@ export const formInput = styleVariants({
   textArea: [formInputBase, formInputTextArea],
   textAreaError: [formInputBase, formInputTextArea, inputError],
   inputError: [formInputBase, inputError],
+});
+
+export const scrollbar = style({
+  '::-webkit-scrollbar': {
+    width: '.75rem',
+  },
+  '::-webkit-scrollbar-track': {
+    backgroundColor: titleTextColor,
+  },
+  '::-webkit-scrollbar-thumb': {
+    backgroundColor: placeholderTextColor,
+    borderRadius: '.75rem',
+  },
 });
