@@ -1,9 +1,9 @@
 import { UseFormRegister, FieldErrors, RegisterOptions } from 'react-hook-form';
 import type { FormInputs } from '../../../lib/types/form';
-import { inputLabel, formInput, scrollbar } from './FormInput.css';
+import { inputLabel, formInput, scrollbar } from './FormControl.css';
 
 // TODO add "as" prop type
-type FormInputOwnProps = {
+type FormControlOwnProps = {
   label: string;
   name: keyof FormInputs;
   register: UseFormRegister<FormInputs>;
@@ -12,12 +12,12 @@ type FormInputOwnProps = {
   validationSchema: RegisterOptions;
 };
 
-type FormInputProps<T extends React.ElementType> = {
+type FormControlProps<T extends React.ElementType> = {
   as?: T;
-} & FormInputOwnProps &
-  Omit<React.ComponentPropsWithoutRef<T>, keyof FormInputOwnProps>;
+} & FormControlOwnProps &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof FormControlOwnProps>;
 
-const FormInput = <T extends React.ElementType = 'input'>({
+const FormControl = <T extends React.ElementType = 'input'>({
   name,
   label,
   type,
@@ -27,7 +27,7 @@ const FormInput = <T extends React.ElementType = 'input'>({
   validationSchema,
   as,
   ...props
-}: FormInputProps<T>) => {
+}: FormControlProps<T>) => {
   const Component = as || 'input';
   let inputClassNames: string;
 
@@ -64,4 +64,4 @@ const FormInput = <T extends React.ElementType = 'input'>({
   );
 };
 
-export default FormInput;
+export default FormControl;

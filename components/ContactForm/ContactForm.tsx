@@ -9,7 +9,7 @@ import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
 import InputWrapper from './InputWrapper';
-import FormInput from './FormInput';
+import FormControl from './FormControl';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -66,7 +66,7 @@ const ContactForm = (): JSX.Element => {
     <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={wrapper}>
         <InputWrapper>
-          <FormInput
+          <FormControl
             as="input"
             name="name"
             label="Name"
@@ -86,7 +86,7 @@ const ContactForm = (): JSX.Element => {
       </div>
       <div className={wrapper}>
         <InputWrapper>
-          <FormInput
+          <FormControl
             as="input"
             label="Email"
             type="email"
@@ -108,7 +108,7 @@ const ContactForm = (): JSX.Element => {
       </div>
       <div className={wrapper}>
         <InputWrapper>
-          <FormInput
+          <FormControl
             as="input"
             name="subject"
             label="Subject"
@@ -128,7 +128,7 @@ const ContactForm = (): JSX.Element => {
       </div>
       <div className={wrapper}>
         <InputWrapper>
-          <FormInput
+          <FormControl
             as="textarea"
             name="message"
             label="Message"
