@@ -1,17 +1,15 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import {
   formContainer,
-  inputWrapper,
-  inputLabel,
-  formInput,
   formButton,
   formError,
   wrapper,
-  scrollbar
 } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
+import InputWrapper from './InputWrapper';
+import FormControl from './FormControl';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -67,79 +65,84 @@ const ContactForm = (): JSX.Element => {
   return (
     <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
       <div className={wrapper}>
-        <div className={inputWrapper}>
-          <label className={inputLabel.required} htmlFor="name">
-            Name
-          </label>
-          <input
-            className={errors.name ? formInput.inputError : formInput.base}
-            type="text"
-            id="name"
-            {...register('name', {
+        <InputWrapper>
+          <FormControl
+            as="input"
+            name="name"
+            label="Name"
+            register={register}
+            errors={errors}
+            required={true}
+            validationSchema={{
               required: 'Please supply a valid name',
               minLength: {
                 value: 2,
                 message: 'Please supply a valid name',
               },
-            })}
+            }}
           />
-        </div>
+        </InputWrapper>
         <span className={formError}>{errors?.name?.message}</span>
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
-          <label className={inputLabel.required} htmlFor="email">
-            Email
-          </label>
-          <input
-            className={errors.email ? formInput.inputError : formInput.base}
+        <InputWrapper>
+          <FormControl
+            as="input"
+            label="Email"
             type="email"
-            id="email"
-            autoComplete="email"
-            {...register('email', {
+            name="email"
+            register={register}
+            errors={errors}
+            required={true}
+            validationSchema={{
               required: 'Please enter an email address',
               pattern: {
                 value: REGEX,
                 message:
                   'Enter a valid email address e.g in the format user@domain.com',
               },
-            })}
+            }}
           />
-        </div>
+        </InputWrapper>
         <span className={formError}>{errors?.email?.message}</span>
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
-          <label className={inputLabel.notRequired} htmlFor="subject">
-            Subject
-          </label>
-          <input
-            className={formInput.base}
+        <InputWrapper>
+          <FormControl
+            as="input"
+            name="subject"
+            label="Subject"
             type="text"
-            id="subject"
-            {...register('subject')}
+            register={register}
+            errors={errors}
+            required={false}
+            validationSchema={{
+              maxLength: {
+                value: 180,
+                message: 'The Subject may not be longer than 180 characters',
+              },
+            }}
           />
-        </div>
-        {/* <span className={formError}>{errors?.subject?.message}</span> */}
+        </InputWrapper>
+        <span className={formError}>{errors?.subject?.message}</span>
       </div>
       <div className={wrapper}>
-        <div className={inputWrapper}>
-          <label className={inputLabel.required} htmlFor="message">
-            Message
-          </label>
-          <textarea
-            className={`${
-              errors.message ? formInput.textAreaError : formInput.textArea
-            } ${scrollbar}`}
-            id="message"
-            cols={30}
-            rows={5}
-            {...register('message', {
+        <InputWrapper>
+          <FormControl
+            as="textarea"
+            name="message"
+            label="Message"
+            register={register}
+            errors={errors}
+            required={true}
+            validationSchema={{
               required: "Don't be shy! Write something",
               maxLength: MAX_MESSAGE_LENGTH,
-            })}
-          ></textarea>
-        </div>
+            }}
+            cols={30}
+            rows={5}
+          />
+        </InputWrapper>
         <div>
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
