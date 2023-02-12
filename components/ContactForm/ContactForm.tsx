@@ -148,7 +148,7 @@ const ContactForm = (): JSX.Element => {
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
           <span>
-            <ProgressBar charactersLeft={charactersLeft}/>
+            <ProgressBar charactersLeft={charactersLeft} />
           </span>
         </div>
       </div>
