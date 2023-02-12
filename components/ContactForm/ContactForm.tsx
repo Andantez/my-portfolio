@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
 import InputWrapper from './InputWrapper';
 import FormControl from './FormControl';
+import { ProgressBar } from '../ui';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -146,7 +147,10 @@ const ContactForm = (): JSX.Element => {
         <div>
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
-          <span> Number of characters left {charactersLeft}</span>
+          <span>
+            <ProgressBar />
+            {charactersLeft}
+          </span>
         </div>
       </div>
       <button className={formButton} type="submit">
