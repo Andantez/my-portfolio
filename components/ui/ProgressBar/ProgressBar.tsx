@@ -13,9 +13,12 @@ type ProgressBarProps = {
 };
 
 const ProgressBar = ({ messageLength }: ProgressBarProps) => {
-  const pathSegment = 1 / MAX_MESSAGE_LENGTH;
-  const animateTo = messageLength > 500 ? 1 : pathSegment * messageLength;
-  
+  const pathSegment = 1 / MAX_MESSAGE_LENGTH; // one segment equal one message character
+
+  // Pass a value of 1 to custom prop if message longer than the allowed value to avoid potential bugs.
+  const animateTo =
+    messageLength > MAX_MESSAGE_LENGTH ? 1 : pathSegment * messageLength;
+
   return (
     <div className={progressBarContainer}>
       <div className={progressBarSvgWrapper}>
