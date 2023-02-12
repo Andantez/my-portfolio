@@ -4,24 +4,41 @@ import {
   progressBarValue,
   progressBarSvgWrapper,
 } from './ProgressBar.css';
+import { motion } from 'framer-motion';
+import { MAX_MESSAGE_LENGTH } from '../../../lib/constVariables';
+import { drawProgressBar } from '../../../lib/framerVariants';
 
 type ProgressBarProps = {
-  charactersLeft: number;
+  messageLength: number;
 };
-const ProgressBar = ({ charactersLeft }: ProgressBarProps) => {
+
+const ProgressBar = ({ messageLength }: ProgressBarProps) => {
+  const pathSegment = 1 / MAX_MESSAGE_LENGTH;
+  const animateTo = messageLength > 500 ? 1 : pathSegment * messageLength;
+  console.log(animateTo);
   return (
     <div className={progressBarContainer}>
       <div className={progressBarSvgWrapper}>
-        <svg
+        <motion.svg
           viewBox="0 0 100 1"
           strokeWidth={1}
           width="100%"
-          strokeLinecap="round"
+          strokeLinecap={messageLength > 0 ? 'round' : 'butt'}
         >
-          <line x1="0" x2="100%" y1="0.5" y2="0.5" stroke={textColor} />
-        </svg>
+          <motion.line
+            initial="initial"
+            animate="animate"
+            variants={drawProgressBar}
+            x1="0.5"
+            x2="100%"
+            y1="0.5"
+            y2="0.5"
+            stroke={textColor}
+            custom={animateTo}
+          />
+        </motion.svg>
       </div>
-      <span className={progressBarValue}>{charactersLeft}</span>
+      <span className={progressBarValue}>{messageLength}</span>
     </div>
   );
 };

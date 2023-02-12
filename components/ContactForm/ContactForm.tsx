@@ -29,7 +29,7 @@ const ContactForm = (): JSX.Element => {
     },
   });
   const [showNotification, setShowNotification] = useState(false);
-  const charactersLeft = MAX_MESSAGE_LENGTH - watch('message').length;
+  const messageLength = watch('message').length;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
@@ -148,7 +148,7 @@ const ContactForm = (): JSX.Element => {
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
           <span>
-            <ProgressBar charactersLeft={charactersLeft} />
+            <ProgressBar messageLength={messageLength} />
           </span>
         </div>
       </div>
