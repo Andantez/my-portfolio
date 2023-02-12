@@ -15,7 +15,7 @@ type ProgressBarProps = {
 const ProgressBar = ({ messageLength }: ProgressBarProps) => {
   const pathSegment = 1 / MAX_MESSAGE_LENGTH;
   const animateTo = messageLength > 500 ? 1 : pathSegment * messageLength;
-  console.log(animateTo);
+  
   return (
     <div className={progressBarContainer}>
       <div className={progressBarSvgWrapper}>
