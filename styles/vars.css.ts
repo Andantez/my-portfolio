@@ -7,6 +7,7 @@ export const accentColor = createVar();
 export const titleTextColor = createVar();
 export const placeholderTextColor = createVar();
 export const errorColor = createVar();
+export const attentionColor = createVar();
 export const browserDot = createVar();
 
 // font weight variables
