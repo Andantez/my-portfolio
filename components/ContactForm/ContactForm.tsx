@@ -145,11 +145,9 @@ const ContactForm = (): JSX.Element => {
           />
         </InputWrapper>
         <div>
+          <ProgressBar messageLength={messageLength} />
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
-          <span>
-            <ProgressBar messageLength={messageLength} />
-          </span>
         </div>
       </div>
       <button className={formButton} type="submit">

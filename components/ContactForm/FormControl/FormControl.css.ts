@@ -48,6 +48,11 @@ const formInputBase = style({
   ':focus': {
     outline: `1px solid ${textColor}`,
   },
+  '::-webkit-resizer': {
+    backgroundColor: titleTextColor,
+    border: '8px solid',
+    borderColor: `transparent ${placeholderTextColor} ${placeholderTextColor} transparent`,
+  },
 });
 
 const formInputTextArea = style({
