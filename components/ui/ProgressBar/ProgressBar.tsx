@@ -1,4 +1,8 @@
-import { textColor } from '../../../styles/vars.css';
+import {
+  attentionColor,
+  errorColor,
+  successColour,
+} from '../../../styles/vars.css';
 import {
   progressBarContainer,
   progressBarValue,
@@ -19,6 +23,19 @@ const ProgressBar = ({ messageLength }: ProgressBarProps) => {
   const animateTo =
     messageLength > MAX_MESSAGE_LENGTH ? 1 : pathSegment * messageLength;
 
+  const charactersLeft = MAX_MESSAGE_LENGTH - messageLength;
+  const valueClassName =
+    messageLength >= MAX_MESSAGE_LENGTH
+      ? progressBarValue.warning
+      : progressBarValue.base;
+
+  const barColour =
+    messageLength >= 250 && messageLength < 300
+      ? attentionColor
+      : messageLength >= MAX_MESSAGE_LENGTH
+      ? errorColor
+      : successColour;
+
   return (
     <div className={progressBarContainer}>
       <div className={progressBarSvgWrapper}>
@@ -36,12 +53,12 @@ const ProgressBar = ({ messageLength }: ProgressBarProps) => {
             x2="100%"
             y1="0.5"
             y2="0.5"
-            stroke={textColor}
+            stroke={barColour}
             custom={animateTo}
           />
         </motion.svg>
       </div>
-      <span className={progressBarValue}>{messageLength}</span>
+      <span className={valueClassName}>{charactersLeft}</span>
     </div>
   );
 };

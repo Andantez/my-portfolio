@@ -1,5 +1,5 @@
-import { style } from '@vanilla-extract/css';
-import { fs200, textColor } from '../../../styles/vars.css';
+import { style, styleVariants } from '@vanilla-extract/css';
+import { errorColor, fs200, textColor } from '../../../styles/vars.css';
 
 export const progressBarContainer = style({
   display: 'flex',
@@ -8,10 +8,20 @@ export const progressBarContainer = style({
   marginTop: '.25rem',
 });
 
-export const progressBarValue = style({
+export const progressBarValueBase = style({
   fontFamily: 'var(--ff-text)',
-  color: textColor,
   fontSize: fs200,
+});
+
+const valueBaseColour = style({
+  color: textColor,
+});
+const valueWarningColour = style({
+  color: errorColor,
+});
+export const progressBarValue = styleVariants({
+  base: [progressBarValueBase, valueBaseColour],
+  warning: [progressBarValueBase, valueWarningColour],
 });
 
 export const progressBarSvgWrapper = style({
