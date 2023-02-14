@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { errorColor, fs200, textColor } from '../../../styles/vars.css';
+import { errorColor, fs100, fs200, textColor } from '../../../styles/vars.css';
 
 export const progressBarContainer = style({
   display: 'flex',
@@ -10,7 +10,12 @@ export const progressBarContainer = style({
 
 export const progressBarValueBase = style({
   fontFamily: 'var(--ff-text)',
-  fontSize: fs200,
+  fontSize: fs100,
+  '@media': {
+    'screen and (min-width: 64rem )': {
+      fontSize: fs200,
+    },
+  },
 });
 
 const valueBaseColour = style({

@@ -47,7 +47,7 @@ export const formButton = style({
   padding: '.5rem 1rem',
   borderRadius: '.25rem',
   cursor: 'pointer',
-  marginTop: '1.5rem',
+  marginTop: '1rem',
   '@media': {
     'screen and (min-width: 46.875rem)': {
       placeSelf: 'flex-start',
@@ -62,6 +62,7 @@ export const formError = style({
   fontFamily: 'var(--ff-text)',
   fontSize: fs100,
   color: errorColor,
+  marginLeft: '.25rem',
 });
 
 export const wrapper = style({

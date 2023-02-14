@@ -45,8 +45,9 @@ const formInputBase = style({
   fontWeight: fwLight,
   borderRadius: '0.25rem',
   caretColor: textColor,
+  transition: 'border-color 250ms ease-out',
   ':focus': {
-    outline: `1px solid ${textColor}`,
+    outline: 'none',
   },
   '::-webkit-resizer': {
     backgroundColor: titleTextColor,
@@ -60,9 +61,6 @@ const formInputTextArea = style({
 });
 const inputError = style({
   border: `1px solid ${errorColor}`,
-  ':focus': {
-    outline: 0,
-  },
 });
 export const formInput = styleVariants({
   base: [formInputBase],
