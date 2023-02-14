@@ -1,4 +1,6 @@
-const drawProgressBar = {
+import type { Variants } from 'framer-motion';
+
+export const drawProgressBar: Variants = {
   initial: {
     pathLength: 0,
   },
@@ -12,4 +14,22 @@ const drawProgressBar = {
     };
   },
 };
-export default drawProgressBar;
+
+export const showValue: Variants = {
+  initial: {
+    opacity: 0,
+    transition: {
+      type: 'tween',
+      duration: 0.25,
+      ease: 'easeIn',
+    },
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      duration: 0.25,
+      ease: 'easeOut',
+    },
+  },
+};

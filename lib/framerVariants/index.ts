@@ -1,1 +1,2 @@
-export { default as drawProgressBar } from './progressBarVariants';
+export { drawProgressBar } from './progressBarVariants';
+export { showValue } from './progressBarVariants';
