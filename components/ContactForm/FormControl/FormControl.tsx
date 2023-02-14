@@ -2,7 +2,6 @@ import { UseFormRegister, FieldErrors, RegisterOptions } from 'react-hook-form';
 import type { FormInputs } from '../../../lib/types/form';
 import { inputLabel, formInput, scrollbar } from './FormControl.css';
 
-// TODO add "as" prop type
 type FormControlOwnProps = {
   label: string;
   name: keyof FormInputs;
