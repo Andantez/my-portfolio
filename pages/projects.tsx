@@ -5,7 +5,7 @@ import meowPortal from '../public/meowPortal.png';
 import adrastos from '../public/adrastos.png';
 import tintsAndShades from '../public/tintsAndShades.png';
 
-// Not final. 
+// Not final.
 const Projects = () => {
   const [firstProject, secondProject, thirdProject] = projects;
   return (

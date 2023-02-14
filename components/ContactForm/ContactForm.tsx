@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
 import InputWrapper from './InputWrapper';
 import FormControl from './FormControl';
+import { ProgressBar } from '../ui';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -28,7 +29,7 @@ const ContactForm = (): JSX.Element => {
     },
   });
   const [showNotification, setShowNotification] = useState(false);
-  const charactersLeft = MAX_MESSAGE_LENGTH - watch('message').length;
+  const messageLength = watch('message').length;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
     try {
@@ -144,9 +145,9 @@ const ContactForm = (): JSX.Element => {
           />
         </InputWrapper>
         <div>
+          <ProgressBar messageLength={messageLength} />
           <span className={formError}>{errors?.message?.message}</span>
           {/* TODO: add svg line indicating the number of characters left. Next line is temporary */}
-          <span> Number of characters left {charactersLeft}</span>
         </div>
       </div>
       <button className={formButton} type="submit">
