@@ -10,7 +10,7 @@ import {
 } from './ProgressBar.css';
 import { motion } from 'framer-motion';
 import { MAX_MESSAGE_LENGTH } from '../../../lib/constVariables';
-import { drawProgressBar } from '../../../lib/framerVariants';
+import { drawProgressBar, showValue } from '../../../lib/framerVariants';
 
 type ProgressBarProps = {
   messageLength: number;
@@ -58,7 +58,14 @@ const ProgressBar = ({ messageLength }: ProgressBarProps) => {
           />
         </motion.svg>
       </div>
-      <span className={valueClassName}>{charactersLeft}</span>
+      <motion.span
+        className={valueClassName}
+        initial="initial"
+        animate={messageLength > 0 ? 'animate' : undefined}
+        variants={showValue}
+      >
+        {charactersLeft}
+      </motion.span>
     </div>
   );
 };
