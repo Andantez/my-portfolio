@@ -1,14 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import {
-  backgroundColor,
-  fs100,
-  fs200,
-  fs300,
-  fwBold,
-  gap150,
-  textColor,
-  errorColor,
-} from '../../styles/vars.css';
+import { fs100, gap150, errorColor } from '../../styles/vars.css';
 
 export const formContainer = style({
   display: 'grid',
@@ -38,31 +29,10 @@ export const formContainer = style({
   },
 });
 
-export const formButton = style({
-  fontFamily: 'var(--ff-text)',
-  fontWeight: fwBold,
-  fontSize: fs200,
-  color: backgroundColor,
-  backgroundColor: textColor,
-  padding: '.5rem 1rem',
-  borderRadius: '.25rem',
-  cursor: 'pointer',
-  marginTop: '1rem',
-  '@media': {
-    'screen and (min-width: 46.875rem)': {
-      placeSelf: 'flex-start',
-    },
-    'screen and (min-width: 75rem)': {
-      fontSize: fs300,
-    },
-  },
-});
-
 export const formError = style({
   fontFamily: 'var(--ff-text)',
   fontSize: fs100,
   color: errorColor,
-  marginLeft: '.25rem',
 });
 
 export const wrapper = style({

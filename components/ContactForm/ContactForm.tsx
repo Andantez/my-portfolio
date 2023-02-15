@@ -1,16 +1,11 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
-import {
-  formContainer,
-  formButton,
-  formError,
-  wrapper,
-} from './ContactForm.css';
+import { formContainer, formError, wrapper } from './ContactForm.css';
 import { MAX_MESSAGE_LENGTH, REGEX } from '../../lib/constVariables';
 import { useEffect, useState } from 'react';
 import type { FormInputs, Error } from '../../lib/types/form';
 import InputWrapper from './InputWrapper';
 import FormControl from './FormControl';
-import { ProgressBar } from '../ui';
+import { Button, ProgressBar } from '../ui';
 
 const ContactForm = (): JSX.Element => {
   const {
@@ -152,9 +147,7 @@ const ContactForm = (): JSX.Element => {
           )}
         </div>
       </div>
-      <button className={formButton} type="submit">
-        Send your message
-      </button>
+      <Button type="submit">Send your message</Button>
       {/* next line is temporary */}
       {showNotification && (
         <h3>Thank You. I will get back at you as soon as possible!</h3>
