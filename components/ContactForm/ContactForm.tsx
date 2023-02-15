@@ -59,7 +59,7 @@ const ContactForm = (): JSX.Element => {
     }
   }, [isSubmitSuccessful, reset]);
   if (showNotification) {
-    return <Notification />
+    return <Notification />;
   } else {
     return (
       <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
