@@ -33,7 +33,6 @@ export const formError = style({
   fontFamily: 'var(--ff-text)',
   fontSize: fs100,
   color: errorColor,
-  marginLeft: '.25rem',
 });
 
 export const wrapper = style({
