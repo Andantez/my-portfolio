@@ -1,5 +1,12 @@
 import { style } from '@vanilla-extract/css';
-import { backgroundColor, textColor } from '../../styles/vars.css';
+import {
+  boxShadow,
+  fs450,
+  fwLight,
+  gap100,
+  notificationBG,
+  textColor,
+} from '../../styles/vars.css';
 
 // This is temporary.
 export const notificationContainer = style({
@@ -8,7 +15,6 @@ export const notificationContainer = style({
   display: 'grid',
   placeContent: 'center',
   textAlign: 'center',
-  border: '2px solid black',
   fontFamily: 'var(--ff-text)',
   backdropFilter: 'blur(7px)',
   background: 'rgb(235, 235, 235, 0.8)',
@@ -17,7 +23,27 @@ export const notificationContainer = style({
 });
 
 export const notificationWrapper = style({
-  background: backgroundColor,
+  display: 'grid',
+  placeItems: 'center',
+  gap: gap100,
+  background: notificationBG,
   margin: '0 1rem',
-  padding: '2rem',
+  padding: '2.5rem 1rem',
+  borderRadius: '0.5rem',
+  boxShadow,
+  '@media': {
+    'screen and (min-width: 28.125rem)': {
+      padding: '2.5rem 3rem',
+    },
+    'screen and (min-width: 75rem)': {
+      padding: '3rem 5rem',
+    },
+  },
+});
+
+export const notificationHeading = style({
+  fontSize: fs450,
+});
+export const notificationParagraph = style({
+  fontWeight: fwLight,
 });

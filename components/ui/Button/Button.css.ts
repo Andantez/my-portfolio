@@ -10,6 +10,7 @@ export const btn = style({
   backgroundColor: 'transparent',
   padding: '.5rem 1rem',
   borderRadius: '.25rem',
+  border: `3px solid ${textColor}`,
   marginTop: '1rem',
   '@media': {
     'screen and (min-width: 46.875rem)': {

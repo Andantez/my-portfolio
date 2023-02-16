@@ -1,3 +1,5 @@
+import { iconShadow } from '../../styles/SharedStyles.css';
+
 const Check = ({
   width = '5rem',
   height = '5rem',
@@ -5,8 +7,9 @@ const Check = ({
 }: React.SVGProps<SVGSVGElement>): JSX.Element => {
   return (
     <svg
+      className={iconShadow}
       viewBox="0 0 512 512"
-      fill="currentColor"
+      fill="#A1CC4D"
       width={width}
       height={height}
       {...rest}
