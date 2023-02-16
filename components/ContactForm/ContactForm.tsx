@@ -27,30 +27,32 @@ const ContactForm = (): JSX.Element => {
   const messageLength = watch('message').length;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    try {
-      const res = await (
-        await fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-      ).json();
+    setShowNotification(true);
+    // try {
+    //   const res = await (
+    //     await fetch('/api/send-email', {
+    //       method: 'POST',
+    //       headers: {
+    //         'Content-Type': 'application/json',
+    //       },
+    //       body: JSON.stringify(data),
+    //     })
+    //   ).json();
 
-      if (res.status === 'invalid data') {
-        res.errors.forEach(({ name, type, message }: Error) => {
-          if (message) {
-            setError(name, { type, message });
-          }
-        });
-      }
-      if (res.status === 'success') {
-        setShowNotification(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
+    //   if (res.status === 'invalid data') {
+    //     res.errors.forEach(({ name, type, message }: Error) => {
+    //       if (message) {
+    //         setError(name, { type, message });
+    //       }
+    //     });
+    //   }
+    //   if (res.status === 'success') {
+    //     setShowNotification(true);
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // Commented out to avoid sending unnecessary api request while testing Notification component
   };
 
   useEffect(() => {
@@ -58,8 +60,12 @@ const ContactForm = (): JSX.Element => {
       reset();
     }
   }, [isSubmitSuccessful, reset]);
+
+  const hideNotification = () => {
+    setShowNotification(false);
+  };
   if (showNotification) {
-    return <Notification />;
+    return <Notification hideNotification={hideNotification} />;
   } else {
     return (
       <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>

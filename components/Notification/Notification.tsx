@@ -2,16 +2,20 @@ import { Button } from '../ui';
 import { notificationContainer } from './Notification.css';
 import { Check } from '../icons';
 
-const Notification = () => {
+type NotificationProps = {
+  hideNotification: () => void;
+};
+const Notification = ({ hideNotification }: NotificationProps): JSX.Element => {
   return (
     <div className={notificationContainer}>
-      <Check width="10rem" height="10rem" />
-
+      <Check width="7.5rem" height="7.5rem" />
       <h3>
         Your message has been sent successfully<span>.</span>
       </h3>
       <p>I&apos;ll get back to you as soon as possible.</p>
-      <Button type="button">Okay</Button>
+      <Button type="button" handleClick={hideNotification}>
+        Okay
+      </Button>
     </div>
   );
 };
