@@ -1,10 +1,11 @@
 import { Button } from '../ui';
 import { notificationContainer } from './Notification.css';
+import { Check } from '../icons';
 
 const Notification = () => {
   return (
     <div className={notificationContainer}>
-      <span>SVG ICON GOES HERE</span>
+      <Check width="10rem" height="10rem" />
 
       <h3>
         Your message has been sent successfully<span>.</span>
