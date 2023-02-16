@@ -104,3 +104,7 @@ export const pageContainer = style({
     },
   },
 });
+
+export const iconShadow = style({
+  filter: `drop-shadow(2px 4px 2px rgb(0 0 0 / 0.3));`,
+});
