@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { notificationContainer } from '../components/Notification/Notification.css';
 import {
   textColor,
   backgroundColor,
@@ -93,6 +94,10 @@ globalStyle('body[data-theme="dark"]', {
     [titleTextColor]: '#363636',
     [errorColor]: '#FF4250',
   },
+});
+
+globalStyle(`body[data-theme="dark"] ${notificationContainer} `, {
+  backgroundColor: 'rgb(10, 10, 10, 0.8) ',
 });
 
 globalStyle('body', {

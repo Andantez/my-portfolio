@@ -64,10 +64,10 @@ const ContactForm = (): JSX.Element => {
   const hideNotification = () => {
     setShowNotification(false);
   };
-  if (showNotification) {
-    return <Notification hideNotification={hideNotification} />;
-  } else {
-    return (
+
+  return (
+    <>
+      {showNotification && <Notification hideNotification={hideNotification} />}
       <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
         <div className={wrapper}>
           <InputWrapper>
@@ -158,12 +158,12 @@ const ContactForm = (): JSX.Element => {
         </div>
         <Button type="submit">Send your message</Button>
         {/* next line is temporary */}
-        {showNotification && (
-          <h3>Thank You. I will get back at you as soon as possible!</h3>
-        )}
+        {/* {showNotification && (
+        <h3>Thank You. I will get back at you as soon as possible!</h3>
+      )} */}
       </form>
-    );
-  }
+    </>
+  );
 };
 
 export default ContactForm;
