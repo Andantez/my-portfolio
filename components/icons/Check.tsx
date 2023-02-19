@@ -1,8 +1,8 @@
-import {  motion, SVGMotionProps } from 'framer-motion';
+import { motion, SVGMotionProps } from 'framer-motion';
 import { checkIcon } from '../../styles/SharedStyles.css';
 
 const Check = ({
-  width ,
+  width,
   height,
   ...rest
 }: SVGMotionProps<SVGSVGElement>): JSX.Element => {
