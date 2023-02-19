@@ -1,14 +1,14 @@
 import {  motion, SVGMotionProps } from 'framer-motion';
-import { iconShadow } from '../../styles/SharedStyles.css';
+import { checkIcon } from '../../styles/SharedStyles.css';
 
 const Check = ({
-  width = '5rem',
-  height = '5rem',
+  width ,
+  height,
   ...rest
 }: SVGMotionProps<SVGSVGElement>): JSX.Element => {
   return (
     <motion.svg
-      className={iconShadow}
+      className={checkIcon}
       viewBox="0 0 512 512"
       fill="#A1CC4D"
       width={width}

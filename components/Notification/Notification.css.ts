@@ -6,6 +6,7 @@ import {
   gap100,
   notificationBG,
   textColor,
+  titleTextColor,
 } from '../../styles/vars.css';
 
 // This is temporary.
@@ -31,9 +32,15 @@ export const notificationWrapper = style({
   padding: '2.5rem 1rem',
   borderRadius: '0.5rem',
   boxShadow,
+  border: `1px solid ${titleTextColor}` ,
   '@media': {
     'screen and (min-width: 28.125rem)': {
       padding: '2.5rem 3rem',
+        
+    },
+    'screen and (min-width: 34.5rem)': {
+      margin: 0,
+
     },
     'screen and (min-width: 75rem)': {
       padding: '3rem 5rem',

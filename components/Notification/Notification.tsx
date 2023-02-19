@@ -14,7 +14,7 @@ const Notification = ({ hideNotification }: NotificationProps): JSX.Element => {
   return (
     <div className={notificationContainer}>
       <div className={notificationWrapper}>
-        <Check width="6rem" height="6rem" />
+        <Check width="4rem" height="4rem" />
         <h3 className={notificationHeading}>
           Your message has been sent successfully.
         </h3>
