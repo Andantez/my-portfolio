@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { fs200, fs300, fwBold, textColor } from '../../../styles/vars.css';
 
-export const btn = style({
+const btnBase = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
   cursor: 'pointer',
@@ -20,4 +20,17 @@ export const btn = style({
       fontSize: fs300,
     },
   },
+});
+
+const btnDisabled = style({
+  ':disabled': {
+    cursor: 'wait',
+    opacity: 0.5,
+    pointerEvents: 'none',
+  },
+});
+
+export const btn = styleVariants({
+  base: [btnBase],
+  disabled: [btnBase, btnDisabled],
 });
