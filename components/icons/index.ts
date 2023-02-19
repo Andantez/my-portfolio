@@ -19,3 +19,4 @@ export { default as Github } from './Github';
 export { default as HTML } from './HTML';
 export { default as CSS } from './CSS';
 export { default as JavaScript } from './JavaScript';
+export { default as Check } from './Check';

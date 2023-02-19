@@ -10,7 +10,7 @@ export const errorColor = createVar();
 export const attentionColor = createVar();
 export const successColour = createVar();
 export const browserDot = createVar();
-
+export const notificationBG = createVar();
 // font weight variables
 export const fwLight = createVar();
 export const fwRegular = createVar();

@@ -1,9 +1,11 @@
 import { btn } from './Button.css';
 
-type ButtonProps = React.ComponentPropsWithoutRef<'button'>;
+type ButtonProps = {
+  handleClick?: () => void;
+} & React.ComponentPropsWithoutRef<'button'>;
 
-const Button = (props: ButtonProps): JSX.Element => {
-  return <button {...props} className={btn} />;
+const Button = ({ handleClick, ...rest }: ButtonProps): JSX.Element => {
+  return <button {...rest} onClick={handleClick} className={btn} />;
 };
 
 export default Button;

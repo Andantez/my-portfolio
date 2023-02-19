@@ -1,4 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { notificationContainer } from '../components/Notification/Notification.css';
 import {
   textColor,
   backgroundColor,
@@ -8,6 +9,7 @@ import {
   errorColor,
   attentionColor,
   successColour,
+  notificationBG,
   fwLight,
   fwRegular,
   fwBold,
@@ -45,6 +47,7 @@ globalStyle(':root', {
     [errorColor]: '#D90404',
     [attentionColor]: '#E5BF06',
     [successColour]: '#6A8BC2',
+    [notificationBG]: '#FFFFFF',
     [fwLight]: '300',
     [fwRegular]: '400',
     [fwBold]: '700',
@@ -83,6 +86,7 @@ globalStyle('body[data-theme="light"]', {
     [backgroundColor]: '#FFFFFF',
     [titleTextColor]: '#F8F8F8',
     [errorColor]: '#D90404',
+    [notificationBG]: '#FFFFFF',
   },
 });
 
@@ -92,7 +96,18 @@ globalStyle('body[data-theme="dark"]', {
     [backgroundColor]: '#0D0D0D',
     [titleTextColor]: '#363636',
     [errorColor]: '#FF4250',
+    [notificationBG]: '#1f1f1f',
+    [boxShadow]: `0px 0.4px 0.4px hsl(${shadowColor} / 0.44),
+    0px 0.8px 0.7px -0.9px hsl(${shadowColor} / 0.38),
+    0px 1.7px 1.6px -1.9px hsl(${shadowColor} / 0.32),
+    0px 3.9px 3.6px -2.8px hsl(${shadowColor} / 0.26),
+    -0.1px 8.1px 7.5px -3.8px hsl(${shadowColor} / 0.2);`,
+    [shadowColor]: '0deg 0% 30%',
   },
+});
+
+globalStyle(`body[data-theme="dark"] ${notificationContainer} `, {
+  backgroundColor: 'rgb(15, 15, 15, 0.8) ',
 });
 
 globalStyle('body', {

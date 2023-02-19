@@ -104,3 +104,13 @@ export const pageContainer = style({
     },
   },
 });
+
+export const checkIcon = style({
+  filter: `drop-shadow(2px 4px 2px rgb(0 0 0 / 0.3));`,
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      width: '6rem',
+      height: '6rem',
+    },
+  },
+});
