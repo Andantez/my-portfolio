@@ -11,7 +11,7 @@ const ContactForm = (): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors, isSubmitSuccessful, isSubmitting },
     watch,
     reset,
     setError,
@@ -154,7 +154,9 @@ const ContactForm = (): JSX.Element => {
             )}
           </div>
         </div>
-        <Button type="submit">Send your message</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? 'Sending your message...' : 'Send your message'}
+        </Button>
       </form>
     </>
   );
