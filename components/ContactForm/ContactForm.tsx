@@ -23,7 +23,7 @@ const ContactForm = (): JSX.Element => {
       message: '',
     },
   });
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const messageLength = watch('message').length;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
@@ -157,10 +157,6 @@ const ContactForm = (): JSX.Element => {
           </div>
         </div>
         <Button type="submit">Send your message</Button>
-        {/* next line is temporary */}
-        {/* {showNotification && (
-        <h3>Thank You. I will get back at you as soon as possible!</h3>
-      )} */}
       </form>
     </>
   );
