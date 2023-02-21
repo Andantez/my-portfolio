@@ -3,15 +3,21 @@ import NavbarList from './NavbarList';
 import { nav, header } from './Header.css';
 import { merriweather } from '../../lib/fonts';
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
+import Modal from '../Modal';
 
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
+// const modalRoot = document.querySelector('#__next') as HTMLElement;
 const Header = (): JSX.Element => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <header className={`${merriweather.variable} ${header}`}>
+      {showModal && <Modal />}
       <nav className={nav}>
         <Logo />
-        <NavbarList />
+        <NavbarList setShowModal={setShowModal} showModal={showModal} />
         <ThemeToggle />
       </nav>
     </header>

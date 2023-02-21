@@ -3,7 +3,14 @@ import { navList, navItem, menuBtn } from './Header.css';
 import { Menu } from '../icons';
 import { NavLink } from '../ui';
 
-const NavbarList = (): JSX.Element => {
+type NavbarListProps = {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  showModal: boolean;
+};
+const NavbarList = ({
+  showModal,
+  setShowModal,
+}: NavbarListProps): JSX.Element => {
   return (
     <ul className={navList}>
       {navLinks.map(({ label, href }) => (
@@ -12,7 +19,11 @@ const NavbarList = (): JSX.Element => {
         </li>
       ))}
       <li className={navItem}>
-        <button type="button" className={menuBtn}>
+        <button
+          type="button"
+          className={menuBtn}
+          onClick={() => setShowModal(!showModal)}
+        >
           <Menu />
         </button>
       </li>
