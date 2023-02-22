@@ -14,7 +14,11 @@ const Header = (): JSX.Element => {
 
   return (
     <header className={`${merriweather.variable} ${header}`}>
-      {showModal && <Modal />}
+      {showModal && (
+        <Modal>
+          <h1>MODAL GOES HERE</h1>
+        </Modal>
+      )}
       <nav className={nav}>
         <Logo />
         <NavbarList setShowModal={setShowModal} showModal={showModal} />

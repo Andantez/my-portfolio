@@ -20,6 +20,7 @@ export default function Document() {
           `}
         </Script>
         <Main />
+        <div id="portal" />
         <NextScript />
       </body>
     </Html>
