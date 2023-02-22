@@ -5,7 +5,7 @@ import { merriweather } from '../../lib/fonts';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Modal from '../Modal';
-
+import ModalContent from '../ModalContent';
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
 // const modalRoot = document.querySelector('#__next') as HTMLElement;
@@ -16,7 +16,7 @@ const Header = (): JSX.Element => {
     <header className={`${merriweather.variable} ${header}`}>
       {showModal && (
         <Modal>
-          <h1>MODAL GOES HERE</h1>
+          <ModalContent />
         </Modal>
       )}
       <nav className={nav}>

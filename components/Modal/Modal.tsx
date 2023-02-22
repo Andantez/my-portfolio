@@ -13,7 +13,9 @@ const Modal = ({ children }: ModalProps) => {
     elRef.current = document.querySelector<HTMLDivElement>('#portal');
     setIsMounted(true);
   }, []);
-  return isMounted && elRef.current ? createPortal(children, elRef.current) : null;
+  return isMounted && elRef.current
+    ? createPortal(children, elRef.current)
+    : null;
 };
 
 export default Modal;
