@@ -22,6 +22,7 @@ export const nav = style({
 
 export const navList = style({
   marginLeft: 'auto',
+  display: 'none',
   '@media': {
     'screen and (min-width: 64rem)': {
       display: 'flex',
@@ -30,27 +31,12 @@ export const navList = style({
   },
 });
 
-export const navItem = style({
-  selectors: {
-    '&:not(:last-child)': {
-      display: 'none',
-    },
-  },
-  '@media': {
-    'screen and (min-width: 64rem)': {
-      selectors: {
-        '&:last-child': {
-          display: 'none',
-        },
-        '&:not(:last-child)': {
-          display: 'block',
-        },
-      },
-    },
-  },
-});
-
 export const menuBtn = style({
   backgroundColor: 'transparent',
   border: 'transparent',
+  position: 'fixed',
+  right: '1rem',
+  top: '1rem',
+  zIndex: 3,
+  padding: 0,
 });

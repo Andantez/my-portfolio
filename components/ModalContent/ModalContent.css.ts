@@ -9,8 +9,9 @@ import {
 
 export const asideContainer = style({
   position: 'fixed',
-  inset: '75px 0 0',
+  inset: '0px 0 0',
   background: backgroundColor,
+  zIndex: 1,
 });
 
 export const navWrapper = style({
