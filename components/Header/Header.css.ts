@@ -39,4 +39,9 @@ export const menuBtn = style({
   top: '1rem',
   zIndex: 3,
   padding: 0,
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      display: 'none',
+    },
+  },
 });
