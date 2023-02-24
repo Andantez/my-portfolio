@@ -3,14 +3,27 @@ import NavbarList from './NavbarList';
 import { nav, header, menuBtn } from './Header.css';
 import { merriweather } from '../../lib/fonts';
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../Modal';
 import ModalContent from '../ModalContent';
+import { useRouter } from 'next/router';
 
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
 const Header = (): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouterChange = () => {
+      setShowModal(false);
+    };
+    router.events.on('routeChangeComplete', handleRouterChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouterChange);
+    };
+  }, [router.events]);
 
   return (
     <header className={`${merriweather.variable} ${header}`}>
