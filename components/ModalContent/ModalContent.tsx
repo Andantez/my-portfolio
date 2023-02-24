@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { navLinks } from '../../data';
 import { Socials } from '../ui';
 import {
@@ -7,9 +8,13 @@ import {
   ulWrapper,
   linkItem,
   linkAccent,
+  activeRoute,
+  listItem,
 } from './ModalContent.css';
 
 const ModalContent = () => {
+  const router = useRouter();
+
   return (
     <aside className={asideContainer}>
       <nav className={navWrapper}>
@@ -17,7 +22,12 @@ const ModalContent = () => {
           {navLinks.map((link, index) => {
             const { href, label } = link;
             return (
-              <li key={label}>
+              <li
+                key={label}
+                className={`${listItem} ${
+                  router.route === href ? activeRoute : undefined
+                }`}
+              >
                 <Link href={href} className={linkItem}>
                   <span className={linkAccent}>0{index + 1}.</span> {label}
                 </Link>

@@ -6,12 +6,12 @@ import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import Modal from '../Modal';
 import ModalContent from '../ModalContent';
+
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
-// const modalRoot = document.querySelector('#__next') as HTMLElement;
 const Header = (): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
-  console.log(showModal);
+
   return (
     <header className={`${merriweather.variable} ${header}`}>
       <Modal>

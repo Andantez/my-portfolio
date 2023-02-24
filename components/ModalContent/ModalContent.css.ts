@@ -22,12 +22,7 @@ export const asideContainer = style({
 });
 
 export const navWrapper = style({
-  placeSelf: 'flex-end flex-start',
-  '@media': {
-    'screen and (min-width: 37.5rem)': {
-      placeSelf: 'flex-end center',
-    },
-  },
+  placeSelf: 'flex-end center',
 });
 
 export const ulWrapper = style({
@@ -53,4 +48,32 @@ export const linkItem = style({
 
 export const linkAccent = style({
   color: accentColor,
+});
+
+export const listItem = style({
+  position: 'relative',
+});
+export const activeRoute = style({
+  '::before': {
+    content: '',
+    position: 'absolute',
+    height: '100%',
+    backgroundColor,
+    zIndex: -1,
+    left: '-1.5rem',
+    right: '-1.5rem',
+    borderRadius: '-5rem',
+  },
+  '::after': {
+    content: '',
+    position: 'absolute',
+    height: '.25rem',
+    width: '100vw',
+    display: 'block',
+    backgroundColor: textColor,
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: -2,
+  },
 });
