@@ -34,7 +34,7 @@ const Contact = ({ children }: ContactProps): JSX.Element => {
         </Link>
       </h3>
       <ContactForm />
-      <Socials />
+      <Socials variant="desktop" />
     </Grid>
   );
 };

@@ -2,9 +2,12 @@ import { Github, Linkedin } from '../../icons';
 import { socialsWrapper } from './Socials.css';
 import Link from 'next/link';
 
-const Socials = () => {
+type SocialsProps = {
+  variant: keyof typeof socialsWrapper;
+};
+const Socials = ({ variant }: SocialsProps) => {
   return (
-    <div className={socialsWrapper}>
+    <div className={socialsWrapper[variant]}>
       <Link href="https://github.com/Andantez" target="_blank">
         <Github />
       </Link>

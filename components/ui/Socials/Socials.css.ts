@@ -1,7 +1,7 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import { gap100 } from '../../../styles/vars.css';
 
-export const socialsWrapper = style({
+const desktop = style({
   display: 'none',
   '@media': {
     'screen and (min-width: 64rem)': {
@@ -21,4 +21,10 @@ export const socialsWrapper = style({
       marginRight: 0,
     },
   },
+});
+
+const mobile = style({});
+export const socialsWrapper = styleVariants({
+  desktop: [desktop],
+  mobile: [mobile],
 });

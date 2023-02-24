@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { navLinks } from '../../data';
+import { Socials } from '../ui';
 import {
   asideContainer,
   navWrapper,
@@ -25,6 +26,7 @@ const ModalContent = () => {
           })}
         </ul>
       </nav>
+      <Socials variant="mobile" />
     </aside>
   );
 };
