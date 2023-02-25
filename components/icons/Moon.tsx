@@ -2,12 +2,7 @@ import { textColor } from '../../styles/vars.css';
 
 const Moon = (): JSX.Element => {
   return (
-    <svg
-      viewBox="0 0 512 512"
-      fill="currentColor"
-      height="1.25em"
-      width="1.25em"
-    >
+    <svg viewBox="0 0 512 512" fill="currentColor" height="25px" width="25px">
       <path
         fill="none"
         stroke={textColor}

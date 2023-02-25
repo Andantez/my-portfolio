@@ -28,6 +28,7 @@ const Header = (): JSX.Element => {
   return (
     <header className={`${merriweather.variable} ${header}`}>
       <Modal>
+        {showModal && <ThemeToggle type="mobile" />}
         <button
           type="button"
           onClick={() => setShowModal(!showModal)}
@@ -36,7 +37,7 @@ const Header = (): JSX.Element => {
         >
           {/* TODO: replace with proper icon */}
           {/* <Menu /> */}
-          MENU
+          Menu
         </button>
         {showModal && <ModalContent />}
       </Modal>
@@ -44,7 +45,7 @@ const Header = (): JSX.Element => {
       <nav className={nav}>
         <Logo />
         <NavbarList />
-        <ThemeToggle />
+        <ThemeToggle type="desktop" />
       </nav>
     </header>
   );
