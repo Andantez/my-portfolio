@@ -1,6 +1,9 @@
 import { textColor } from '../../styles/vars.css';
 
-const Menu = (): JSX.Element => {
+type MenuProps = {
+  showModal: boolean;
+};
+const Menu = ({ showModal }: MenuProps): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

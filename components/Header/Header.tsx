@@ -35,9 +35,7 @@ const Header = (): JSX.Element => {
           className={menuBtn}
           aria-label="Open menu"
         >
-          {/* TODO: replace with proper icon */}
-          <Menu />
-          {/* Menu */}
+          <Menu showModal={showModal} />
         </button>
         {showModal && <ModalContent />}
       </Modal>
