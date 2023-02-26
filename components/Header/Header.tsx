@@ -1,4 +1,4 @@
-import { Logo } from '../icons';
+import { Logo, Menu } from '../icons';
 import NavbarList from './NavbarList';
 import { nav, header, menuBtn } from './Header.css';
 import { merriweather } from '../../lib/fonts';
@@ -36,8 +36,8 @@ const Header = (): JSX.Element => {
           aria-label="Open menu"
         >
           {/* TODO: replace with proper icon */}
-          {/* <Menu /> */}
-          Menu
+          <Menu />
+          {/* Menu */}
         </button>
         {showModal && <ModalContent />}
       </Modal>
