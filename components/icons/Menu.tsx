@@ -9,14 +9,13 @@ const Menu = ({ showModal }: MenuProps): JSX.Element => {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      fillRule="evenodd"
-      clipRule="evenodd"
       viewBox="0 0 100 100"
+      strokeLinecap="round"
       fill="none"
       stroke={textColor}
       strokeWidth={6}
-      width={50}
-      height={50}
+      width={45}
+      height={45}
       initial="initial"
       animate={showModal ? 'animate' : 'initial'}
     >

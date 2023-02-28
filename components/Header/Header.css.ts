@@ -36,7 +36,7 @@ export const menuBtn = style({
   border: 'transparent',
   position: 'fixed',
   right: '1rem',
-  top: '1rem',
+  top: 'calc(1rem - 2px)',
   zIndex: 3,
   padding: 0,
   '@media': {
