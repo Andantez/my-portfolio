@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import Modal from '../Modal';
 import ModalContent from '../ModalContent';
 import { useRouter } from 'next/router';
+import { AnimatePresence } from 'framer-motion';
 
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
@@ -37,7 +38,7 @@ const Header = (): JSX.Element => {
         >
           <Menu showModal={showModal} />
         </button>
-        {showModal && <ModalContent />}
+        <AnimatePresence>{showModal && <ModalContent />}</AnimatePresence>
       </Modal>
 
       <nav className={nav}>

@@ -11,7 +11,8 @@ import {
 export const asideContainer = style({
   position: 'fixed',
   inset: '0px 0 0',
-  background: backgroundColor,
+  background: 'lightgrey',
+  // background: backgroundColor,
   zIndex: 1,
   display: 'grid',
   '@media': {
