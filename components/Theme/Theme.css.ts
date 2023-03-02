@@ -16,10 +16,6 @@ const base = style({
 });
 
 const mobile = style({
-  position: 'fixed',
-  zIndex: 2,
-  top: '1.5rem',
-  left: '1.5rem',
   '@media': {
     'screen and (min-width: 64rem)': {
       display: 'none',

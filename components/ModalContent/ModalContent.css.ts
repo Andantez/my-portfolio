@@ -86,3 +86,10 @@ export const activeRoute = style({
 export const socialsWrapper = style({
   placeSelf: 'center',
 });
+
+export const themeToggleWrapper = style({
+  position: 'absolute',
+  zIndex: 2,
+  top: '1.5rem',
+  left: '1.5rem',
+});

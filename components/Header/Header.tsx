@@ -29,16 +29,18 @@ const Header = (): JSX.Element => {
   return (
     <header className={`${merriweather.variable} ${header}`}>
       <Modal>
-        {showModal && <ThemeToggle type="mobile" />}
-        <button
-          type="button"
-          onClick={() => setShowModal(!showModal)}
-          className={menuBtn}
-          aria-label="Open menu"
-        >
-          <Menu showModal={showModal} />
-        </button>
-        <AnimatePresence>{showModal && <ModalContent />}</AnimatePresence>
+        <AnimatePresence>
+          <button
+            key="menu-btn"
+            type="button"
+            onClick={() => setShowModal(!showModal)}
+            className={menuBtn}
+            aria-label="Open menu"
+          >
+            <Menu showModal={showModal} />
+          </button>
+          {showModal && <ModalContent />}
+        </AnimatePresence>
       </Modal>
 
       <nav className={nav}>

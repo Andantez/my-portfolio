@@ -11,9 +11,11 @@ import {
   activeRoute,
   listItem,
   socialsWrapper,
+  themeToggleWrapper,
 } from './ModalContent.css';
 import { motion } from 'framer-motion';
 import { containerVariants, itemVariant } from '../../lib/framerVariants';
+import ThemeToggle from '../Theme/ThemeToggle';
 
 const ModalContent = () => {
   const router = useRouter();
@@ -27,6 +29,9 @@ const ModalContent = () => {
       exit="exit"
       variants={containerVariants}
     >
+      <motion.div className={themeToggleWrapper} variants={itemVariant}>
+        <ThemeToggle type="mobile" />
+      </motion.div>
       <nav className={navWrapper}>
         <ul className={ulWrapper}>
           {navLinks.map((link, index) => {
