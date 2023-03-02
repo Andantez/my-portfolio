@@ -10,6 +10,7 @@ import {
   linkAccent,
   activeRoute,
   listItem,
+  socialsWrapper,
 } from './ModalContent.css';
 import { motion, Variants } from 'framer-motion';
 
@@ -17,30 +18,25 @@ import { motion, Variants } from 'framer-motion';
 // values not final
 const modalVariants: Variants = {
   initial: {
-    // clipPath: 'polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)',
     x: '100%',
   },
   animate: {
-    // clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
     x: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
 
       ease: 'easeOut',
-      delayChildren: 0.2,
-      staggerChildren: 0.2,
+      staggerChildren: 0.04,
       when: 'beforeChildren',
     },
   },
   exit: {
-    // clipPath: 'polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)',
     x: '-100%',
     transition: {
-      duration: 0.6,
+      duration: 0.4,
       ease: [0.49, -0.07, 0.82, 0.68],
-      staggerDirection: -1,
-      delayChildren: 0.2,
-      staggerChildren: 0.2,
+      staggerDirection: 1,
+      staggerChildren: 0.04,
       when: 'afterChildren',
     },
   },
@@ -48,12 +44,23 @@ const modalVariants: Variants = {
 const itemVariant: Variants = {
   initial: {
     y: -25,
+    opacity: 0,
   },
   animate: {
     y: 0,
+    opacity: 1,
+    transition: {
+      ease: 'backOut',
+      duration: 0.4,
+    },
   },
   exit: {
-    y: 25,
+    y: -25,
+    opacity: 0,
+    transition: {
+      ease: 'backIn',
+      duration: 0.4,
+    },
   },
 };
 const ModalContent = () => {
@@ -88,7 +95,9 @@ const ModalContent = () => {
           })}
         </ul>
       </nav>
-      <Socials variant="mobile" />
+      <motion.div className={socialsWrapper} variants={itemVariant}>
+        <Socials variant="mobile" />
+      </motion.div>
     </motion.aside>
   );
 };

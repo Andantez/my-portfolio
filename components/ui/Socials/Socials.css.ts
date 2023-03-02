@@ -26,7 +26,6 @@ const desktop = style({
 const mobile = style({
   display: 'flex',
   gap: '.5rem',
-  placeSelf: 'center',
 });
 export const socialsWrapper = styleVariants({
   desktop: [desktop],
