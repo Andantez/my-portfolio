@@ -12,57 +12,9 @@ import {
   listItem,
   socialsWrapper,
 } from './ModalContent.css';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { containerVariants, itemVariant } from '../../lib/framerVariants';
 
-// temporary. To be exported to other file when done.
-// values not final
-const modalVariants: Variants = {
-  initial: {
-    x: '100%',
-  },
-  animate: {
-    x: 0,
-    transition: {
-      duration: 0.4,
-
-      ease: 'easeOut',
-      staggerChildren: 0.04,
-      when: 'beforeChildren',
-    },
-  },
-  exit: {
-    x: '-100%',
-    transition: {
-      duration: 0.4,
-      ease: [0.49, -0.07, 0.82, 0.68],
-      staggerDirection: 1,
-      staggerChildren: 0.04,
-      when: 'afterChildren',
-    },
-  },
-};
-const itemVariant: Variants = {
-  initial: {
-    y: -25,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      ease: 'backOut',
-      duration: 0.4,
-    },
-  },
-  exit: {
-    y: -25,
-    opacity: 0,
-    transition: {
-      ease: 'backIn',
-      duration: 0.4,
-    },
-  },
-};
 const ModalContent = () => {
   const router = useRouter();
 
@@ -73,7 +25,7 @@ const ModalContent = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={modalVariants}
+      variants={containerVariants}
     >
       <nav className={navWrapper}>
         <ul className={ulWrapper}>
