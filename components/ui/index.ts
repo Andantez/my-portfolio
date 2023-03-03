@@ -9,4 +9,3 @@ export { default as Socials } from './Socials';
 export { default as Container } from './Container';
 export { default as BrowserMenu } from './BrowserMenu';
 export { default as ProgressBar } from './ProgressBar';
-export { default as ActiveRoute } from './ActiveRoute';

@@ -16,6 +16,7 @@ import {
 import { motion } from 'framer-motion';
 import { containerVariants, itemVariant } from '../../lib/framerVariants';
 import ThemeToggle from '../Theme/ThemeToggle';
+import { Arrow } from '../icons';
 
 const ModalContent = () => {
   const router = useRouter();
@@ -36,17 +37,19 @@ const ModalContent = () => {
         <ul className={ulWrapper}>
           {navLinks.map((link, index) => {
             const { href, label } = link;
+            const isSelectedRoute = router.route === href;
             return (
               <motion.li
                 variants={itemVariant}
                 key={label}
                 className={`${listItem} ${
-                  router.route === href ? activeRoute : undefined
+                  isSelectedRoute ? activeRoute : undefined
                 }`}
               >
                 <Link href={href} className={linkItem}>
                   <span className={linkAccent}>0{index + 1}.</span> {label}
                 </Link>
+                {isSelectedRoute && <Arrow />}
               </motion.li>
             );
           })}
