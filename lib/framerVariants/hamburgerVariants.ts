@@ -6,8 +6,9 @@ export const topAndBottomLine: Variants = {
     pathSpacing: 1, // stroke-dasharray second value
     pathOffset: 0.71, // stroke-dashoffset
     transition: {
-      duration: 0.6,
+      duration: 0.75,
       ease: 'easeInOut',
+      delay: 0.25,
     },
   },
   animate: {
@@ -28,9 +29,9 @@ export const middleLine: Variants = {
     pathOffset: 0,
     x: 0,
     transition: {
-      duration: 0.4,
+      duration: 0.6,
       ease: 'easeInOut',
-      delay: 0.2,
+      delay: 0.4,
     },
   },
   animate: {
