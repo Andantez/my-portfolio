@@ -12,6 +12,7 @@ import {
   listItem,
   socialsWrapper,
   themeToggleWrapper,
+  arrow,
 } from './ModalContent.css';
 import { motion } from 'framer-motion';
 import { containerVariants, itemVariant } from '../../lib/framerVariants';
@@ -48,8 +49,21 @@ const ModalContent = () => {
               >
                 <Link href={href} className={linkItem}>
                   <span className={linkAccent}>0{index + 1}.</span> {label}
+                  {isSelectedRoute && (
+                    <motion.div
+                      className={arrow}
+                      layoutId="arrow"
+                      transition={{
+                        layout: {
+                          ease: 'easeOut',
+                          duration: 0.4,
+                        },
+                      }}
+                    >
+                      <Arrow />
+                    </motion.div>
+                  )}
                 </Link>
-                {isSelectedRoute && <Arrow />}
               </motion.li>
             );
           })}

@@ -38,6 +38,7 @@ export const ulWrapper = style({
 });
 
 export const linkItem = style({
+  position: 'relative',
   fontFamily: 'var(--ff-text)',
   textDecoration: 'none',
   color: textColor,
@@ -55,8 +56,9 @@ export const linkAccent = style({
   fontSize: fs450,
 });
 
+//  to remind me to remove it if not needed.
 export const listItem = style({
-  position: 'relative',
+  // position: 'relative',
 });
 export const activeRoute = style({
   // '::before': {
@@ -82,7 +84,7 @@ export const activeRoute = style({
   //   zIndex: -2,
   // },
 });
-
+// ----------------------------------------------
 export const socialsWrapper = style({
   placeSelf: 'center',
 });
@@ -92,4 +94,13 @@ export const themeToggleWrapper = style({
   zIndex: 2,
   top: '1.5rem',
   left: '1.5rem',
+});
+
+export const arrow = style({
+  position: 'absolute',
+  right: '-45px',
+  top: 0,
+  bottom: 0,
+  display: 'flex',
+  alignItems: 'center',
 });
