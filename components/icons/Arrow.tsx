@@ -1,3 +1,5 @@
+import { arrowIcon } from '../../styles/SharedStyles.css';
+
 const Arrow = ({
   width = 45,
   height = 45,
@@ -5,6 +7,7 @@ const Arrow = ({
 }: React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
+      className={arrowIcon}
       fill="currentColor"
       viewBox="0 0 16 16"
       width={width}

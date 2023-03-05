@@ -7,14 +7,14 @@ import {
   fs650,
   fwBold,
   gap100,
+  modalBG,
   textColor,
 } from '../../styles/vars.css';
 
 export const asideContainer = style({
   position: 'fixed',
   inset: '0px 0 0',
-  background: 'lightgrey',
-  // background: backgroundColor,
+  background: modalBG,
   zIndex: 1,
   display: 'grid',
   '@media': {
@@ -103,4 +103,9 @@ export const arrow = style({
   bottom: 0,
   display: 'flex',
   alignItems: 'center',
+  '@media': {
+    'screen and (min-width: 37.5rem)': {
+      right: -65,
+    },
+  },
 });

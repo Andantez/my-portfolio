@@ -114,3 +114,12 @@ export const checkIcon = style({
     },
   },
 });
+
+export const arrowIcon = style({
+  '@media': {
+    'screen and (min-width: 37.5rem)': {
+      width: 65,
+      height: 65,
+    },
+  },
+});
