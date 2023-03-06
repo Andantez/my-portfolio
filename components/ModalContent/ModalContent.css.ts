@@ -1,8 +1,7 @@
 import { style } from '@vanilla-extract/css';
 import {
   accentColor,
-  backgroundColor,
-  fs450,
+  fs500,
   fs600,
   fs650,
   fwBold,
@@ -53,38 +52,9 @@ export const linkItem = style({
 
 export const linkAccent = style({
   color: accentColor,
-  fontSize: fs450,
+  fontSize: fs500,
 });
 
-//  to remind me to remove it if not needed.
-export const listItem = style({
-  // position: 'relative',
-});
-export const activeRoute = style({
-  // '::before': {
-  //   content: '',
-  //   position: 'absolute',
-  //   height: '100%',
-  //   backgroundColor,
-  //   zIndex: -1,
-  //   left: '-1.5rem',
-  //   right: '-1.5rem',
-  //   borderRadius: '-5rem',
-  // },
-  // '::after': {
-  //   content: '',
-  //   position: 'absolute',
-  //   height: '.25rem',
-  //   width: '100vw',
-  //   display: 'block',
-  //   backgroundColor: textColor,
-  //   top: '50%',
-  //   left: '50%',
-  //   transform: 'translate(-50%, -50%)',
-  //   zIndex: -2,
-  // },
-});
-// ----------------------------------------------
 export const socialsWrapper = style({
   placeSelf: 'center',
 });

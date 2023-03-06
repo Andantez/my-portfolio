@@ -8,8 +8,6 @@ import {
   ulWrapper,
   linkItem,
   linkAccent,
-  activeRoute,
-  listItem,
   socialsWrapper,
   themeToggleWrapper,
   arrow,
@@ -43,9 +41,6 @@ const ModalContent = () => {
               <motion.li
                 variants={itemVariant}
                 key={label}
-                className={`${listItem} ${
-                  isSelectedRoute ? activeRoute : undefined
-                }`}
               >
                 <Link href={href} className={linkItem}>
                   <span className={linkAccent}>0{index + 1}.</span> {label}
