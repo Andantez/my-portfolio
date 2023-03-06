@@ -19,6 +19,7 @@ export default function Document() {
             document.body.dataset.theme = getThemePreference();
           `}
         </Script>
+        <div id="portal" />
         <Main />
         <NextScript />
       </body>

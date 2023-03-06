@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { Moon, Sun } from '../icons';
 import { themeBtn } from './Theme.css';
 
-const ThemeToggle = () => {
+type ThemeToggleProps = {
+  type: keyof typeof themeBtn;
+};
+const ThemeToggle = ({ type }: ThemeToggleProps) => {
   const [activeTheme, setActiveTheme] = useState<string>(
     document.body.dataset.theme!
   );
@@ -14,7 +17,7 @@ const ThemeToggle = () => {
   }, [activeTheme]);
   return (
     <button
-      className={themeBtn}
+      className={themeBtn[type]}
       type="button"
       onClick={() => setActiveTheme(inactiveTheme)}
     >

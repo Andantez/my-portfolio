@@ -9,8 +9,8 @@ const Logo = (): JSX.Element => {
       strokeMiterlimit="1.5"
       clipRule="evenodd"
       viewBox="0 0 3100 2313"
-      width="50"
-      height="25"
+      width="40"
+      height="40"
     >
       <path
         fill="none"
