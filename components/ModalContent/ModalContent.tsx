@@ -38,10 +38,7 @@ const ModalContent = () => {
             const { href, label } = link;
             const isSelectedRoute = router.route === href;
             return (
-              <motion.li
-                variants={itemVariant}
-                key={label}
-              >
+              <motion.li variants={itemVariant} key={label}>
                 <Link href={href} className={linkItem}>
                   <span className={linkAccent}>0{index + 1}.</span> {label}
                   {isSelectedRoute && (

@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Moon, Sun } from '../icons';
 import { themeBtn } from './Theme.css';
@@ -10,7 +11,6 @@ const ThemeToggle = ({ type }: ThemeToggleProps) => {
     document.body.dataset.theme!
   );
   const inactiveTheme = activeTheme === 'light' ? 'dark' : 'light';
-
   useEffect(() => {
     document.body.dataset.theme = activeTheme;
     window.localStorage.setItem('theme', activeTheme);
@@ -21,7 +21,9 @@ const ThemeToggle = ({ type }: ThemeToggleProps) => {
       type="button"
       onClick={() => setActiveTheme(inactiveTheme)}
     >
-      {activeTheme === 'light' ? <Sun /> : <Moon />}
+      <AnimatePresence mode="wait">
+        {activeTheme === 'light' ? <Sun key="sun" /> : <Moon key="moon" />}
+      </AnimatePresence>
     </button>
   );
 };
