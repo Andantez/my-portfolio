@@ -1,34 +1,14 @@
 import { textColor } from '../../styles/vars.css';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { moon } from '../../lib/framerVariants';
 
-const moon: Variants = {
-  initial: {
-    pathLength: 0,
-    rotate: 90,
-  },
-  animate: {
-    pathLength: 1,
-    rotate: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 75,
-    },
-  },
-  exit: {
-    pathLength: 0,
-    rotate: 90,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 const Moon = (): JSX.Element => {
   return (
     <motion.svg
       viewBox="0 0 512 512"
       fill="currentColor"
-      height="25px"
-      width="25px"
+      height="20px"
+      width="20px"
       initial="initial"
       animate="animate"
       exit="exit"

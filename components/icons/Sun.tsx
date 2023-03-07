@@ -1,49 +1,7 @@
 import { textColor } from '../../styles/vars.css';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { sunInner, sunOuter } from '../../lib/framerVariants';
 
-const sun: Variants = {
-  initial: {
-    pathLength: 0,
-    // opacity: 0,
-    // rotate: 90,
-  },
-  animate: {
-    pathLength: 1,
-    // opacity: 1,
-    rotate: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  exit: {
-    pathLength: 0,
-    // opacity: 0,
-    // rotate: 90,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-const sun2: Variants = {
-  initial: {
-    pathLength: 0,
-    opacity: 0,
-  },
-  animate: {
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  exit: {
-    pathLength: 0,
-    opacity: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
 const Sun = (): JSX.Element => {
   return (
     <motion.svg
@@ -53,18 +11,18 @@ const Sun = (): JSX.Element => {
       strokeLinejoin="round"
       strokeWidth={2}
       viewBox="0 0 24 24"
-      height="25px"
-      width="25px"
+      height="20px"
+      width="20px"
       initial="initial"
       animate="animate"
       exit="exit"
     >
       <motion.path
         d="M17 12 A5 5 0 0 1 12 17 A5 5 0 0 1 7 12 A5 5 0 0 1 17 12 z"
-        variants={sun}
+        variants={sunInner}
       />
       <motion.path
-        variants={sun2}
+        variants={sunOuter}
         d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
       />
     </motion.svg>
