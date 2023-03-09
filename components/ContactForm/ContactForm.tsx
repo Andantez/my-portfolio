@@ -7,6 +7,7 @@ import InputWrapper from './InputWrapper';
 import FormControl from './FormControl';
 import { Button, ProgressBar } from '../ui';
 import Notification from '../Notification';
+import { AnimatePresence } from 'framer-motion';
 const ContactForm = (): JSX.Element => {
   const {
     register,
@@ -65,7 +66,11 @@ const ContactForm = (): JSX.Element => {
 
   return (
     <>
-      {showNotification && <Notification hideNotification={hideNotification} />}
+      <AnimatePresence>
+        {showNotification && (
+          <Notification hideNotification={hideNotification} />
+        )}
+      </AnimatePresence>
       <form className={formContainer} onSubmit={handleSubmit(onSubmit)}>
         <div className={wrapper}>
           <InputWrapper>

@@ -6,14 +6,23 @@ import {
   notificationHeading,
 } from './Notification.css';
 import { Check } from '../icons';
+import { motion } from 'framer-motion';
+import { container, content } from '../../lib/framerVariants';
+
 
 type NotificationProps = {
   hideNotification: () => void;
 };
 const Notification = ({ hideNotification }: NotificationProps): JSX.Element => {
   return (
-    <div className={notificationContainer}>
-      <div className={notificationWrapper}>
+    <motion.div
+      className={notificationContainer}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={container}
+    >
+      <motion.div className={notificationWrapper} variants={content}>
         <Check width="4rem" height="4rem" />
         <h3 className={notificationHeading}>
           Your message has been sent successfully.
@@ -24,8 +33,8 @@ const Notification = ({ hideNotification }: NotificationProps): JSX.Element => {
         <Button type="button" handleClick={hideNotification}>
           Okay
         </Button>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
