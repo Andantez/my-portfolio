@@ -24,35 +24,34 @@ const ContactForm = (): JSX.Element => {
       message: '',
     },
   });
-  const [showNotification, setShowNotification] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
   const messageLength = watch('message').length;
 
   const onSubmit: SubmitHandler<FormInputs> = async (data) => {
-    // try {
-    //   const res = await (
-    //     await fetch('/api/send-email', {
-    //       method: 'POST',
-    //       headers: {
-    //         'Content-Type': 'application/json',
-    //       },
-    //       body: JSON.stringify(data),
-    //     })
-    //   ).json();
+    try {
+      const res = await (
+        await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+      ).json();
 
-    //   if (res.status === 'invalid data') {
-    //     res.errors.forEach(({ name, type, message }: Error) => {
-    //       if (message) {
-    //         setError(name, { type, message });
-    //       }
-    //     });
-    //   }
-    //   if (res.status === 'success') {
-    //     setShowNotification(true);
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    setShowNotification(true);
+      if (res.status === 'invalid data') {
+        res.errors.forEach(({ name, type, message }: Error) => {
+          if (message) {
+            setError(name, { type, message });
+          }
+        });
+      }
+      if (res.status === 'success') {
+        setShowNotification(true);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

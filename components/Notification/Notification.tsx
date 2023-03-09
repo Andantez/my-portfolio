@@ -6,54 +6,9 @@ import {
   notificationHeading,
 } from './Notification.css';
 import { Check } from '../icons';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { container, content } from '../../lib/framerVariants';
 
-const container: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      duration: 0.6,
-      ease: 'easeInOut',
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeIn',
-    },
-  },
-};
-const content: Variants = {
-  initial: {
-    y: -150,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 255,
-      duration: 0.45,
-      damping: 15,
-    },
-  },
-  exit: {
-    y: -150,
-    opacity: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 225,
-      duration: 0.45,
-      damping: 15,
-    },
-  },
-};
 
 type NotificationProps = {
   hideNotification: () => void;

@@ -1,21 +1,7 @@
-import { motion, SVGMotionProps, Variants } from 'framer-motion';
+import { motion, SVGMotionProps } from 'framer-motion';
 import { checkIcon } from '../../styles/SharedStyles.css';
+import { drawIcon } from '../../lib/framerVariants';
 
-const check: Variants = {
-  initial: {
-    pathLength: 0,
-    strokeLinecap: 'butt',
-  },
-  animate: {
-    pathLength: 1,
-    strokeLinecap: 'round',
-    transition: {
-      duration: 0.6,
-      ease: 'easeInOut',
-      delay: 0.2,
-    },
-  },
-};
 const Check = ({
   width,
   height,
@@ -29,12 +15,13 @@ const Check = ({
       viewBox="0 0 24 24"
       strokeWidth="2.5"
       stroke="#A1CC4D"
+      strokeLinecap="round"
       width={width}
       height={height}
       {...rest}
     >
       <motion.path
-        variants={check}
+        variants={drawIcon}
         strokeLinejoin="round"
         d="M4.5 12.75l6 6 9-13.5"
       />
