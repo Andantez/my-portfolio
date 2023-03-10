@@ -9,7 +9,6 @@ import { Check } from '../icons';
 import { motion } from 'framer-motion';
 import { container, content } from '../../lib/framerVariants';
 
-
 type NotificationProps = {
   hideNotification: () => void;
 };

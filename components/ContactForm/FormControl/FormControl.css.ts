@@ -9,6 +9,7 @@ import {
   textColor,
   titleTextColor,
   placeholderTextColor,
+  outlineColor,
 } from '../../../styles/vars.css';
 
 const labelBase = style({
@@ -37,7 +38,7 @@ export const inputLabel = styleVariants({
 });
 
 const formInputBase = style({
-  border: '1px solid transparent',
+  border: 'none',
   backgroundColor: titleTextColor,
   color: textColor,
   padding: '.5rem 1rem',
@@ -45,9 +46,10 @@ const formInputBase = style({
   fontWeight: fwLight,
   borderRadius: '0.25rem',
   caretColor: textColor,
-  transition: 'border-color 250ms ease-out',
+  outline: '1px solid transparent',
+  transition: 'outline-color 200ms ease-out',
   ':focus': {
-    outline: 'none',
+    outline: `1px solid ${outlineColor}`,
   },
   '::-webkit-resizer': {
     backgroundColor: titleTextColor,
@@ -60,7 +62,10 @@ const formInputTextArea = style({
   resize: 'vertical',
 });
 const inputError = style({
-  border: `1px solid ${errorColor}`,
+  outline: `1px solid ${errorColor}`,
+  ':focus': {
+    outline: `1px solid ${errorColor}`,
+  },
 });
 export const formInput = styleVariants({
   base: [formInputBase],
