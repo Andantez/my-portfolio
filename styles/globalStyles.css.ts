@@ -11,6 +11,7 @@ import {
   successColour,
   notificationBG,
   modalBG,
+  outlineColor,
   fwLight,
   fwRegular,
   fwBold,
@@ -50,6 +51,7 @@ globalStyle(':root', {
     [successColour]: '#6A8BC2',
     [notificationBG]: '#FFFFFF',
     [modalBG]: '#f2f2f2',
+    [outlineColor]: '#cfcfcf',
     [fwLight]: '300',
     [fwRegular]: '400',
     [fwBold]: '700',
@@ -90,6 +92,7 @@ globalStyle('body[data-theme="light"]', {
     [errorColor]: '#D90404',
     [notificationBG]: '#FFFFFF',
     [modalBG]: '#f2f2f2',
+    [outlineColor]: '#cfcfcf',
   },
 });
 
@@ -101,6 +104,7 @@ globalStyle('body[data-theme="dark"]', {
     [errorColor]: '#FF4250',
     [notificationBG]: '#1f1f1f',
     [modalBG]: '#1a1a1a',
+    [outlineColor]: '#7c7c7c',
     [boxShadow]: `0px 0.4px 0.4px hsl(${shadowColor} / 0.44),
     0px 0.8px 0.7px -0.9px hsl(${shadowColor} / 0.38),
     0px 1.7px 1.6px -1.9px hsl(${shadowColor} / 0.32),
