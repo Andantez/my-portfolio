@@ -19,6 +19,7 @@ type ProjectProps = {
   image: StaticImageData;
   panelColor: keyof typeof projectImgWrapper;
 };
+
 const SingleProject = ({
   name,
   description,
