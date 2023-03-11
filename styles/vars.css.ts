@@ -13,6 +13,8 @@ export const browserDot = createVar();
 export const notificationBG = createVar();
 export const modalBG = createVar();
 export const outlineColor = createVar();
+export const browserMenuColor = createVar();
+export const browserSearchColor = createVar();
 // font weight variables
 export const fwLight = createVar();
 export const fwRegular = createVar();
