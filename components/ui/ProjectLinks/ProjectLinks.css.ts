@@ -3,7 +3,6 @@ import {
   fs300,
   fwBold,
   textColor,
-  backgroundColor,
   fs200,
   gap150,
 } from '../../../styles/vars.css';
@@ -34,11 +33,12 @@ export const projectLink = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
   fontSize: fs200,
-  color: backgroundColor,
-  backgroundColor: textColor,
+  color: textColor,
+  backgroundColor: 'transparent',
   textDecoration: 'none',
   padding: '.5rem 1rem',
   borderRadius: '.25rem',
+  border: `3px solid ${textColor}`,
   textAlign: 'center',
   width: '100%',
   '@media': {
