@@ -1,9 +1,9 @@
 import { style } from '@vanilla-extract/css';
+import { browserMenuColor } from '../../../styles/vars.css';
 
-// TODO: change the background color based on the Theme
 export const browserMenuContainer = style({
   position: 'relative',
-  backgroundColor: '#DFDFDF',
+  backgroundColor: browserMenuColor,
   padding: '.25rem 0.5rem',
   borderTopLeftRadius: '4px',
   borderTopRightRadius: '4px',
