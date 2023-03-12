@@ -1,8 +1,9 @@
-import { textColor } from '../../styles/vars.css';
+import { modalTextColor, textColor } from '../../styles/vars.css';
 import { motion } from 'framer-motion';
 import { moon } from '../../lib/framerVariants';
+import type { ScreenTypeProps } from '../../lib/types/icon';
 
-const Moon = (): JSX.Element => {
+const Moon = ({ screenType }: ScreenTypeProps): JSX.Element => {
   return (
     <motion.svg
       viewBox="0 0 512 512"
@@ -16,7 +17,7 @@ const Moon = (): JSX.Element => {
       <motion.path
         variants={moon}
         fill="none"
-        stroke={textColor}
+        stroke={screenType === 'mobile' ? modalTextColor : textColor}
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={32}

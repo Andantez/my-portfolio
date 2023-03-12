@@ -1,12 +1,13 @@
-import { textColor } from '../../styles/vars.css';
+import { modalTextColor, textColor } from '../../styles/vars.css';
 import { motion } from 'framer-motion';
 import { sunInner, sunOuter } from '../../lib/framerVariants';
+import type { ScreenTypeProps } from '../../lib/types/icon';
 
-const Sun = (): JSX.Element => {
+const Sun = ({ screenType }: ScreenTypeProps): JSX.Element => {
   return (
     <motion.svg
       fill="none"
-      stroke={textColor}
+      stroke={screenType === 'mobile' ? modalTextColor : textColor}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}
