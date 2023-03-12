@@ -1,13 +1,12 @@
 import { style } from '@vanilla-extract/css';
 import {
   accentColor,
-  fs500,
   fs600,
   fs650,
   fwBold,
   gap100,
   modalBG,
-  textColor,
+  modalTextColor,
 } from '../../styles/vars.css';
 
 export const asideContainer = style({
@@ -40,7 +39,7 @@ export const linkItem = style({
   position: 'relative',
   fontFamily: 'var(--ff-text)',
   textDecoration: 'none',
-  color: textColor,
+  color: modalTextColor,
   fontSize: fs600,
   fontWeight: fwBold,
   '@media': {
@@ -52,7 +51,6 @@ export const linkItem = style({
 
 export const linkAccent = style({
   color: accentColor,
-  fontSize: fs500,
 });
 
 export const socialsWrapper = style({
@@ -62,8 +60,8 @@ export const socialsWrapper = style({
 export const themeToggleWrapper = style({
   position: 'absolute',
   zIndex: 2,
-  top: '1.5rem',
-  left: '1.5rem',
+  top: '1.65rem',
+  left: '1.65rem',
 });
 
 export const arrow = style({

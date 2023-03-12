@@ -22,7 +22,11 @@ const ThemeToggle = ({ type }: ThemeToggleProps) => {
       onClick={() => setActiveTheme(inactiveTheme)}
     >
       <AnimatePresence mode="wait">
-        {activeTheme === 'light' ? <Sun key="sun" /> : <Moon key="moon" />}
+        {activeTheme === 'light' ? (
+          <Sun key="sun" screenType={type} />
+        ) : (
+          <Moon key="moon" screenType={type} />
+        )}
       </AnimatePresence>
     </button>
   );

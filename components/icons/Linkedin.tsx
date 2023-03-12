@@ -1,13 +1,15 @@
-import { textColor } from '../../styles/vars.css';
+import type { ScreenTypeProps } from '../../lib/types/icon';
+import { modalTextColor, textColor } from '../../styles/vars.css';
 
 const Linkedin = ({
   width = 35,
   height = 35,
-}: React.SVGProps<SVGSetElement>): JSX.Element => {
+  screenType,
+}: React.SVGProps<SVGSetElement> & ScreenTypeProps): JSX.Element => {
   return (
     <svg
       fill="none"
-      stroke={textColor}
+      stroke={screenType === 'mobile' ? modalTextColor : textColor}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={2}

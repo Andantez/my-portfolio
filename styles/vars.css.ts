@@ -12,6 +12,7 @@ export const successColour = createVar();
 export const browserDot = createVar();
 export const notificationBG = createVar();
 export const modalBG = createVar();
+export const modalTextColor = createVar();
 export const outlineColor = createVar();
 export const browserMenuColor = createVar();
 export const browserSearchColor = createVar();
