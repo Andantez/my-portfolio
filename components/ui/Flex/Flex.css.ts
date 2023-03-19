@@ -5,7 +5,7 @@ export const flex = recipe({
   base: {
     display: 'flex',
     maxWidth: '1400px',
-    margin: '0 auto',
+    margin: '0 auto 2.5rem',
     '@media': {
       'screen and (min-width: 87.5rem)': {
         padding: '0 !important',
