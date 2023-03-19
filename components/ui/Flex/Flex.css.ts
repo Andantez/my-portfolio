@@ -5,7 +5,7 @@ export const flex = recipe({
   base: {
     display: 'flex',
     maxWidth: '1400px',
-    margin: '0 auto 2.5rem',
+    margin: '0 auto',
     '@media': {
       'screen and (min-width: 87.5rem)': {
         padding: '0 !important',
@@ -318,6 +318,35 @@ export const flex = recipe({
         },
       },
     },
+    marginBottom: {
+      '1rem': {
+        marginBottom: '1rem',
+      },
+      '1.5rem': {
+        marginBottom: '1.5rem',
+      },
+      '2rem': {
+        marginBottom: '2rem',
+      },
+      '2.5rem': {
+        marginBottom: '2.5rem',
+      },
+      '3rem': {
+        marginBottom: '3rem',
+      },
+      '3.5rem': {
+        marginBottom: '3.5rem',
+      },
+      '4rem': {
+        marginBottom: '4rem',
+      },
+      '4.5rem': {
+        marginBottom: '4.5rem',
+      },
+      '5rem': {
+        marginBottom: '5rem',
+      },
+    }
   },
 });
 
