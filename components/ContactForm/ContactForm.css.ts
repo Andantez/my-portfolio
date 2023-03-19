@@ -4,13 +4,8 @@ import { fs100, gap150, errorColor } from '../../styles/vars.css';
 export const formContainer = style({
   display: 'grid',
   gap: gap150,
-  marginTop: '1rem',
-
+  margin: '1rem 1rem 0',
   '@media': {
-    'screen and (min-width: 28.125rem)': {
-      marginLeft: '1rem',
-      marginRight: '1rem',
-    },
     'screen and (min-width: 37.5rem)': {
       gridColumn: '3 / -3',
       marginLeft: 0,
