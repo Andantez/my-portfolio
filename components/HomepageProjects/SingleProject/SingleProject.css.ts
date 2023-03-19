@@ -23,6 +23,7 @@ export const projectInfo = style({
     'screen and (min-width: 64rem)': {
       textAlign: 'left',
       padding: 0,
+      paddingLeft: '2rem',
       flex: 1,
     },
     'screen and (min-width: 87.5rem)': {
@@ -94,9 +95,9 @@ export const projectImgWrapperBase = style({
     },
     'screen and (min-width: 64rem)': {
       flex: 1,
-      padding: '0 2rem',
+      padding: '0 4rem 0 2rem',
       '::before': {
-        inset: '-2rem 0 2rem',
+        inset: '-2rem 2rem 2rem 0',
       },
     },
     'screen and (min-width: 87.5rem)': {
