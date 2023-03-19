@@ -35,8 +35,9 @@ const SingleProject = ({
       flexDirection="columnReverse"
       gap="medium"
       directionMediaBreakpoint="rowAt1024"
-      // paddingMediaBreakpoint="padding2At1024"
       gapMediaBreakPoint="gap3At1400"
+      paddingTop='4rem'
+      paddingBottom='4rem'
     >
       <article className={projectInfo}>
         <h2 className={projectName}>{name}</h2>

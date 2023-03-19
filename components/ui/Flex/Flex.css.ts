@@ -277,31 +277,31 @@ export const flex = recipe({
     },
     paddingBottom: {
       '1rem': {
-        paddingTop: '1rem',
+        paddingBottom: '1rem',
       },
       '1.5rem': {
-        paddingTop: '1.5rem',
+        paddingBottom: '1.5rem',
       },
       '2rem': {
-        paddingTop: '2rem',
+        paddingBottom: '2rem',
       },
       '2.5rem': {
-        paddingTop: '2.5rem',
+        paddingBottom: '2.5rem',
       },
       '3rem': {
-        paddingTop: '3rem',
+        paddingBottom: '3rem',
       },
       '3.5rem': {
-        paddingTop: '3.5rem',
+        paddingBottom: '3.5rem',
       },
       '4rem': {
-        paddingTop: '4rem',
+        paddingBottom: '4rem',
       },
       '4.5rem': {
-        paddingTop: '4.5rem',
+        paddingBottom: '4.5rem',
       },
       '5rem': {
-        paddingTop: '5rem',
+        paddingBottom: '5rem',
       },
     },
   },
