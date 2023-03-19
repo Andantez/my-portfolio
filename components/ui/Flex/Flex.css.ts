@@ -76,7 +76,6 @@ export const flex = recipe({
     },
     minHeight: {
       '100%': { minHeight: '100%' },
-      auto: { minHeight: 'auto' },
       '100vh': { minHeight: '100vh' },
     },
     gap: {
@@ -91,20 +90,6 @@ export const flex = recipe({
       },
       large: {
         gap: '3rem',
-      },
-    },
-    padding: {
-      noPadding: {
-        padding: 0,
-      },
-      smallLeftAndRight: {
-        padding: '0 1rem',
-      },
-      mediumLeftAndRight: {
-        padding: '0 2rem',
-      },
-      largeLeftAndRight: {
-        padding: '0 3rem',
       },
     },
     directionMediaBreakpoint: {
@@ -223,64 +208,6 @@ export const flex = recipe({
         },
       },
     },
-    paddingMediaBreakpoint: {
-      padding1At600: {
-        '@media': {
-          'screen and (min-width: 37.5rem)': {
-            padding: '0 1rem',
-          },
-        },
-      },
-      padding1At900: {
-        '@media': {
-          'screen and (min-width: 56.25rem)': {
-            padding: '0 1rem',
-          },
-        },
-      },
-      padding1At1024: {
-        '@media': {
-          'screen and (min-width: 64rem)': {
-            padding: '0 1rem',
-          },
-        },
-      },
-      padding1At1200: {
-        '@media': {
-          'screen and (min-width: 75rem)': {
-            padding: '0 1rem',
-          },
-        },
-      },
-      padding2At600: {
-        '@media': {
-          'screen and (min-width: 37.5rem)': {
-            padding: '0 2rem',
-          },
-        },
-      },
-      padding2At900: {
-        '@media': {
-          'screen and (min-width: 56.25rem)': {
-            padding: '0 2rem',
-          },
-        },
-      },
-      padding2At1024: {
-        '@media': {
-          'screen and (min-width: 64rem)': {
-            padding: '0 2rem',
-          },
-        },
-      },
-      padding2At1200: {
-        '@media': {
-          'screen and (min-width: 75rem)': {
-            padding: '0 2rem',
-          },
-        },
-      },
-    },
     gapMediaBreakPoint: {
       gap3At600: {
         '@media': {
@@ -316,6 +243,65 @@ export const flex = recipe({
             gap: gap300,
           },
         },
+      },
+    },
+
+    paddingTop: {
+      '1rem': {
+        paddingTop: '1rem',
+      },
+      '1.5rem': {
+        paddingTop: '1.5rem',
+      },
+      '2rem': {
+        paddingTop: '2rem',
+      },
+      '2.5rem': {
+        paddingTop: '2.5rem',
+      },
+      '3rem': {
+        paddingTop: '3rem',
+      },
+      '3.5rem': {
+        paddingTop: '3.5rem',
+      },
+      '4rem': {
+        paddingTop: '4rem',
+      },
+      '4.5rem': {
+        paddingTop: '4.5rem',
+      },
+      '5rem': {
+        paddingTop: '5rem',
+      },
+    },
+    paddingBottom: {
+      '1rem': {
+        paddingTop: '1rem',
+      },
+      '1.5rem': {
+        paddingTop: '1.5rem',
+      },
+      '2rem': {
+        paddingTop: '2rem',
+      },
+      '2.5rem': {
+        paddingTop: '2.5rem',
+      },
+      '3rem': {
+        paddingTop: '3rem',
+      },
+      '3.5rem': {
+        paddingTop: '3.5rem',
+      },
+      '4rem': {
+        paddingTop: '4rem',
+      },
+      '4.5rem': {
+        paddingTop: '4.5rem',
+      },
+      '5rem': {
+        paddingTop: '5rem',
       },
     },
   },
