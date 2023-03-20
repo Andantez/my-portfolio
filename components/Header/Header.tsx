@@ -7,6 +7,7 @@ import Modal from '../Modal';
 import ModalContent from '../ModalContent';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
@@ -43,7 +44,9 @@ const Header = (): JSX.Element => {
       </Modal>
 
       <nav className={nav}>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <NavbarList />
         <ThemeToggle type="desktop" />
       </nav>

@@ -41,7 +41,7 @@ export default function Home() {
           Much to their annoyance my passion grew stronger and deeper. In recent
           years I had the opportunity to pursue my passion in web development.
         </p>
-        <Link href="/" className={aboutLink}>
+        <Link href="/about" className={aboutLink}>
           More About Me
         </Link>
       </About>
