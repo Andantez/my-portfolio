@@ -17,6 +17,9 @@ export const nav = style({
     'screen and (min-width: 64rem)': {
       gap: gap150,
     },
+    'screen and (min-width: 90.625rem)': {
+      padding: '1rem 0',
+    },
   },
 });
 
