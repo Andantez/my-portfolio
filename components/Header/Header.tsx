@@ -1,7 +1,6 @@
 import { Logo, Menu } from '../icons';
 import NavbarList from './NavbarList';
 import { nav, header, menuBtn } from './Header.css';
-import { merriweather } from '../../lib/fonts';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal';
@@ -27,7 +26,7 @@ const Header = (): JSX.Element => {
   }, [router.events]);
 
   return (
-    <header className={`${merriweather.variable} ${header}`}>
+    <header className={header}>
       <Modal>
         <AnimatePresence>
           <button
