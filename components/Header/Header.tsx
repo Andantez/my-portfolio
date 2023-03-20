@@ -1,13 +1,13 @@
 import { Logo, Menu } from '../icons';
 import NavbarList from './NavbarList';
 import { nav, header, menuBtn } from './Header.css';
-import { merriweather } from '../../lib/fonts';
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 import Modal from '../Modal';
 import ModalContent from '../ModalContent';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 
 const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
 
@@ -27,7 +27,7 @@ const Header = (): JSX.Element => {
   }, [router.events]);
 
   return (
-    <header className={`${merriweather.variable} ${header}`}>
+    <header className={header}>
       <Modal>
         <AnimatePresence>
           <button
@@ -44,7 +44,9 @@ const Header = (): JSX.Element => {
       </Modal>
 
       <nav className={nav}>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <NavbarList />
         <ThemeToggle type="desktop" />
       </nav>

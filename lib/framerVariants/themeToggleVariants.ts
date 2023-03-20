@@ -8,14 +8,14 @@ export const sunInner: Variants = {
     pathLength: 1,
     rotate: 0,
     transition: {
-      duration: 0.5,
+      duration: .3,
       ease: 'easeInOut',
     },
   },
   exit: {
     pathLength: 0,
     transition: {
-      duration: 0.5,
+      duration: .3,
       ease: 'easeInOut',
     },
   },
@@ -29,7 +29,7 @@ export const sunOuter: Variants = {
     pathLength: 1,
     opacity: 1,
     transition: {
-      duration: 0.5,
+      duration: .3,
       ease: 'easeInOut',
     },
   },
@@ -37,7 +37,7 @@ export const sunOuter: Variants = {
     pathLength: 0,
     opacity: 0,
     transition: {
-      duration: 0.5,
+      duration: .3,
       ease: 'easeInOut',
     },
   },
@@ -60,7 +60,7 @@ export const moon: Variants = {
     pathLength: 0,
     rotate: 90,
     transition: {
-      duration: 0.5,
+      duration: .3,
       ease: 'easeInOut',
     },
   },
