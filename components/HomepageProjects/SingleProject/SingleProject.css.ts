@@ -22,12 +22,14 @@ export const projectInfo = style({
     },
     'screen and (min-width: 64rem)': {
       textAlign: 'left',
-      padding: 0,
-      paddingLeft: '2rem',
       flex: 1,
     },
     'screen and (min-width: 87.5rem)': {
       flexBasis: '45%',
+    },
+    'screen and (min-width: 90.625rem)': {
+      padding: 0,
+      paddingLeft: '2rem',
     },
   },
 });
