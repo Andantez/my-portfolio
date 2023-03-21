@@ -1,1 +1,1 @@
-export { default} from './SubHeading'
+export { default } from './SubHeading';
