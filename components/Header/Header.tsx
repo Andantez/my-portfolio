@@ -8,8 +8,12 @@ import ModalContent from '../ModalContent';
 import { useRouter } from 'next/router';
 import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { ThemeSkeleton } from '../ui';
 
-const ThemeToggle = dynamic(() => import('../Theme'), { ssr: false });
+const ThemeToggle = dynamic(() => import('../Theme'), {
+  ssr: false,
+  loading: () => <ThemeSkeleton />,
+});
 
 const Header = (): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
