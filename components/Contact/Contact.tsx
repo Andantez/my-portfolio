@@ -7,6 +7,7 @@ import {
   noTextDecoration,
 } from '../../styles/SharedStyles.css';
 import Link from 'next/link';
+import SubHeading from '../ui/SubHeading';
 
 type ContactProps = {
   children: React.ReactNode;
@@ -23,7 +24,7 @@ const Contact = ({ children }: ContactProps): JSX.Element => {
       position="relative"
     >
       {children}
-      <h3 className={aboutSubHeading}>
+      <SubHeading as='h3' cssStyling={aboutSubHeading}>
         Get in touch by filling the form below <br className={lineBreak} />
         or just send an{' '}
         <Link
@@ -32,7 +33,7 @@ const Contact = ({ children }: ContactProps): JSX.Element => {
         >
           email here.
         </Link>
-      </h3>
+      </SubHeading>
       <ContactForm />
       <Socials variant="desktop" />
     </Grid>
