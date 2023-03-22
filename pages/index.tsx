@@ -30,7 +30,7 @@ export default function Home() {
           title="Projects"
         />
         <SubHeading as="h3" cssStyling={subHeading}>
-          Here are some of my most recent projects that I have built
+          Here are some of my most recent projects that I have built!
         </SubHeading>
       </Grid>
       <HomepageProjects />
