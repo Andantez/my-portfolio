@@ -12,7 +12,7 @@ import {
 } from './vars.css';
 
 // TODO: rename the variables.
-export const aboutSubHeading = style({
+export const subHeading = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwRegular,
   fontSize: fs450,

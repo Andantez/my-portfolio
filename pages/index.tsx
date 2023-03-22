@@ -8,7 +8,7 @@ import SubHeading from '../components/ui/SubHeading';
 import {
   aboutDescription,
   aboutLink,
-  aboutSubHeading,
+  subHeading,
 } from '../styles/SharedStyles.css';
 export default function Home() {
   return (
@@ -29,13 +29,13 @@ export default function Home() {
           headingText="Some things I've build."
           title="Projects"
         />
-        <SubHeading as="h3" cssStyling={aboutSubHeading}>
+        <SubHeading as="h3" cssStyling={subHeading}>
           Here are some of my most recent projects that I have built
         </SubHeading>
       </Grid>
       <HomepageProjects />
       <About>
-        <SubHeading as="h3" cssStyling={aboutSubHeading}>
+        <SubHeading as="h3" cssStyling={subHeading}>
           My love for computers and inquisitive mind stems from a young age
         </SubHeading>
         <p className={aboutDescription}>

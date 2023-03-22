@@ -2,7 +2,7 @@ import ContactForm from '../ContactForm';
 import { Grid, Socials } from '../ui';
 import { lineBreak } from './Contact.css';
 import {
-  aboutSubHeading,
+  subHeading,
   accent,
   noTextDecoration,
 } from '../../styles/SharedStyles.css';
@@ -24,7 +24,7 @@ const Contact = ({ children }: ContactProps): JSX.Element => {
       position="relative"
     >
       {children}
-      <SubHeading as='h3' cssStyling={aboutSubHeading}>
+      <SubHeading as="h3" cssStyling={subHeading}>
         Get in touch by filling the form below <br className={lineBreak} />
         or just send an{' '}
         <Link

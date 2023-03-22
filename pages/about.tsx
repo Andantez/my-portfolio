@@ -1,6 +1,6 @@
 import { Grid, Heading, ProjectStack, Container } from '../components/ui';
 import { skillList } from '../data';
-import { aboutSubHeading } from '../styles/SharedStyles.css';
+import { subHeading } from '../styles/SharedStyles.css';
 import {
   sectionHeader,
   sectionContainer,
@@ -25,7 +25,7 @@ const AboutPage = () => {
           title="About"
           headingText="About"
         />
-        <h2 className={aboutSubHeading}>
+        <h2 className={subHeading}>
           Hello I&apos;m Kaloyan Atanasov, Front-End developer.
           <br /> I love problem solving and I like making cool interactive
           things.
