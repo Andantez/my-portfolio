@@ -4,10 +4,11 @@ import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
 import { Grid, Heading } from '../components/ui';
+import SubHeading from '../components/ui/SubHeading';
 import {
   aboutDescription,
   aboutLink,
-  aboutSubHeading,
+  subHeading,
 } from '../styles/SharedStyles.css';
 export default function Home() {
   return (
@@ -28,13 +29,15 @@ export default function Home() {
           headingText="Some things I've build."
           title="Projects"
         />
-        {/* TODO add paragraph here  */}
+        <SubHeading as="h3" cssStyling={subHeading}>
+          Here are some of my most recent projects that I have built!
+        </SubHeading>
       </Grid>
       <HomepageProjects />
       <About>
-        <h3 className={aboutSubHeading}>
+        <SubHeading as="h3" cssStyling={subHeading}>
           My love for computers and inquisitive mind stems from a young age
-        </h3>
+        </SubHeading>
         <p className={aboutDescription}>
           I loved playing games as a child and developed interest in computers
           in general (which got me in trouble with my parents all the time) .
