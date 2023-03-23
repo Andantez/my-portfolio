@@ -18,7 +18,7 @@ export const containerVariants: Variants = {
     x: '-100%',
     transition: {
       duration: 0.4,
-      ease: [0.49, -0.07, 0.82, 0.68],
+      ease: [0.49, -0.02, 0.82, 0.68],
       staggerDirection: 1,
       staggerChildren: 0.04,
       when: 'afterChildren',
