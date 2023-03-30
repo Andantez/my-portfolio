@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import About from '../components/About';
+import Canvas from '../components/Canvas';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
@@ -10,9 +11,12 @@ import {
   aboutLink,
   subHeading,
 } from '../styles/SharedStyles.css';
+
 export default function Home() {
   return (
     <>
+      {/* Might change the position of Canvas component */}
+      <Canvas />
       <Hero />
       <Grid
         gap="small"
