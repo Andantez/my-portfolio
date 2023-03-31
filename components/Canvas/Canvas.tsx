@@ -12,11 +12,11 @@ const Canvas = () => {
 
   // draw function is executed in an INFINITE LOOP
   const draw = (p5: p5Types) => {
-    p5.background(0); // TEMPORARY
+    p5.background(255); // TEMPORARY
     p5.ellipse(50, 50, 70, 70); // TEMPORARY
   };
 
-  return <Sketch setup={setup} draw={draw} />;
+  return <Sketch setup={setup} draw={draw} className="wave-canvas" />;
 };
 
 export default Canvas;
