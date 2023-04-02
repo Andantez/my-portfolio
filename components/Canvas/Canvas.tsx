@@ -26,7 +26,8 @@ const Canvas = () => {
     const centerY = p5.windowHeight / 2;
 
     // the height of the Waves
-    pathHeight += (centerY - p5.mouseY - pathHeight) / 10;
+    // pathHeight += (centerY - p5.mouseY - pathHeight * 1.5) / 10;
+    pathHeight += (centerY - pathHeight * 1.5) / 10; // Temporary
 
     p5.beginShape();
     p5.curveVertex(centerX, 0);
