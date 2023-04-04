@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
 import { Grid, Heading } from '../components/ui';
 import SubHeading from '../components/ui/SubHeading';
+import useWindowWidth from '../lib/hooks/useWindowWidth';
 import {
   aboutDescription,
   aboutLink,
@@ -13,10 +14,14 @@ import {
 } from '../styles/SharedStyles.css';
 
 export default function Home() {
+  const { windowWidth } = useWindowWidth();
+
+  const isBreakpointActive = windowWidth >= 1024;
+  
   return (
     <>
       {/* Might change the position of Canvas component */}
-      <Canvas />
+      {isBreakpointActive && <Canvas />}
       <Hero />
       <Grid
         gap="small"
