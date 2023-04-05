@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import {  fs300, fs400, fs700, modalTextColor } from '../../../styles/vars.css';
+import { fs300, fs400, fs700, modalTextColor } from '../../../styles/vars.css';
 
 const baseStyle = style({
   textDecoration: 'none',
