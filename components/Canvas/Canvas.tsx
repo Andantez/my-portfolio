@@ -9,17 +9,18 @@ let count = 0;
 let pathHeight: number;
 const controlPoints = 10;
 const offset = 152;
+const animationSpeed = 0.35;
 const Canvas = () => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     // use the parent to render canvas.
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     pathHeight = p5.windowHeight / 2;
+    p5.fill('black');
   };
 
   // draw function is executed in an INFINITE LOOP
   const draw = (p5: p5Types) => {
-    p5.background('white');
-    p5.fill('black');
+    p5.clear();
 
     const startPositionX = p5.windowWidth / 2;
     const centerX = p5.windowWidth / 2;
@@ -51,7 +52,7 @@ const Canvas = () => {
     p5.curveVertex(p5.windowWidth + offset, 0);
     p5.curveVertex(p5.windowWidth + offset, 0);
     p5.endShape();
-    count++;
+    count += animationSpeed;
   };
 
   const handleResize = (p5: p5Types) => {
