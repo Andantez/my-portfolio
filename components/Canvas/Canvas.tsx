@@ -10,18 +10,21 @@ let pathHeight: number;
 const controlPoints = 10;
 const offset = 152;
 const animationSpeed = 0.35;
-const Canvas = () => {
+
+type CanvasProps = {
+  activeTheme: string;
+};
+const Canvas = ({ activeTheme }: CanvasProps) => {
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     // use the parent to render canvas.
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef);
     pathHeight = p5.windowHeight / 2;
-    p5.fill('black');
   };
 
   // draw function is executed in an INFINITE LOOP
   const draw = (p5: p5Types) => {
     p5.clear();
-
+    p5.fill(activeTheme === 'light' ? '#0d0d0d' : '#A62934');
     const startPositionX = p5.windowWidth / 2;
     const centerX = p5.windowWidth / 2;
     const centerY = p5.windowHeight / 2;
