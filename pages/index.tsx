@@ -10,6 +10,7 @@ import {
   aboutLink,
   subHeading,
 } from '../styles/SharedStyles.css';
+
 export default function Home() {
   return (
     <>
