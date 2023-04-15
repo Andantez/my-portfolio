@@ -3,6 +3,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
+import InitialAnimation from '../components/InitialAnimation';
 import { Grid, Heading } from '../components/ui';
 import SubHeading from '../components/ui/SubHeading';
 import {
@@ -14,6 +15,7 @@ import {
 export default function Home() {
   return (
     <>
+      <InitialAnimation />
       <Hero />
       <Grid
         gap="small"
