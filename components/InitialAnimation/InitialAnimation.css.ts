@@ -14,5 +14,5 @@ export const animationContainer = style({
 export const heading = style({
   color: modalTextColor,
   fontFamily: 'var(--ff-heading)',
-  fontSize: '13rem',
+  fontSize: '13.5rem',
 });
