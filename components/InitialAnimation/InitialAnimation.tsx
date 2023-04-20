@@ -1,68 +1,57 @@
 import { motion, Variants } from 'framer-motion';
-import { animationContainer, heading } from './InitialAnimation.css';
-import { accent } from '../../styles/SharedStyles.css';
+import {
+  animationContainer,
+  heading,
+  singleWord,
+} from './InitialAnimation.css';
 
-const textVariant: Variants = {
-  hidden: {
-    WebkitMaskImage: `repeating-linear-gradient(to left, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 25px, rgba(0,0,0,1) 25px, rgba(0,0,0,1) 25px), repeating-linear-gradient(to top, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 25px, rgba(0,0,0,1) 25px, rgba(0,0,0,1) 25px)`,
-    opacity: 0,
-  },
-  visible: {
-    WebkitMaskImage: `repeating-linear-gradient(to left, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 25px), repeating-linear-gradient(to left, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 25px)`,
-    opacity: 1,
-    y: '-100%',
-    transition: {
-      duration: 1.5,
-      ease: 'easeInOut',
-      y: {
-        ease: 'easeIn',
-        delay: 2,
-        duration: 1.5,
-      },
-    },
-  },
-};
-
-const dotVariant: Variants = {
+const wordVariant: Variants = {
   initial: {
+    y: 25,
     opacity: 0,
-    y: '-100%',
   },
   animate: {
-    opacity: 1,
     y: 0,
+    opacity: 1,
     transition: {
-      delay: 1.5,
-      type: 'spring',
-      stiffness: 225,
-      damping: 7.5,
+      duration: 1,
+      ease: 'easeInOut',
     },
   },
 };
+
+const container: Variants = {
+  animate: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+const text = 'Bringing my ideas to life and growing as a developer';
 const InitialAnimation = () => {
   return (
     <motion.div
-      initial={{ y: 0 }}
-      animate={{ y: '-100%' }}
+      // initial={{ y: 0 }}
+      // animate={{ y: '-100%' }}
+      initial="initial"
+      animate="animate"
+      variants={container}
       transition={{ duration: 1.5, delay: 2.5, ease: 'easeIn' }}
       className={animationContainer}
     >
-      <motion.h1
-        className={heading}
-        initial="hidden"
-        animate="visible"
-        variants={textVariant}
-      >
-        Loading
-        <motion.span
-          style={{ display: 'inline-block' }}
-          initial="initial"
-          animate="animate"
-          variants={dotVariant}
-          className={accent.base}
-        >
-          .
-        </motion.span>
+      <motion.h1 className={heading}>
+        {text.split(' ').map((word, index, arr) => {
+          const isLastWord = index === arr.length - 1
+          return (
+            <motion.span
+              className={isLastWord ? singleWord.withAccent : singleWord.base}
+              variants={wordVariant}
+              key={`${word}-${index}`}
+            >
+              {word}{' '}
+            </motion.span>
+          );
+        })}
       </motion.h1>
     </motion.div>
   );
