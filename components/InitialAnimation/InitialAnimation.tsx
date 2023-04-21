@@ -7,15 +7,15 @@ import {
 
 const wordVariant: Variants = {
   initial: {
-    y: 25,
+    y: 100,
     opacity: 0,
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1,
-      ease: 'easeInOut',
+      duration: 2,
+      ease: 'circOut',
     },
   },
 };
@@ -41,7 +41,7 @@ const InitialAnimation = () => {
     >
       <motion.h1 className={heading}>
         {text.split(' ').map((word, index, arr) => {
-          const isLastWord = index === arr.length - 1
+          const isLastWord = index === arr.length - 1;
           return (
             <motion.span
               className={isLastWord ? singleWord.withAccent : singleWord.base}
