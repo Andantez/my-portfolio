@@ -14,7 +14,7 @@ const wordVariant: Variants = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 2,
+      duration: 1,
       ease: 'circOut',
     },
   },
@@ -22,8 +22,12 @@ const wordVariant: Variants = {
 
 const container: Variants = {
   animate: {
+    y: '-100%',
     transition: {
       staggerChildren: 0.08,
+      duration: 1,
+      delay: 2,
+      ease: [0.52, 0.25, 0.82, 0.68],
     },
   },
 };
@@ -31,12 +35,9 @@ const text = 'Bringing my ideas to life and growing as a developer';
 const InitialAnimation = () => {
   return (
     <motion.div
-      // initial={{ y: 0 }}
-      // animate={{ y: '-100%' }}
       initial="initial"
       animate="animate"
       variants={container}
-      transition={{ duration: 1.5, delay: 2.5, ease: 'easeIn' }}
       className={animationContainer}
     >
       <motion.h1 className={heading}>
