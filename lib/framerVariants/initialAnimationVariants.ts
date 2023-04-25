@@ -17,7 +17,8 @@ export const textAnimation: Variants = {
 
 export const initialAnimationContainer: Variants = {
   animate: {
-    y: '-100%',
+    // y: '-100%',
+    
     transition: {
       staggerChildren: 0.08,
       duration: 1,
