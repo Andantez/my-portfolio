@@ -11,11 +11,12 @@ import {
   aboutLink,
   subHeading,
 } from '../styles/SharedStyles.css';
+import type { FirstMount } from '../lib/types/global';
 
-export default function Home() {
+export default function Home({ isFirstMount }: FirstMount) {
   return (
     <>
-      <InitialAnimation />
+      {isFirstMount && <InitialAnimation />}
       <Hero />
       <Grid
         gap="small"
