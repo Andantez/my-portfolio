@@ -7,6 +7,7 @@ import {
 import {
   textAnimation,
   initialAnimationContainer,
+  svgPath,
 } from '../../lib/framerVariants';
 import { WORDS } from '../../lib/constVariables';
 
@@ -24,17 +25,10 @@ const InitialAnimation = () => {
       <svg id="svg" width="0" height="0">
         <clipPath id="clippath" clipPathUnits="objectBoundingBox">
           <motion.path
-            initial={{
-              d: 'M0,0 L0,1 C0,1,0,1,1,1 L1,0',
-            }}
-            animate={{
-              d: 'M0,0 L0,0.769 C0.125,1,0.875,1,1,0.769 L1,0',
-            }}
-            transition={{
-              duration: 1,
-              delay: 1.5,
-            }}
-            // d="M 0 1 Q 0.5 1.4 1 1 L 1 1 L 0 1 z"
+            initial="initial"
+            animate="animate"
+            variants={svgPath}
+            d="M0,0 L0,1 Q0.5,1,1,1 L1,0"
           />
         </clipPath>
       </svg>

@@ -7,4 +7,5 @@ export { container, content, drawIcon } from './notificationVariants';
 export {
   textAnimation,
   initialAnimationContainer,
+  svgPath,
 } from './initialAnimationVariants';
