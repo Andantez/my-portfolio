@@ -3,6 +3,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
+import InitialAnimation from '../components/InitialAnimation';
 import { Grid, Heading } from '../components/ui';
 import SubHeading from '../components/ui/SubHeading';
 import {
@@ -10,10 +11,12 @@ import {
   aboutLink,
   subHeading,
 } from '../styles/SharedStyles.css';
+import type { FirstMount } from '../lib/types/global';
 
-export default function Home() {
+export default function Home({ isFirstMount }: FirstMount) {
   return (
     <>
+      {isFirstMount && <InitialAnimation />}
       <Hero />
       <Grid
         gap="small"
