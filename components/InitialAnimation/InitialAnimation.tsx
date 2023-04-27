@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimate } from 'framer-motion';
 import {
   animationContainer,
   heading,
@@ -7,32 +7,42 @@ import {
 import {
   textAnimation,
   initialAnimationContainer,
-  svgPath,
+  fadeOut,
 } from '../../lib/framerVariants';
 import { WORDS } from '../../lib/constVariables';
+import { useEffect, useState } from 'react';
 
 const InitialAnimation = () => {
+  const [scope, animate] = useAnimate();
+  const [animatePath, setAnimatePath] = useState(false);
+
+  useEffect(() => {
+    if (animatePath) {
+      animate(
+        scope.current,
+        { d: 'M0,0 L0,0.667 Q0.5,1,1,0.667 L1,0' },
+        { duration: 1, ease: [0.25, 1, 0.5, 1] }
+      );
+    }
+  }, [animatePath, animate, scope]);
+
   return (
     <motion.div
       initial="initial"
       animate="animate"
       variants={initialAnimationContainer}
       className={animationContainer}
-      style={{
-        clipPath: 'url(#clippath)',
-      }}
     >
       <svg id="svg" width="0" height="0">
         <clipPath id="clippath" clipPathUnits="objectBoundingBox">
-          <motion.path
-            initial="initial"
-            animate="animate"
-            variants={svgPath}
-            d="M0,0 L0,1 Q0.5,1,1,1 L1,0"
-          />
+          <path ref={scope} d="M0,0 L0,1 Q0.5,1,1,1 L1,0" />
         </clipPath>
       </svg>
-      <motion.h1 className={heading}>
+      <motion.h1
+        className={heading}
+        variants={fadeOut}
+        onAnimationComplete={() => setAnimatePath(true)}
+      >
         {WORDS.map((word, index) => {
           const isLastWord = index === WORDS.length - 1;
           return (

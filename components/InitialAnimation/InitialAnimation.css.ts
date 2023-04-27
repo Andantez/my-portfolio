@@ -15,6 +15,7 @@ export const animationContainer = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  clipPath: 'url(#clippath)',
 });
 
 export const heading = style({
