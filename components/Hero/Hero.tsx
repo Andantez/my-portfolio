@@ -1,4 +1,4 @@
-import { Grid, NavLink } from '../ui';
+import { Grid } from '../ui';
 import { heroParagraph } from './Hero.css';
 import {
   pageTitle,
@@ -6,6 +6,9 @@ import {
   header,
   section,
 } from '../../lib/styles/SharedStyles.css';
+import { buttonLink } from '../../styles/SharedStyles.css';
+import Link from 'next/link';
+
 const Hero = () => {
   return (
     <Grid
@@ -25,7 +28,9 @@ const Hero = () => {
         Coder, Conceptual thinker with passion for UI effects and animations who
         loves to build creative things
       </p>
-      <NavLink label="View Projects" href="/projects" textSize="md" />
+      <Link href={'/projects'} className={buttonLink}>
+        View Projects
+      </Link>
     </Grid>
   );
 };
