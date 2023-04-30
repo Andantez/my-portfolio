@@ -1,6 +1,7 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import {
   accentColor,
+  fs300,
   fs400,
   fs450,
   fs500,
@@ -120,6 +121,30 @@ export const arrowIcon = style({
     'screen and (min-width: 37.5rem)': {
       width: 65,
       height: 65,
+    },
+  },
+});
+
+export const buttonLink = style({
+  fontFamily: 'var(--ff-text)',
+  fontWeight: fwBold,
+  fontSize: fs300,
+  color: textColor,
+  backgroundColor: 'transparent',
+  padding: '.5rem 1rem',
+  borderRadius: '.25rem',
+  border: `3px solid ${textColor}`,
+  textDecoration: 'none',
+  maxWidth: 'fit-content',
+  marginLeft: '1rem',
+  '@media': {
+    'screen and (min-width: 37.5rem)': {
+      marginLeft: 0,
+      gridColumn: '3 / span 4',
+      gridRow: '3',
+    },
+    'screen and (min-width: 64rem)': {
+      fontSize: fs400,
     },
   },
 });

@@ -1,6 +1,5 @@
-import { style, globalStyle } from '@vanilla-extract/css';
-import { fwBold, textColor, fs400 } from '../../styles/vars.css';
-import { grid } from '../../lib/styles/Grid.css';
+import { style } from '@vanilla-extract/css';
+import { textColor, fs400 } from '../../styles/vars.css';
 
 export const heroParagraph = style({
   fontFamily: 'var(--ff-text)',
@@ -17,21 +16,6 @@ export const heroParagraph = style({
     },
     'screen and (min-width: 87.5rem)': {
       gridColumn: '3/ span 6',
-    },
-  },
-});
-
-globalStyle(`${grid()} a[data-link="nav"]`, {
-  maxWidth: 'fit-content',
-  marginLeft: '1rem',
-  fontWeight: fwBold,
-  textDecoration: 'underline',
-  textUnderlineOffset: 5,
-  '@media': {
-    'screen and (min-width: 37.5rem)': {
-      marginLeft: 0,
-      gridColumn: '3 / span 3',
-      gridRow: '3',
     },
   },
 });
