@@ -24,7 +24,7 @@ export const projectLinksWrapper = style({
       margin: '0',
     },
     'screen and (min-width: 87.5rem)': {
-      marginTop: '1.5rem',
+      marginTop: '1rem',
     },
   },
 });

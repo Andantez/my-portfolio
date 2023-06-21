@@ -82,13 +82,19 @@ export const flex = recipe({
       noGap: {
         gap: 0,
       },
-      small: {
+      '1': {
         gap: '1rem',
       },
-      medium: {
+      '1.5': {
+        gap: '1.5rem',
+      },
+      '2': {
         gap: '2rem',
       },
-      large: {
+      '2.5': {
+        gap: '2.5rem',
+      },
+      '3': {
         gap: '3rem',
       },
     },

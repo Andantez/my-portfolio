@@ -8,6 +8,7 @@ import {
   gap100,
   gap150,
   fs650,
+  fs500,
 } from '../../../styles/vars.css';
 
 export const projectInfo = style({
@@ -22,20 +23,21 @@ export const projectInfo = style({
     'screen and (min-width: 64rem)': {
       textAlign: 'left',
       flex: 1,
+      padding: '0 0 0 4.5rem',
     },
     'screen and (min-width: 87.5rem)': {
-      flexBasis: '45%',
+      flexBasis: '50%',
+      paddingLeft: 0,
     },
     'screen and (min-width: 90.625rem)': {
       padding: 0,
-      paddingLeft: '2rem',
     },
   },
 });
 export const projectName = style({
   fontFamily: 'var(--ff-heading)',
   fontWeight: fwBold,
-  fontSize: 'fs500',
+  fontSize: fs500,
   color: textColor,
   '@media': {
     'screen and (min-width: 87.5rem)': {
@@ -67,51 +69,32 @@ export const projectStack = style({
 });
 
 export const projectImgWrapperBase = style({
-  padding: '0 2rem',
-  position: 'relative',
-  '::before': {
-    content: '',
-    position: 'absolute',
-    inset: '-1rem 1rem 1rem',
-    zIndex: -1,
-  },
+  padding: '1rem',
   '@media': {
-    'screen and (min-width: 28.125rem)': {
-      padding: '0 2.25rem',
-      '::before': {
-        inset: '-1.25rem 1rem 1.25rem',
-      },
-    },
     'screen and (min-width: 37.5rem)': {
-      padding: '0 2.5rem',
-      '::before': {
-        inset: '-1.5rem 1rem 1.5rem',
-      },
+      padding: '1.5rem',
+      margin: '0 1rem',
     },
     'screen and (min-width: 46.875rem)': {
-      padding: '0 5rem',
-      '::before': {
-        inset: '-1.75rem 3.25rem 1.75rem',
-      },
+      margin: '0 3.25rem',
     },
     'screen and (min-width: 64rem)': {
       flex: 1,
-      padding: '0 4rem 0 2rem',
-      '::before': {
-        inset: '-2rem 2rem 2rem 0',
-      },
+      margin: '0 3.25rem 0 1rem',
+    },
+    'screen and (min-width: 75rem)': {
+      margin: '0 3.25rem 0 0rem',
     },
     'screen and (min-width: 87.5rem)': {
-      flexBasis: '55%',
+      flexBasis: '50%',
+      margin: 0,
+      padding: '1.5rem 2.5rem',
     },
   },
 });
 
 export const projectImgWrapper = styleVariants({
-  red: [projectImgWrapperBase, { '::before': { backgroundColor: '#FF4250' } }],
-  blue: [projectImgWrapperBase, { '::before': { backgroundColor: '#6A8BC2' } }],
-  darkGrey: [
-    projectImgWrapperBase,
-    { '::before': { backgroundColor: '#325055' } },
-  ],
+  red: [projectImgWrapperBase, { backgroundColor: '#FF4250' }],
+  blue: [projectImgWrapperBase, { backgroundColor: '#6A8BC2' }],
+  darkGrey: [projectImgWrapperBase, { backgroundColor: '#325055' }],
 });
