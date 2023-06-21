@@ -2,13 +2,12 @@ import { style, styleVariants } from '@vanilla-extract/css';
 
 import {
   fs300,
-  fs600,
   fwBold,
   fwLight,
   textColor,
-  fs700,
   gap100,
   gap150,
+  fs650,
 } from '../../../styles/vars.css';
 
 export const projectInfo = style({
@@ -34,13 +33,13 @@ export const projectInfo = style({
   },
 });
 export const projectName = style({
-  fontFamily: 'var(--ff-text)',
+  fontFamily: 'var(--ff-heading)',
   fontWeight: fwBold,
-  fontSize: fs600,
+  fontSize: 'fs500',
   color: textColor,
   '@media': {
     'screen and (min-width: 87.5rem)': {
-      fontSize: fs700,
+      fontSize: fs650,
     },
   },
 });

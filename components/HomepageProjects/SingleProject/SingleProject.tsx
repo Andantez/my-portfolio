@@ -18,6 +18,7 @@ type ProjectProps = {
   stack: Stack;
   image: StaticImageData;
   panelColor: keyof typeof projectImgWrapper;
+  projectNumber: '01' | '02' | '03';
 };
 
 const SingleProject = ({
@@ -26,6 +27,7 @@ const SingleProject = ({
   stack,
   image,
   panelColor,
+  projectNumber,
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
@@ -40,7 +42,9 @@ const SingleProject = ({
       paddingBottom="4rem"
     >
       <article className={projectInfo}>
-        <h2 className={projectName}>{name}</h2>
+        <h2 className={projectName}>
+          {projectNumber} {name}
+        </h2>
         <p className={projectDescription}>{description}</p>
         <ul className={projectStack}>
           {stack.map((stk) => (

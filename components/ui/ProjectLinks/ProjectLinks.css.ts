@@ -38,7 +38,7 @@ export const projectLink = style({
   textDecoration: 'none',
   padding: '.5rem 1rem',
   borderRadius: '.25rem',
-  border: `3px solid ${textColor}`,
+  border: `1px solid ${textColor}`,
   textAlign: 'center',
   width: '100%',
   '@media': {

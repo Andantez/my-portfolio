@@ -37,6 +37,7 @@ const Projects = () => {
         stack={firstProject.stack}
         image={meowPortal}
         panelColor="blue"
+        projectNumber="01"
       />
       <SingleProject
         name={secondProject.name}
@@ -44,6 +45,7 @@ const Projects = () => {
         stack={secondProject.stack}
         image={adrastos}
         panelColor="red"
+        projectNumber="02"
       />
       <SingleProject
         name={thirdProject.name}
@@ -51,6 +53,7 @@ const Projects = () => {
         stack={thirdProject.stack}
         image={tintsAndShades}
         panelColor="darkGrey"
+        projectNumber="03"
       />
     </>
   );
