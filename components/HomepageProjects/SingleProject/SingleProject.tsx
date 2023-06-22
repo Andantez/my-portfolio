@@ -31,7 +31,7 @@ const SingleProject = ({
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
-      minHeight="100%"
+      minHeight="100svh"
       alignItems="center"
       justifyContent="center"
       flexDirection="columnReverse"

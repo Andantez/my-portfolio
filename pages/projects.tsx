@@ -14,7 +14,7 @@ const Projects = () => {
     <>
       <Grid
         gap="small"
-        minHeight="100%"
+        minHeight="100svh"
         padding="smallLeftAndRight"
         columnsMediaBreakpoint={600}
         placeContent="center"
