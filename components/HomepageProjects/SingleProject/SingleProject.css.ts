@@ -6,7 +6,6 @@ import {
   fwLight,
   textColor,
   gap100,
-  gap150,
   fs650,
   fs500,
 } from '../../../styles/vars.css';
@@ -56,7 +55,7 @@ export const projectDescription = style({
 export const projectStack = style({
   display: 'flex',
   flexWrap: 'wrap',
-  gap: gap150,
+  gap: gap100,
   padding: 0,
   '@media': {
     'screen and (min-width: 46.875rem)': {
