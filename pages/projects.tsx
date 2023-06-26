@@ -29,6 +29,9 @@ const Projects = () => {
         />
         <SubHeading as="h3" cssStyling={subHeading}>
           Here are some of my most recent projects that I have built!
+          <br />
+          Each project presented a unique opportunity for me to expand my skills
+          and knowledge.
         </SubHeading>
       </Grid>
       <SingleProject
