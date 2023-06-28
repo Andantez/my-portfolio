@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 import {
   accentColor,
@@ -58,13 +58,25 @@ export const header = style({
   },
 });
 
-export const section = style({
+export const baseSection = style({
   position: 'relative',
   fontFamily: 'var(--ff-heading)',
+});
+
+export const initial = style({
   '@media': {
     'screen and (min-width: 37.5rem)': {
       paddingLeft: 0,
       gridColumn: '2/ -1',
     },
   },
+});
+
+export const center = style({
+  padding: '0 1rem',
+});
+
+export const section = styleVariants({
+  initial: [baseSection, initial],
+  center: [baseSection, center],
 });

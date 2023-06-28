@@ -37,7 +37,7 @@ const Heading = <T extends React.ElementType = 'h1'>({
   const Component = as || 'h1';
   if (accentType === 'number') {
     return (
-      <section className={section}>
+      <section className={section.initial}>
         <Component className={header} {...rest}>
           <span className={accent}>{accentText}</span> {headingText}
         </Component>
@@ -46,7 +46,7 @@ const Heading = <T extends React.ElementType = 'h1'>({
     );
   }
   return (
-    <section className={section}>
+    <section className={section.initial}>
       <h1 className={header}>
         {headingText}
         <span className={accent}>{accentText}</span>
