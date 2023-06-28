@@ -15,6 +15,14 @@ export const grid = recipe({
       '100%': { minHeight: '100%' },
       auto: { minHeight: 'auto' },
       '100vh': { minHeight: '100vh' },
+      '100svh': {
+        minHeight: '100vh',
+        '@supports': {
+          '(min-height: 100svh)': {
+            minHeight: '100svh',
+          },
+        },
+      },
     },
     padding: {
       noPadding: {

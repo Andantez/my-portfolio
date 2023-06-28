@@ -14,7 +14,7 @@ const Projects = () => {
     <>
       <Grid
         gap="small"
-        minHeight="100%"
+        minHeight="100svh"
         padding="smallLeftAndRight"
         columnsMediaBreakpoint={600}
         placeContent="center"
@@ -29,6 +29,9 @@ const Projects = () => {
         />
         <SubHeading as="h3" cssStyling={subHeading}>
           Here are some of my most recent projects that I have built!
+          <br />
+          Each project presented a unique opportunity for me to expand my skills
+          and knowledge.
         </SubHeading>
       </Grid>
       <SingleProject
@@ -37,6 +40,7 @@ const Projects = () => {
         stack={firstProject.stack}
         image={meowPortal}
         panelColor="blue"
+        projectNumber="01"
       />
       <SingleProject
         name={secondProject.name}
@@ -44,6 +48,7 @@ const Projects = () => {
         stack={secondProject.stack}
         image={adrastos}
         panelColor="red"
+        projectNumber="02"
       />
       <SingleProject
         name={thirdProject.name}
@@ -51,6 +56,7 @@ const Projects = () => {
         stack={thirdProject.stack}
         image={tintsAndShades}
         panelColor="darkGrey"
+        projectNumber="03"
       />
     </>
   );

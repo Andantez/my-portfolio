@@ -18,6 +18,7 @@ type ProjectProps = {
   stack: Stack;
   image: StaticImageData;
   panelColor: keyof typeof projectImgWrapper;
+  projectNumber: '01' | '02' | '03';
 };
 
 const SingleProject = ({
@@ -26,14 +27,15 @@ const SingleProject = ({
   stack,
   image,
   panelColor,
+  projectNumber,
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
-      minHeight="100%"
+      minHeight="100svh"
       alignItems="center"
       justifyContent="center"
       flexDirection="columnReverse"
-      gap="medium"
+      gap="1.5"
       directionMediaBreakpoint="rowAt1024"
       gapMediaBreakPoint="gap3At1400"
       paddingTop="4rem"
