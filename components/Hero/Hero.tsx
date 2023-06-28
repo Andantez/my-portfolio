@@ -18,7 +18,7 @@ const Hero = () => {
       columnsMediaBreakpoint={600}
       placeContent="center"
     >
-      <section className={section}>
+      <section className={section.initial}>
         <h1 className={header}>
           I&apos;m <span className={accent}>Kaloyan</span>, Front-End developer
         </h1>
