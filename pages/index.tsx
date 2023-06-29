@@ -9,12 +9,11 @@ import SubHeading from '../components/ui/SubHeading';
 import {
   aboutDescription,
   aboutLink,
-  // pageTitleCenter,
   projectSubHeading,
   subHeading,
 } from '../styles/SharedStyles.css';
 import type { FirstMount } from '../lib/types/global';
-import { accent, header, section } from '../lib/styles/SharedStyles.css';
+import { accent, section, withBefore } from '../lib/styles/SharedStyles.css';
 
 export default function Home({ isFirstMount }: FirstMount) {
   return (
@@ -45,14 +44,13 @@ export default function Home({ isFirstMount }: FirstMount) {
       </Grid> */}
       <Flex flexDirection="column" alignItems="center">
         <section className={section.center}>
-          <h2 className={header}>
+          <h2 className={withBefore}>
             <span className={accent}>01.</span> Some things I&apos;ve build.
-            {/* <div className={pageTitleCenter}>Projects</div> */}
           </h2>
           <p className={projectSubHeading}>
-            Here are some of my most recent projects that I have built!
-            {/* <br /> */} Each project presented a unique opportunity for me to
-            expand my skills and knowledge.
+            Here are some of my most recent projects that I have built! Each
+            project presented a unique opportunity for me to expand my skills
+            and knowledge.
           </p>
         </section>
       </Flex>
