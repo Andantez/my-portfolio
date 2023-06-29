@@ -9,6 +9,7 @@ import {
   textColor,
   fs650,
   fs600,
+  gap100,
 } from '../../styles/vars.css';
 
 export const accent = style({
@@ -73,6 +74,9 @@ export const initial = style({
 });
 
 export const center = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: gap100,
   padding: '0 1rem',
 });
 

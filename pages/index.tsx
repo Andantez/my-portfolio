@@ -4,21 +4,24 @@ import Contact from '../components/Contact';
 import Hero from '../components/Hero';
 import HomepageProjects from '../components/HomepageProjects';
 import InitialAnimation from '../components/InitialAnimation';
-import { Grid, Heading } from '../components/ui';
+import { Flex, Heading } from '../components/ui';
 import SubHeading from '../components/ui/SubHeading';
 import {
   aboutDescription,
   aboutLink,
+  // pageTitleCenter,
+  projectSubHeading,
   subHeading,
 } from '../styles/SharedStyles.css';
 import type { FirstMount } from '../lib/types/global';
+import { accent, header, section } from '../lib/styles/SharedStyles.css';
 
 export default function Home({ isFirstMount }: FirstMount) {
   return (
     <>
       {isFirstMount && <InitialAnimation />}
       <Hero />
-      <Grid
+      {/* <Grid
         gap="small"
         minHeight="100%"
         padding="smallLeftAndRight"
@@ -39,7 +42,20 @@ export default function Home({ isFirstMount }: FirstMount) {
           Each project presented a unique opportunity for me to expand my skills
           and knowledge.
         </SubHeading>
-      </Grid>
+      </Grid> */}
+      <Flex flexDirection="column" alignItems="center">
+        <section className={section.center}>
+          <h2 className={header}>
+            <span className={accent}>01.</span> Some things I&apos;ve build.
+            {/* <div className={pageTitleCenter}>Projects</div> */}
+          </h2>
+          <p className={projectSubHeading}>
+            Here are some of my most recent projects that I have built!
+            {/* <br /> */} Each project presented a unique opportunity for me to
+            expand my skills and knowledge.
+          </p>
+        </section>
+      </Flex>
       <HomepageProjects />
       <About>
         <SubHeading as="h3" cssStyling={subHeading}>
