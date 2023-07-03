@@ -64,6 +64,7 @@ export const header = style({
 export const withBefore = style({
   position: 'relative',
   textAlign: 'center',
+  color: textColor,
   '@media': {
     'screen and (min-width: 34.375rem)': {
       '::before': {

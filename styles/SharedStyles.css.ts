@@ -150,6 +150,7 @@ export const buttonLink = style({
 });
 
 export const projectSubHeading = style({
+  color: textColor,
   fontFamily: 'var(--ff-text)',
   fontSize: fs450,
   fontWeight: fwRegular,
