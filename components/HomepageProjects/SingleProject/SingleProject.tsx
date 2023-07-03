@@ -9,8 +9,9 @@ import {
   projectStack,
   projectImgWrapper,
 } from './SingleProject.css';
-import type { Stack } from '../../../data/projects';
 import { boxShadow } from '../../../styles/vars.css';
+import type { Stack } from '../../../data/projects';
+import type { MinHeight } from '../../../lib/types/global';
 
 type ProjectProps = {
   name: string;
@@ -18,6 +19,7 @@ type ProjectProps = {
   stack: Stack;
   image: StaticImageData;
   panelColor: keyof typeof projectImgWrapper;
+  minHeight?: MinHeight;
 };
 
 const SingleProject = ({
@@ -26,10 +28,11 @@ const SingleProject = ({
   stack,
   image,
   panelColor,
+  minHeight,
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
-      minHeight="100svh"
+      minHeight={minHeight}
       alignItems="center"
       justifyContent="center"
       flexDirection="columnReverse"

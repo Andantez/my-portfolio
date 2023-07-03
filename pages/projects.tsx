@@ -40,7 +40,7 @@ const Projects = () => {
         stack={firstProject.stack}
         image={meowPortal}
         panelColor="blue"
-        minHeight='100svh'
+        minHeight="100svh"
       />
       <SingleProject
         name={secondProject.name}
@@ -48,7 +48,7 @@ const Projects = () => {
         stack={secondProject.stack}
         image={adrastos}
         panelColor="red"
-        minHeight='100svh'
+        minHeight="100svh"
       />
       <SingleProject
         name={thirdProject.name}
@@ -56,7 +56,7 @@ const Projects = () => {
         stack={thirdProject.stack}
         image={tintsAndShades}
         panelColor="darkGrey"
-        minHeight='100svh'
+        minHeight="100svh"
       />
     </>
   );

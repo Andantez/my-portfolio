@@ -3,18 +3,18 @@ import { projects } from '../../data';
 import meowPortal from '../../public/meowPortal.png';
 import adrastos from '../../public/adrastos.png';
 import tintsAndShades from '../../public/tintsAndShades.png';
+import { homepageProjectsContainer } from './HomepageProjects.css';
 
 const HomepageProjects = () => {
   const [firstProject, secondProject, thirdProject] = projects;
   return (
-    <>
+    <div className={homepageProjectsContainer}>
       <SingleProject
         name={firstProject.name}
         description={firstProject.description}
         stack={firstProject.stack}
         image={meowPortal}
         panelColor="blue"
-        projectNumber="01"
       />
       <SingleProject
         name={secondProject.name}
@@ -22,7 +22,6 @@ const HomepageProjects = () => {
         stack={secondProject.stack}
         image={adrastos}
         panelColor="red"
-        projectNumber="02"
       />
       <SingleProject
         name={thirdProject.name}
@@ -30,9 +29,8 @@ const HomepageProjects = () => {
         stack={thirdProject.stack}
         image={tintsAndShades}
         panelColor="darkGrey"
-        projectNumber="03"
       />
-    </>
+    </div>
   );
 };
 
