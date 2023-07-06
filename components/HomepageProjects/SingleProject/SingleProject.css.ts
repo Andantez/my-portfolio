@@ -10,7 +10,7 @@ import {
   fs500,
 } from '../../../styles/vars.css';
 
-export const projectInfo = style({
+const base = style({
   display: 'grid',
   gap: gap100,
   padding: '0 1rem',
@@ -20,7 +20,6 @@ export const projectInfo = style({
       padding: '0 3.25rem',
     },
     'screen and (min-width: 64rem)': {
-      textAlign: 'left',
       flex: 1,
       padding: '0 0 0 4.5rem',
     },
@@ -33,6 +32,30 @@ export const projectInfo = style({
     },
   },
 });
+
+const textToLeft = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      textAlign: 'left',
+    },
+  },
+});
+
+const textToRight = style({
+  order: 1,
+  textAlign: 'right',
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      textAlign: 'right',
+    },
+  }
+})
+export const projectInfo = styleVariants({
+  left: [base, textToLeft],
+  right: [base, textToRight]
+})
+
+
 export const projectName = style({
   fontFamily: 'var(--ff-heading)',
   fontWeight: fwBold,

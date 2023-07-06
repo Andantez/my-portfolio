@@ -20,6 +20,7 @@ type ProjectProps = {
   image: StaticImageData;
   panelColor: keyof typeof projectImgWrapper;
   minHeight?: MinHeight;
+  textPosition?: 'left' | 'right'
 };
 
 const SingleProject = ({
@@ -29,6 +30,7 @@ const SingleProject = ({
   image,
   panelColor,
   minHeight,
+  textPosition = 'left'
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
@@ -42,7 +44,7 @@ const SingleProject = ({
       paddingTop="4rem"
       paddingBottom="4rem"
     >
-      <article className={projectInfo}>
+      <article className={projectInfo[textPosition]}>
         <h2 className={projectName}>{name}</h2>
         <p className={projectDescription}>{description}</p>
         <ul className={projectStack}>

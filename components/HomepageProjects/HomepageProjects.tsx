@@ -22,6 +22,7 @@ const HomepageProjects = () => {
         stack={secondProject.stack}
         image={adrastos}
         panelColor="red"
+        textPosition='right'
       />
       <SingleProject
         name={thirdProject.name}
