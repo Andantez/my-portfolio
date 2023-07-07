@@ -52,7 +52,7 @@ const SingleProject = ({
             <ProjectStack key={stk.name} name={stk.name} Icon={stk.icon} />
           ))}
         </ul>
-        <ProjectLinks liveUrl="/" sourceUrl="/" />
+        <ProjectLinks liveUrl="/" sourceUrl="/" position={textPosition} />
       </article>
       <div className={projectImgWrapper[panelColor]}>
         <BrowserMenu />

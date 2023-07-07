@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import {
   fs300,
   fwBold,
@@ -7,7 +7,7 @@ import {
   gap150,
 } from '../../../styles/vars.css';
 
-export const projectLinksWrapper = style({
+const projectLinksBase = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: gap150,
@@ -20,13 +20,31 @@ export const projectLinksWrapper = style({
       margin: '1.5rem 8rem 0',
     },
     'screen and (min-width: 64rem)': {
-      justifyContent: 'flex-start',
       margin: '0',
+      justifyContent: 'flex-start',
     },
     'screen and (min-width: 87.5rem)': {
       marginTop: '1rem',
     },
   },
+});
+const projectLinksLeft = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      justifyContent: 'flex-start',
+    },
+  },
+});
+const projectLinksRight = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      justifyContent: 'flex-end',
+    },
+  },
+});
+export const projectLinksWrapper = styleVariants({
+  left: [projectLinksBase, projectLinksLeft],
+  right: [projectLinksBase, projectLinksRight],
 });
 
 export const projectLink = style({
