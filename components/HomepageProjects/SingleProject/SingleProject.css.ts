@@ -42,10 +42,9 @@ const textToLeft = style({
 });
 
 const textToRight = style({
-  order: 1,
-  textAlign: 'right',
   '@media': {
     'screen and (min-width: 64rem)': {
+      order: 1,
       textAlign: 'right',
     },
   },
