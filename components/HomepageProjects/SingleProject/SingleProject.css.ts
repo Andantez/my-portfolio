@@ -71,6 +71,16 @@ export const projectDescription = style({
   fontSize: fs300,
   fontWeight: fwLight,
   color: textColor,
+  '@media': {
+    'screen and (min-width: 46.875rem)': {
+      background: '#EEEEEE',
+      padding: '1rem',
+      borderRadius: '.5rem',
+    },
+    'screen and (min-width: 75rem)': {
+      padding: '2rem',
+    },
+  },
 });
 
 const projectStackToRight = style({
