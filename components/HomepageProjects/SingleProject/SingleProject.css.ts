@@ -48,13 +48,12 @@ const textToRight = style({
     'screen and (min-width: 64rem)': {
       textAlign: 'right',
     },
-  }
-})
+  },
+});
 export const projectInfo = styleVariants({
   left: [base, textToLeft],
-  right: [base, textToRight]
-})
-
+  right: [base, textToRight],
+});
 
 export const projectName = style({
   fontFamily: 'var(--ff-heading)',
@@ -75,7 +74,21 @@ export const projectDescription = style({
   color: textColor,
 });
 
-export const projectStack = style({
+const projectStackToRight = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      justifyContent: 'flex-end',
+    },
+  },
+});
+const projectStackToLeft = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      justifyContent: 'flex-start',
+    },
+  },
+});
+const projectStackBase = style({
   display: 'flex',
   flexWrap: 'wrap',
   gap: gap100,
@@ -84,10 +97,12 @@ export const projectStack = style({
     'screen and (min-width: 46.875rem)': {
       justifyContent: 'center',
     },
-    'screen and (min-width: 64rem)': {
-      justifyContent: 'flex-start',
-    },
   },
+});
+
+export const projectStack = styleVariants({
+  left: [projectStackBase, projectStackToLeft],
+  right: [projectStackBase, projectStackToRight],
 });
 
 export const projectImgWrapperBase = style({
