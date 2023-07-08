@@ -3,6 +3,7 @@ import { notificationContainer } from '../components/Notification/Notification.c
 import {
   textColor,
   backgroundColor,
+  backgroundColorText,
   accentColor,
   titleTextColor,
   placeholderTextColor,
@@ -46,6 +47,7 @@ globalStyle(':root', {
   vars: {
     [textColor]: '#0D0D0D',
     [backgroundColor]: '#FFFFFF',
+    [backgroundColorText]: '#F2F4F8',
     [accentColor]: '#FF4250',
     [titleTextColor]: '#F8F8F8',
     [placeholderTextColor]: '#DBDBDB',
@@ -94,6 +96,7 @@ globalStyle('body[data-theme="light"]', {
   vars: {
     [textColor]: '#0D0D0D',
     [backgroundColor]: '#FFFFFF',
+    [backgroundColorText]: '#F2F4F8',
     [titleTextColor]: '#F8F8F8',
     [errorColor]: '#D90404',
     [notificationBG]: '#FFFFFF',
@@ -108,6 +111,7 @@ globalStyle('body[data-theme="dark"]', {
   vars: {
     [textColor]: '#FFFFFF',
     [backgroundColor]: '#0D0D0D',
+    [backgroundColorText]: '#1a1a1a',
     [titleTextColor]: '#363636',
     [errorColor]: '#FF4250',
     [notificationBG]: '#1f1f1f',

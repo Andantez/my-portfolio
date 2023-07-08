@@ -3,6 +3,7 @@ import { createVar } from '@vanilla-extract/css';
 // colour variables
 export const textColor = createVar();
 export const backgroundColor = createVar();
+export const backgroundColorText = createVar();
 export const accentColor = createVar();
 export const titleTextColor = createVar();
 export const placeholderTextColor = createVar();
