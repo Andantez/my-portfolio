@@ -22,7 +22,6 @@ const base = style({
     },
     'screen and (min-width: 64rem)': {
       flex: 1,
-      padding: '0 0 0 4.5rem',
     },
     'screen and (min-width: 87.5rem)': {
       flexBasis: '50%',
@@ -38,6 +37,7 @@ const textToLeft = style({
   '@media': {
     'screen and (min-width: 64rem)': {
       textAlign: 'left',
+      padding: '0 0 0 3rem',
     },
   },
 });
@@ -47,6 +47,7 @@ const textToRight = style({
     'screen and (min-width: 64rem)': {
       order: 1,
       textAlign: 'right',
+      padding: '0 3rem 0 0',
     },
   },
 });
@@ -116,10 +117,8 @@ export const projectStack = styleVariants({
 });
 
 export const projectImgWrapperBase = style({
-  padding: '1rem',
   '@media': {
     'screen and (min-width: 37.5rem)': {
-      padding: '1.5rem',
       margin: '0 1rem',
     },
     'screen and (min-width: 46.875rem)': {
@@ -127,7 +126,6 @@ export const projectImgWrapperBase = style({
     },
     'screen and (min-width: 64rem)': {
       flex: 1,
-      margin: '0 3.25rem 0 1rem',
     },
     'screen and (min-width: 75rem)': {
       margin: '0 3.25rem 0 0rem',
@@ -135,13 +133,25 @@ export const projectImgWrapperBase = style({
     'screen and (min-width: 87.5rem)': {
       flexBasis: '50%',
       margin: 0,
-      padding: '1.5rem 2.5rem',
     },
   },
 });
 
+const projectImgLeft = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      margin: '0 3rem 0 0',
+    },
+  },
+});
+const projectImgRight = style({
+  '@media': {
+    'screen and (min-width: 64rem)': {
+      margin: '0 0 0 3rem',
+    },
+  },
+});
 export const projectImgWrapper = styleVariants({
-  red: [projectImgWrapperBase, { backgroundColor: '#FF4250' }],
-  blue: [projectImgWrapperBase, { backgroundColor: '#6A8BC2' }],
-  darkGrey: [projectImgWrapperBase, { backgroundColor: '#325055' }],
+  left: [projectImgWrapperBase, projectImgLeft],
+  right: [projectImgWrapperBase, projectImgRight],
 });

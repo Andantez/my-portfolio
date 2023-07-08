@@ -18,7 +18,6 @@ type ProjectProps = {
   description: string;
   stack: Stack;
   image: StaticImageData;
-  panelColor: keyof typeof projectImgWrapper;
   minHeight?: MinHeight;
   textPosition?: 'left' | 'right';
 };
@@ -28,7 +27,6 @@ const SingleProject = ({
   description,
   stack,
   image,
-  panelColor,
   minHeight,
   textPosition = 'left',
 }: ProjectProps): JSX.Element => {
@@ -40,7 +38,7 @@ const SingleProject = ({
       flexDirection="columnReverse"
       gap="1.5"
       directionMediaBreakpoint="rowAt1024"
-      gapMediaBreakPoint="gap3At1400"
+      gapMediaBreakPoint="gap3At1024"
       paddingTop="4rem"
       paddingBottom="4rem"
     >
@@ -54,7 +52,7 @@ const SingleProject = ({
         </ul>
         <ProjectLinks liveUrl="/" sourceUrl="/" position={textPosition} />
       </article>
-      <div className={projectImgWrapper[panelColor]}>
+      <div className={projectImgWrapper[textPosition]}>
         <BrowserMenu />
         <Image
           src={image}
