@@ -39,6 +39,9 @@ const textToLeft = style({
       textAlign: 'left',
       padding: '0 0 0 3rem',
     },
+    'screen and (min-width: 87.5rem)': {
+      marginRight: '.75rem',
+    },
   },
 });
 
@@ -48,6 +51,9 @@ const textToRight = style({
       order: 1,
       textAlign: 'right',
       padding: '0 3rem 0 0',
+    },
+    'screen and (min-width: 87.5rem)': {
+      marginLeft: '.75rem'
     },
   },
 });
@@ -139,12 +145,18 @@ const projectImgLeft = style({
     'screen and (min-width: 64rem)': {
       margin: '0 3rem 0 0',
     },
+    'screen and (min-width: 87.5rem)': {
+      marginLeft: '.75rem',
+    },
   },
 });
 const projectImgRight = style({
   '@media': {
     'screen and (min-width: 64rem)': {
       margin: '0 0 0 3rem',
+    },
+    'screen and (min-width: 87.5rem)': {
+      marginRight: '.75rem',
     },
   },
 });
