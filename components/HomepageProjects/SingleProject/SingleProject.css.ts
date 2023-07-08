@@ -8,6 +8,7 @@ import {
   gap100,
   fs650,
   fs500,
+  backgroundColorText,
 } from '../../../styles/vars.css';
 
 const base = style({
@@ -73,7 +74,7 @@ export const projectDescription = style({
   color: textColor,
   '@media': {
     'screen and (min-width: 46.875rem)': {
-      background: '#EEEEEE',
+      background: backgroundColorText,
       padding: '1rem',
       borderRadius: '.5rem',
     },
