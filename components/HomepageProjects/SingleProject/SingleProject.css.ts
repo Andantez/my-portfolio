@@ -127,9 +127,6 @@ export const projectImgWrapperBase = style({
     'screen and (min-width: 64rem)': {
       flex: 1,
     },
-    'screen and (min-width: 75rem)': {
-      margin: '0 3.25rem 0 0rem',
-    },
     'screen and (min-width: 87.5rem)': {
       flexBasis: '50%',
       margin: 0,
