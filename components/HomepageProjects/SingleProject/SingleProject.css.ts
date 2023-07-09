@@ -54,7 +54,7 @@ const textToRight = style({
       padding: '0 3rem 0 0',
     },
     'screen and (min-width: 87.5rem)': {
-      marginLeft: '.75rem'
+      marginLeft: '.75rem',
     },
   },
 });
