@@ -9,6 +9,7 @@ import {
   fs650,
   fs500,
   backgroundColorText,
+  boxShadowSimple,
 } from '../../../styles/vars.css';
 
 const base = style({
@@ -123,6 +124,9 @@ export const projectStack = styleVariants({
 });
 
 export const projectImgWrapperBase = style({
+  boxShadow: boxShadowSimple,
+  borderTopLeftRadius: '.5rem',
+  borderTopRightRadius: '.5rem',
   '@media': {
     'screen and (min-width: 37.5rem)': {
       margin: '0 1rem',

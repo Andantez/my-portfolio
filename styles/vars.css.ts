@@ -48,4 +48,5 @@ export const gap500 = createVar();
 
 // box shadow
 export const boxShadow = createVar();
+export const boxShadowSimple = createVar();
 export const shadowColor = createVar();

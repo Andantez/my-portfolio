@@ -31,6 +31,7 @@ import {
   fs800,
   fs900,
   boxShadow,
+  boxShadowSimple,
   shadowColor,
   gap100,
   gap150,
@@ -88,6 +89,7 @@ globalStyle(':root', {
     0px 1.7px 1.6px -1.9px hsl(${shadowColor} / 0.32),
     0px 3.9px 3.6px -2.8px hsl(${shadowColor} / 0.26),
     -0.1px 8.1px 7.5px -3.8px hsl(${shadowColor} / 0.2);`,
+    [boxShadowSimple]: `0 0 25px -5px hsl(${shadowColor} / 0.44)`,
     [shadowColor]: '0deg 0% 63%',
   },
 });
