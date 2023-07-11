@@ -6,12 +6,10 @@ import {
   fs450,
   fs500,
   fs600,
-  fs800,
   fwBold,
   fwLight,
   fwRegular,
   textColor,
-  titleTextColor,
 } from './vars.css';
 
 // TODO: rename the variables.
@@ -152,25 +150,18 @@ export const buttonLink = style({
 });
 
 export const projectSubHeading = style({
+  color: textColor,
   fontFamily: 'var(--ff-text)',
-  fontSize: fs450,
+  fontSize: fs400,
   fontWeight: fwRegular,
-  marginLeft: '1rem',
-});
-
-export const pageTitleCenter = style({
-  display: 'none',
+  textAlign: 'center',
   '@media': {
-    'screen and (min-width: 34.375rem)': {
-      display: 'block',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      zIndex: -1,
-      fontSize: fs800,
-      lineHeight: 0.875,
-      fontWeight: fwBold,
-      color: titleTextColor,
+    'screen and (min-width: 46.875rem)': {
+      maxWidth: '70vw',
+    },
+    'screen and (min-width: 87.5rem)': {
+      maxWidth: '50vw',
+      fontSize: fs500,
     },
   },
 });

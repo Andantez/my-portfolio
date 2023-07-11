@@ -9,16 +9,17 @@ import {
   projectStack,
   projectImgWrapper,
 } from './SingleProject.css';
-import type { Stack } from '../../../data/projects';
 import { boxShadow } from '../../../styles/vars.css';
+import type { Stack } from '../../../data/projects';
+import type { MinHeight } from '../../../lib/types/global';
 
 type ProjectProps = {
   name: string;
   description: string;
   stack: Stack;
   image: StaticImageData;
-  panelColor: keyof typeof projectImgWrapper;
-  projectNumber: '01' | '02' | '03';
+  minHeight?: MinHeight;
+  textPosition?: 'left' | 'right';
 };
 
 const SingleProject = ({
@@ -26,32 +27,32 @@ const SingleProject = ({
   description,
   stack,
   image,
-  panelColor,
-  projectNumber,
+  minHeight,
+  textPosition = 'left',
 }: ProjectProps): JSX.Element => {
   return (
     <Flex
-      minHeight="100svh"
+      minHeight={minHeight}
       alignItems="center"
       justifyContent="center"
       flexDirection="columnReverse"
       gap="1.5"
       directionMediaBreakpoint="rowAt1024"
-      gapMediaBreakPoint="gap3At1400"
+      gapMediaBreakPoint="gap3At1024"
       paddingTop="4rem"
       paddingBottom="4rem"
     >
-      <article className={projectInfo}>
+      <article className={projectInfo[textPosition]}>
         <h2 className={projectName}>{name}</h2>
         <p className={projectDescription}>{description}</p>
-        <ul className={projectStack}>
+        <ul className={projectStack[textPosition]}>
           {stack.map((stk) => (
             <ProjectStack key={stk.name} name={stk.name} Icon={stk.icon} />
           ))}
         </ul>
-        <ProjectLinks liveUrl="/" sourceUrl="/" />
+        <ProjectLinks liveUrl="/" sourceUrl="/" position={textPosition} />
       </article>
-      <div className={projectImgWrapper[panelColor]}>
+      <div className={projectImgWrapper[textPosition]}>
         <BrowserMenu />
         <Image
           src={image}
