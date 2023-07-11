@@ -16,12 +16,15 @@ export const homepageProjectsContainer = style({
   padding: '0 1rem',
   borderRadius: '.5rem',
   '@media': {
+    'screen and (min-width: 34.375rem)': {
+      marginBottom: '5rem',
+    },
     'screen and (min-width: 46.875rem)': {
       padding: 0,
-      margin: '5rem 2.5rem 0',
+      margin: '5rem 2.5rem 5rem',
     },
     'screen and (min-width: 87.5rem)': {
-      margin: '7rem auto 0',
+      margin: '8rem auto 5rem',
       padding: '8rem 6rem',
       gap: '10rem',
     },

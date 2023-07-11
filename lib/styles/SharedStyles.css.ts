@@ -114,6 +114,7 @@ export const center = style({
   '@media': {
     'screen and (min-width: 34.375rem)': {
       gap: gap150,
+      marginTop: '5rem',
     },
     'screen and (min-width: 64rem)': {
       gap: gap200,
