@@ -22,8 +22,8 @@ export const homepageProjectsContainer = style({
     },
     'screen and (min-width: 87.5rem)': {
       margin: '7rem auto 0',
-      padding: '7rem 5rem',
-      gap: '7.5rem',
+      padding: '8rem 6rem',
+      gap: '10rem',
     },
   },
 });
