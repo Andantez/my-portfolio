@@ -1,4 +1,8 @@
-import { aboutDescription, aboutLink, subHeading } from '../../styles/SharedStyles.css';
+import {
+  aboutDescription,
+  aboutLink,
+  subHeading,
+} from '../../styles/SharedStyles.css';
 import { Grid, Heading } from '../ui';
 import SubHeading from '../ui/SubHeading';
 import Link from 'next/link';
