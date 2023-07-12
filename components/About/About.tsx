@@ -1,9 +1,9 @@
+import { aboutDescription, aboutLink, subHeading } from '../../styles/SharedStyles.css';
 import { Grid, Heading } from '../ui';
+import SubHeading from '../ui/SubHeading';
+import Link from 'next/link';
 
-type AboutProps = {
-  children: React.ReactNode;
-};
-const About = ({ children }: AboutProps): JSX.Element => {
+const About = (): JSX.Element => {
   return (
     <Grid
       minHeight="100%"
@@ -20,7 +20,18 @@ const About = ({ children }: AboutProps): JSX.Element => {
         title="About"
         headingText="My bio."
       />
-      {children}
+      <SubHeading as="h3" cssStyling={subHeading}>
+        My love for computers and inquisitive mind stems from a young age
+      </SubHeading>
+      <p className={aboutDescription}>
+        I loved playing games as a child and developed interest in computers in
+        general (which got me in trouble with my parents all the time) . Much to
+        their annoyance my passion grew stronger and deeper. In recent years I
+        had the opportunity to pursue my passion in web development.
+      </p>
+      <Link href="/about" className={aboutLink}>
+        More About Me
+      </Link>
     </Grid>
   );
 };
