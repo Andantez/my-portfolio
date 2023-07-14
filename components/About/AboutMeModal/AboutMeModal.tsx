@@ -1,8 +1,9 @@
-import { modalContainer } from './MoreAboutMe.css';
+import { modalContainer } from "./AboutMeModal.css";
+
 type MoreAboutMeProps = {
   handleClick: () => void;
 };
-const MoreAboutMe = ({ handleClick }: MoreAboutMeProps) => {
+const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
     <div className={modalContainer}>
       <h1>More About Me</h1>
@@ -11,4 +12,4 @@ const MoreAboutMe = ({ handleClick }: MoreAboutMeProps) => {
   );
 };
 
-export default MoreAboutMe;
+export default AboutMeModal;

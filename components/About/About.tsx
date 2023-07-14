@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { aboutDescription, subHeading } from '../../styles/SharedStyles.css';
 import { Button, Grid, Heading } from '../ui';
 import SubHeading from '../ui/SubHeading';
-import MoreAboutMe from './MoreAboutMe';
+import AboutMeModal from './AboutMeModal';
 
 const About = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,7 +12,7 @@ const About = (): JSX.Element => {
   };
   return (
     <>
-      {isModalOpen && <MoreAboutMe handleClick={handleClick} />}
+      {isModalOpen && <AboutMeModal handleClick={handleClick} />}
       <Grid
         minHeight="100%"
         placeContent="center"
