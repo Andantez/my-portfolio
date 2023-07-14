@@ -1,1 +1,1 @@
-export { default} from './AboutMeModal'
+export { default } from './AboutMeModal';
