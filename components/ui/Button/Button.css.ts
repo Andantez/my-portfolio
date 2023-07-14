@@ -45,6 +45,7 @@ const btnWIthoutBorder = style({
   fontSize: fs400,
   marginLeft: '2rem',
   border: 'none',
+  width: 'max-content',
   '::after': {
     content: '',
     position: 'absolute',
