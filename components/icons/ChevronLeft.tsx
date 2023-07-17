@@ -1,8 +1,8 @@
 import { textColor } from '../../styles/vars.css';
 
 const ChevronLeft = ({
-  width = 25,
-  height = 25,
+  width = 23,
+  height = 23,
   ...rest
 }: React.SVGProps<SVGSVGElement>) => {
   return (

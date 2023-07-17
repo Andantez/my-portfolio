@@ -3,6 +3,8 @@ import {
   articleItem,
   articlesWrapper,
   articleWrapper,
+  backBtn,
+  backWrapper,
   contentContainer,
   mainHeading,
   modalContainer,
@@ -10,6 +12,7 @@ import {
 } from './AboutMeModal.css';
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
+import ChevronLeft from '../../icons/ChevronLeft';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -18,6 +21,14 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
     <div className={modalContainer}>
       <aside className={contentContainer}>
+        <div className={backWrapper}>
+          <button type="button" className={backBtn.base} onClick={handleClick}>
+            <ChevronLeft />
+          </button>
+          <button type="button" className={backBtn.text} onClick={handleClick}>
+            Back
+          </button>
+        </div>
         <h1 className={mainHeading}>
           Hello I&apos;m Kaloyan Atanasov, Front-End developer.
           <br /> I love problem solving and I like making cool interactive

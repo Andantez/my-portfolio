@@ -1,10 +1,12 @@
-import { style } from '@vanilla-extract/css';
+import { style, styleVariants } from '@vanilla-extract/css';
 import {
   accentColor,
   backgroundColor,
+  fs200,
   fs400,
   fs450,
   fs500,
+  fwBold,
   fwLight,
   gap150,
   gap200,
@@ -86,4 +88,26 @@ export const articleWrapper = style({
 
 export const articleItem = style({
   fontWeight: fwLight,
+});
+
+export const backWrapper = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  borderBottom: `1px solid #eaeaea`,
+  paddingBottom: '.75rem',
+});
+
+const backBtnBase = style({
+  border: 'none',
+  background: 'transparent',
+});
+const backBtnText = style({
+  fontFamily: 'var(--ff-text)',
+  fontWeight: fwBold,
+  fontSize: fs200,
+});
+export const backBtn = styleVariants({
+  base: [backBtnBase],
+  text: [backBtnBase, backBtnText],
 });
