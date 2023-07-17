@@ -25,7 +25,7 @@ export const modalContainer = style({
 export const contentContainer = style({
   display: 'grid',
   gap: gap200,
-  padding: '7rem 2rem 3rem',
+  padding: '6rem 2rem 3rem',
   background: backgroundColor,
 });
 
