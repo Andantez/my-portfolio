@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useDisableScroll from '../../lib/hooks/useDisableScroll';
 import { aboutDescription, subHeading } from '../../styles/SharedStyles.css';
 import { Button, Grid, Heading } from '../ui';
 import SubHeading from '../ui/SubHeading';
@@ -6,6 +7,7 @@ import AboutMeModal from './AboutMeModal';
 
 const About = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  useDisableScroll(isModalOpen);
 
   const handleClick = () => {
     setIsModalOpen(!isModalOpen);
