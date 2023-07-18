@@ -29,7 +29,7 @@ const Notification = ({ hideNotification }: NotificationProps): JSX.Element => {
         <p className={notificationParagraph}>
           I&apos;ll get back to you as soon as possible.
         </p>
-        <Button type="button" handleClick={hideNotification}>
+        <Button type="button" handleClick={hideNotification} variant="withBorder">
           Okay
         </Button>
       </motion.div>
