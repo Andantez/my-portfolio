@@ -15,10 +15,10 @@ import {
 
 export const modalContainer = style({
   position: 'fixed',
-  background: 'rgb(25, 25, 25, .5)',
   inset: 0,
   zIndex: 1,
   overflowY: 'auto',
+  background: 'rgb(25, 25, 25, .8)',
 });
 
 export const contentContainer = style({
