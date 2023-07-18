@@ -13,6 +13,7 @@ import {
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
 import ChevronLeft from '../../icons/ChevronLeft';
+import Link from 'next/link';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -71,11 +72,14 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             </ul>
           </article>
         </div>
-        <div>
-          <p>Email</p>
-          <p>Github</p>
-          <p>LinkedIn</p>
-        </div>
+        <footer>
+          {/* might change text to icons */}
+          <Link href="mailto:kaloyanatanasov83@gmail.com">Email</Link>
+          <Link href="https://github.com/Andantez" target="_blank">Github</Link>
+          <Link href="https://www.linkedin.com/in/kaloyan-boyanov-atanasov/" target="_blank">
+            Linkedin
+          </Link>
+        </footer>
       </aside>
     </div>
   );
