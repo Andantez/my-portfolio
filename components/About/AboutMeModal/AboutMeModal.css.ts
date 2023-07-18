@@ -113,6 +113,7 @@ const backBtnText = style({
   fontFamily: 'var(--ff-text)',
   fontWeight: fwBold,
   fontSize: fs200,
+  color: textColor,
 });
 export const backBtn = styleVariants({
   base: [backBtnBase],
