@@ -19,7 +19,7 @@ type MoreAboutMeProps = {
 };
 const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
-    <div className={modalContainer}>
+    <div className={modalContainer} onClick={handleClick}>
       <aside className={contentContainer}>
         <div className={backWrapper}>
           <button type="button" className={backBtn.base} onClick={handleClick}>
