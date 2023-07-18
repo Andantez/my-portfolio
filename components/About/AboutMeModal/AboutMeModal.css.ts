@@ -5,7 +5,6 @@ import {
   fs200,
   fs400,
   fs450,
-  fs500,
   fwBold,
   fwLight,
   gap150,
@@ -24,9 +23,20 @@ export const modalContainer = style({
 
 export const contentContainer = style({
   display: 'grid',
+  placeContent: 'flex-start',
   gap: gap200,
   padding: '6rem 2rem 3rem',
   background: backgroundColor,
+  minHeight: '100%',
+  marginLeft: 'auto',
+  '@media': {
+    'screen and (min-width: 46.875rem)': {
+      width: 'min(75vw, 38rem)',
+    },
+    'screen and (min-width: 64rem)': {
+      padding: '2rem 2rem 3rem',
+    },
+  },
 });
 
 export const articlesWrapper = style({
@@ -54,12 +64,8 @@ export const mainHeading = style({
 
 export const articleHeader = style({
   fontSize: fs400,
-  '@media': {
-    'screen and (min-width: 75rem)': {
-      fontSize: fs500,
-    },
-  },
 });
+
 export const skillsUL = style({
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
@@ -101,6 +107,7 @@ export const backWrapper = style({
 const backBtnBase = style({
   border: 'none',
   background: 'transparent',
+  cursor: 'pointer',
 });
 const backBtnText = style({
   fontFamily: 'var(--ff-text)',
