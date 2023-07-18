@@ -20,7 +20,7 @@ type MoreAboutMeProps = {
 const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
     <div className={modalContainer} onClick={handleClick}>
-      <aside className={contentContainer}>
+      <aside className={contentContainer} onClick={(e) => e.stopPropagation()}>
         <div className={backWrapper}>
           <button type="button" className={backBtn.base} onClick={handleClick}>
             <ChevronLeft />
@@ -71,7 +71,11 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             </ul>
           </article>
         </div>
-        <button onClick={handleClick}>CLOSE</button>
+        <div>
+          <p>Email</p>
+          <p>Github</p>
+          <p>LinkedIn</p>
+        </div>
       </aside>
     </div>
   );
