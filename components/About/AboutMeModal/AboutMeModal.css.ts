@@ -9,6 +9,8 @@ import {
   fwLight,
   gap150,
   gap200,
+  modalBG,
+  modalTextColor,
   textColor,
   titleTextColor,
 } from '../../../styles/vars.css';
@@ -22,10 +24,11 @@ export const modalContainer = style({
 });
 
 export const contentContainer = style({
+  position: 'relative',
   display: 'grid',
   placeContent: 'flex-start',
   gap: gap200,
-  padding: '6rem 2rem 3rem',
+  padding: '6rem 2rem 6rem',
   background: backgroundColor,
   minHeight: '100%',
   marginLeft: 'auto',
@@ -34,7 +37,7 @@ export const contentContainer = style({
       width: 'min(75vw, 38rem)',
     },
     'screen and (min-width: 64rem)': {
-      padding: '2rem 2rem 3rem',
+      padding: '2rem 2rem 6rem',
     },
   },
 });
@@ -119,3 +122,22 @@ export const backBtn = styleVariants({
   base: [backBtnBase],
   text: [backBtnBase, backBtnText],
 });
+
+export const socialsFooter = style({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  right: 0,
+  padding: '1rem',
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+  gap: gap150,
+  fontFamily: 'var(--ff-text)',
+  background: modalBG,
+});
+
+export const socialLink = style({
+  textDecoration: 'none',
+  color: modalTextColor,
+})

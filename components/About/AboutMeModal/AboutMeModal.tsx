@@ -9,11 +9,15 @@ import {
   mainHeading,
   modalContainer,
   skillsUL,
+  socialLink,
+  socialsFooter,
 } from './AboutMeModal.css';
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
 import ChevronLeft from '../../icons/ChevronLeft';
 import Link from 'next/link';
+import { Github, Linkedin } from '../../icons';
+import Email from '../../icons/Email';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -72,12 +76,26 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             </ul>
           </article>
         </div>
-        <footer>
-          {/* might change text to icons */}
-          <Link href="mailto:kaloyanatanasov83@gmail.com">Email</Link>
-          <Link href="https://github.com/Andantez" target="_blank">Github</Link>
-          <Link href="https://www.linkedin.com/in/kaloyan-boyanov-atanasov/" target="_blank">
-            Linkedin
+        <footer className={socialsFooter}>
+          <Link
+            href="mailto:kaloyanatanasov83@gmail.com"
+            className={socialLink}
+          >
+            <Email />
+          </Link>
+          <Link
+            href="https://github.com/Andantez"
+            target="_blank"
+            className={socialLink}
+          >
+            <Github screenType="mobile" width={25} height={25} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/kaloyan-boyanov-atanasov/"
+            target="_blank"
+            className={socialLink}
+          >
+            <Linkedin screenType="mobile" width={25} height={25} />
           </Link>
         </footer>
       </aside>
