@@ -74,6 +74,11 @@ export const skillsUL = style({
   gridTemplateColumns: '1fr 1fr',
   gap: '.75rem',
   padding: 0,
+  '@media': {
+    'screen and (min-width: 34.375rem)': {
+      gridTemplateColumns: 'repeat(3, 1fr)'
+    }
+  }
 });
 
 export const articleWrapper = style({
