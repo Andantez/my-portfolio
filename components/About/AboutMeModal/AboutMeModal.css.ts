@@ -137,7 +137,6 @@ export const socialsFooter = style({
   padding: '1rem',
   display: 'flex',
   justifyContent: 'center',
-  alignContent: 'center',
   gap: gap150,
   fontFamily: 'var(--ff-text)',
   background: modalBG,
