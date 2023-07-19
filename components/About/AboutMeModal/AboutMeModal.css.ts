@@ -20,7 +20,8 @@ export const modalContainer = style({
   inset: 0,
   zIndex: 1,
   overflowY: 'auto',
-  background: 'rgb(25, 25, 25, .8)',
+  background: 'rgb(48, 48, 48, .8)',
+  backdropFilter: 'blur(8px)',
 });
 
 export const contentContainer = style({
