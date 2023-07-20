@@ -77,9 +77,9 @@ export const skillsUL = style({
   padding: 0,
   '@media': {
     'screen and (min-width: 34.375rem)': {
-      gridTemplateColumns: 'repeat(3, 1fr)'
-    }
-  }
+      gridTemplateColumns: 'repeat(3, 1fr)',
+    },
+  },
 });
 
 export const articleWrapper = style({
@@ -145,4 +145,4 @@ export const socialsFooter = style({
 export const socialLink = style({
   textDecoration: 'none',
   color: modalTextColor,
-})
+});

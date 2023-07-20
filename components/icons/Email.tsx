@@ -1,4 +1,4 @@
-import { modalTextColor } from "../../styles/vars.css";
+import { modalTextColor } from '../../styles/vars.css';
 
 const Email = ({ width = 25, height = 25 }: React.SVGProps<SVGSVGElement>) => {
   return (
