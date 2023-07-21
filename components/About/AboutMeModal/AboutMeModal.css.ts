@@ -33,6 +33,7 @@ export const contentContainer = style({
   background: backgroundColor,
   minHeight: '100%',
   marginLeft: 'auto',
+  clipPath: 'url(#clipPath2)',
   '@media': {
     'screen and (min-width: 46.875rem)': {
       width: 'min(75vw, 38rem)',

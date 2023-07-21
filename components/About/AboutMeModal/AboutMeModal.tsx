@@ -18,13 +18,66 @@ import ChevronLeft from '../../icons/ChevronLeft';
 import Link from 'next/link';
 import { Github, Linkedin } from '../../icons';
 import Email from '../../icons/Email';
+import { motion, Variants } from 'framer-motion';
 
+const containerVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      duration: 0.4,
+      staggerChildren: 0.07,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren',
+      duration: 0.25,
+      ease: 'easeIn',
+      staggerChildren: 0.06,
+      staggerDirection: -1,
+    },
+  },
+};
+const svgVariant: Variants = {
+  initial: {
+    d: 'M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0',
+
+  },
+  animate: {
+    d: 'M0,0 L1,0 L1,1 L0,1 C-0.211,0.75,-0.211,0.25,0,0',
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+  exit: {},
+};
 type MoreAboutMeProps = {
   handleClick: () => void;
 };
 const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
-    <div className={modalContainer} onClick={handleClick}>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={containerVariants}
+      className={modalContainer}
+      onClick={handleClick}
+    >
+      <svg id="svg" width="0" height="0">
+        <clipPath id="clipPath2" clipPathUnits="objectBoundingBox">
+          <motion.path
+            variants={svgVariant}
+            d="M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0"
+          />
+        </clipPath>
+      </svg>
       <aside className={contentContainer} onClick={(e) => e.stopPropagation()}>
         <div className={backWrapper}>
           <button type="button" className={backBtn.base} onClick={handleClick}>
@@ -99,7 +152,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
           </Link>
         </footer>
       </aside>
-    </div>
+    </motion.div>
   );
 };
 

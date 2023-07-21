@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import useDisableScroll from '../../lib/hooks/useDisableScroll';
 import { aboutDescription, subHeading } from '../../styles/SharedStyles.css';
@@ -14,7 +15,9 @@ const About = (): JSX.Element => {
   };
   return (
     <>
-      {isModalOpen && <AboutMeModal handleClick={handleClick} />}
+      <AnimatePresence>
+        {isModalOpen && <AboutMeModal handleClick={handleClick} />}
+      </AnimatePresence>
       <Grid
         minHeight="100%"
         placeContent="center"
