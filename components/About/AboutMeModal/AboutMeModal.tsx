@@ -28,7 +28,8 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       when: 'beforeChildren',
-      duration: 0.4,
+      duration: 0.2,
+      ease: 'easeInOut',
       staggerChildren: 0.07,
     },
   },
