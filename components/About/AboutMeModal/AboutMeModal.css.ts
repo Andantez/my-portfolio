@@ -85,8 +85,6 @@ export const skillsUL = style({
 
 export const articleWrapper = style({
   position: 'relative',
-  display: 'grid',
-  gap: '0.75rem',
   color: textColor,
   paddingLeft: '1.5rem',
   '::before': {
@@ -100,6 +98,10 @@ export const articleWrapper = style({
     borderRadius: '50%',
     border: `2px solid ${accentColor}`,
   },
+});
+export const articleContentWrapper = style({
+  display: 'grid',
+  gap: '0.75rem',
 });
 
 export const articleItem = style({
