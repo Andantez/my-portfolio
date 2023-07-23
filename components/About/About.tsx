@@ -8,14 +8,15 @@ import AboutMeModal from './AboutMeModal';
 const About = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
   const handleClick = () => {
     setIsModalOpen(!isModalOpen);
   };
   return (
     <>
       <AnimatePresence>
-        {isModalOpen && <AboutMeModal handleClick={handleClick} isOpen={isModalOpen} />}
+        {isModalOpen && (
+          <AboutMeModal handleClick={handleClick} isOpen={isModalOpen} />
+        )}
       </AnimatePresence>
       <Grid
         minHeight="100%"
