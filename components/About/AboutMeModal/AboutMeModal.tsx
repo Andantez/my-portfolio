@@ -20,6 +20,7 @@ import Link from 'next/link';
 import { Github, Linkedin } from '../../icons';
 import Email from '../../icons/Email';
 import { motion, Variants } from 'framer-motion';
+import useDisableScroll from '../../../lib/hooks/useDisableScroll';
 
 const containerVariants: Variants = {
   initial: {
@@ -94,8 +95,8 @@ const itemContainerVariant: Variants = {
     transition: {
       staggerChildren: 0.06,
       staggerDirection: -1,
-    }
-  }
+    },
+  },
 };
 
 const navigationVariant: Variants = {
@@ -121,8 +122,11 @@ const navigationVariant: Variants = {
 
 type MoreAboutMeProps = {
   handleClick: () => void;
+  isOpen: boolean;
 };
-const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
+const AboutMeModal = ({ handleClick, isOpen }: MoreAboutMeProps) => {
+  useDisableScroll(isOpen);
+
   return (
     <motion.div
       initial="initial"
