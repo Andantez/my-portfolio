@@ -37,10 +37,6 @@ const containerVariants: Variants = {
     opacity: 0,
     transition: {
       when: 'afterChildren',
-      duration: 0.25,
-      ease: 'easeIn',
-      staggerChildren: 0.06,
-      staggerDirection: -1,
     },
   },
 };
@@ -51,11 +47,20 @@ const svgVariant: Variants = {
   animate: {
     d: 'M0,0 L1,0 L1,1 L0,1 C-0.211,0.75,-0.211,0.25,0,0',
     transition: {
-      duration: 0.4,
-      ease: 'easeOut',
+      type: 'spring',
+      stiffness: 55,
+      restDelta: 2,
     },
   },
-  exit: {},
+  exit: {
+    d: 'M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0',
+    transition: {
+      delay: 0.2,
+      type: 'spring',
+      stiffness: 300,
+      damping: 40,
+    },
+  },
 };
 
 const itemVariant: Variants = {
@@ -70,13 +75,27 @@ const itemVariant: Variants = {
       y: { stiffness: 1000, velocity: -100 },
     },
   },
+  exit: {
+    opacity: 0,
+    y: 50,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
 };
+
 const itemContainerVariant: Variants = {
   animate: {
     transition: {
       staggerChildren: 0.07,
     },
   },
+  exit: {
+    transition: {
+      staggerChildren: 0.06,
+      staggerDirection: -1,
+    }
+  }
 };
 
 const navigationVariant: Variants = {
@@ -89,6 +108,13 @@ const navigationVariant: Variants = {
       ease: 'easeOut',
       duration: 0.4,
       delay: 0.4,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.3,
     },
   },
 };
