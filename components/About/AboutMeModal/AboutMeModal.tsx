@@ -20,7 +20,6 @@ import Link from 'next/link';
 import { Github, Linkedin } from '../../icons';
 import Email from '../../icons/Email';
 import { motion, Variants } from 'framer-motion';
-import useDisableScroll from '../../../lib/hooks/useDisableScroll';
 
 const containerVariants: Variants = {
   initial: {
@@ -125,7 +124,6 @@ type MoreAboutMeProps = {
   isOpen: boolean;
 };
 const AboutMeModal = ({ handleClick, isOpen }: MoreAboutMeProps) => {
-  useDisableScroll(isOpen);
 
   return (
     <motion.div
