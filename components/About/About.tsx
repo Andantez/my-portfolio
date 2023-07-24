@@ -8,17 +8,21 @@ import AboutMeModal from './AboutMeModal';
 
 const About = (): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  useDisableScroll(isModalOpen);
-  
+  const [isScrollDisabled, setIsScrollDisabled] = useState(false);
+
+  useDisableScroll(isScrollDisabled);
+
   const handleClick = () => {
     setIsModalOpen(!isModalOpen);
+    setIsScrollDisabled(true);
+  };
+  const handleScroll = () => {
+    setIsScrollDisabled(false);
   };
   return (
     <>
-      <AnimatePresence>
-        {isModalOpen && (
-          <AboutMeModal handleClick={handleClick} />
-        )}
+      <AnimatePresence onExitComplete={handleScroll}>
+        {isModalOpen && <AboutMeModal handleClick={handleClick} />}
       </AnimatePresence>
       <Grid
         minHeight="100%"
