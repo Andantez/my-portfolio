@@ -17,7 +17,7 @@ const About = (): JSX.Element => {
     <>
       <AnimatePresence>
         {isModalOpen && (
-          <AboutMeModal handleClick={handleClick} isOpen={isModalOpen} />
+          <AboutMeModal handleClick={handleClick} />
         )}
       </AnimatePresence>
       <Grid

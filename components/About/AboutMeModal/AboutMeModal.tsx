@@ -121,10 +121,8 @@ const navigationVariant: Variants = {
 
 type MoreAboutMeProps = {
   handleClick: () => void;
-  isOpen: boolean;
 };
-const AboutMeModal = ({ handleClick, isOpen }: MoreAboutMeProps) => {
-
+const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
   return (
     <motion.div
       initial="initial"
