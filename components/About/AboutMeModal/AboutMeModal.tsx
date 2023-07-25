@@ -107,7 +107,7 @@ const navigationVariant: Variants = {
     transition: {
       ease: 'easeOut',
       duration: 0.4,
-      delay: 0.4,
+      delay: 0.6,
     },
   },
   exit: {
