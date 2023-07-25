@@ -21,3 +21,4 @@ export { default as CSS } from './CSS';
 export { default as JavaScript } from './JavaScript';
 export { default as Check } from './Check';
 export { default as Arrow } from './Arrow';
+export { default as Git } from './Git';
