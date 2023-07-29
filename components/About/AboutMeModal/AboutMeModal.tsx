@@ -18,105 +18,16 @@ import { ProjectStack } from '../../ui';
 import Link from 'next/link';
 import { Github, Linkedin, ChevronRight } from '../../icons';
 import Email from '../../icons/Email';
-import { motion, Variants } from 'framer-motion';
-
-const containerVariants: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      duration: 0.2,
-      ease: 'easeInOut',
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      when: 'afterChildren',
-    },
-  },
-};
-const svgVariant: Variants = {
-  initial: {
-    d: 'M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0',
-  },
-  animate: {
-    d: 'M0,0 L1,0 L1,1 L0,1 C-0.211,0.75,-0.211,0.25,0,0',
-    transition: {
-      type: 'spring',
-      stiffness: 55,
-      restDelta: 2,
-    },
-  },
-  exit: {
-    d: 'M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0',
-    transition: {
-      delay: 0.2,
-      type: 'spring',
-      stiffness: 300,
-      damping: 40,
-    },
-  },
-};
-
-const itemVariant: Variants = {
-  initial: {
-    opacity: 0,
-    y: 50,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      y: { stiffness: 1000, velocity: -100 },
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: 50,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
-};
-
-const itemContainerVariant: Variants = {
-  animate: {
-    transition: {
-      staggerChildren: 0.07,
-    },
-  },
-  exit: {
-    transition: {
-      staggerChildren: 0.06,
-      staggerDirection: -1,
-    },
-  },
-};
-
-const navigationVariant: Variants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      ease: 'easeOut',
-      duration: 0.4,
-      delay: 0.6,
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      ease: 'easeIn',
-      duration: 0.3,
-    },
-  },
-};
+import { motion } from 'framer-motion';
+import {
+  aboutModalContainerVariants,
+  itemWrapperVariants,
+  svgVariants,
+} from '../../../lib/framerVariants';
+import {
+  itemVariants,
+  navigationVariants,
+} from '../../../lib/framerVariants/aboutMeModalVariants';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -127,26 +38,26 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={containerVariants}
+      variants={aboutModalContainerVariants}
       className={modalContainer}
       onClick={handleClick}
     >
       <svg id="svg" width="0" height="0">
         <clipPath id="clipPath2" clipPathUnits="objectBoundingBox">
           <motion.path
-            variants={svgVariant}
+            variants={svgVariants}
             d="M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0"
           />
         </clipPath>
       </svg>
       <motion.aside
-        variants={itemContainerVariant}
+        variants={itemWrapperVariants}
         className={contentContainer}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={backWrapper}>
           <motion.button
-            variants={navigationVariant}
+            variants={navigationVariants}
             type="button"
             className={backBtn.base}
             onClick={handleClick}
@@ -154,7 +65,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             <ChevronRight />
           </motion.button>
           <motion.button
-            variants={navigationVariant}
+            variants={navigationVariants}
             type="button"
             className={backBtn.text}
             onClick={handleClick}
@@ -162,7 +73,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             Back
           </motion.button>
         </div>
-        <motion.h1 variants={itemVariant} className={mainHeading}>
+        <motion.h1 variants={itemVariants} className={mainHeading}>
           Hello I&apos;m Kaloyan Atanasov, Front-End developer.
           <br /> I love problem solving and I like making cool interactive
           things.
@@ -170,7 +81,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
         <motion.div className={articlesWrapper}>
           <article className={articleWrapper}>
             <motion.div
-              variants={itemVariant}
+              variants={itemVariants}
               className={articleContentWrapper}
             >
               <h2 className={articleHeader}>Background</h2>
@@ -185,7 +96,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
           </article>
           <article className={articleWrapper}>
             <motion.div
-              variants={itemVariant}
+              variants={itemVariants}
               className={articleContentWrapper}
             >
               <h2 className={articleHeader}>Future Goals</h2>
@@ -198,7 +109,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
           </article>
           <article className={articleWrapper}>
             <motion.div
-              variants={itemVariant}
+              variants={itemVariants}
               className={articleContentWrapper}
             >
               <h3 className={articleHeader}>My Hobbies</h3>
@@ -212,7 +123,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
           </article>
           <article className={articleWrapper}>
             <motion.div
-              variants={itemVariant}
+              variants={itemVariants}
               className={articleContentWrapper}
             >
               <h3 className={articleHeader}>Skills</h3>
