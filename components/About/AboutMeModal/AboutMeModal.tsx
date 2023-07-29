@@ -8,14 +8,9 @@ import {
   mainHeading,
   modalContainer,
   skillsUL,
-  socialLink,
-  socialsFooter,
 } from './AboutMeModal.css';
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
-import Link from 'next/link';
-import { Github, Linkedin } from '../../icons';
-import Email from '../../icons/Email';
 import { motion } from 'framer-motion';
 import {
   aboutModalContainerVariants,
@@ -24,6 +19,7 @@ import {
 import { itemVariants } from '../../../lib/framerVariants/aboutMeModalVariants';
 import ModalNavigation from './ModalNavigation';
 import SvgPath from './SvgPath';
+import ModalFooter from './ModalFooter';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -107,28 +103,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             </motion.div>
           </article>
         </motion.div>
-        <footer className={socialsFooter}>
-          <Link
-            href="mailto:kaloyanatanasov83@gmail.com"
-            className={socialLink}
-          >
-            <Email />
-          </Link>
-          <Link
-            href="https://github.com/Andantez"
-            target="_blank"
-            className={socialLink}
-          >
-            <Github screenType="mobile" width={25} height={25} />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/kaloyan-boyanov-atanasov/"
-            target="_blank"
-            className={socialLink}
-          >
-            <Linkedin screenType="mobile" width={25} height={25} />
-          </Link>
-        </footer>
+        <ModalFooter />
       </motion.aside>
     </motion.div>
   );
