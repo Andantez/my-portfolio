@@ -15,9 +15,8 @@ import {
 } from './AboutMeModal.css';
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
-import ChevronLeft from '../../icons/ChevronLeft';
 import Link from 'next/link';
-import { Github, Linkedin } from '../../icons';
+import { Github, Linkedin, ChevronRight } from '../../icons';
 import Email from '../../icons/Email';
 import { motion, Variants } from 'framer-motion';
 
@@ -152,7 +151,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
             className={backBtn.base}
             onClick={handleClick}
           >
-            <ChevronLeft />
+            <ChevronRight />
           </motion.button>
           <motion.button
             variants={navigationVariant}
