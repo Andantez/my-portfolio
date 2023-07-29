@@ -20,10 +20,10 @@ import { motion } from 'framer-motion';
 import {
   aboutModalContainerVariants,
   itemWrapperVariants,
-  svgVariants,
 } from '../../../lib/framerVariants';
 import { itemVariants } from '../../../lib/framerVariants/aboutMeModalVariants';
 import ModalNavigation from './ModalNavigation';
+import SvgPath from './SvgPath';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -38,14 +38,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
       className={modalContainer}
       onClick={handleClick}
     >
-      <svg id="svg" width="0" height="0">
-        <clipPath id="clipPath2" clipPathUnits="objectBoundingBox">
-          <motion.path
-            variants={svgVariants}
-            d="M0,0 L1,0 L1,1 L1,1 C1,0.5,1,0.5,1,0"
-          />
-        </clipPath>
-      </svg>
+      <SvgPath />
       <motion.aside
         variants={itemWrapperVariants}
         className={contentContainer}
