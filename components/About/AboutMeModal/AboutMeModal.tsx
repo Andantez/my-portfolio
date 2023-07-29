@@ -4,8 +4,6 @@ import {
   articleItem,
   articlesWrapper,
   articleWrapper,
-  backBtn,
-  backWrapper,
   contentContainer,
   mainHeading,
   modalContainer,
@@ -16,7 +14,7 @@ import {
 import { skillList } from '../../../data';
 import { ProjectStack } from '../../ui';
 import Link from 'next/link';
-import { Github, Linkedin, ChevronRight } from '../../icons';
+import { Github, Linkedin } from '../../icons';
 import Email from '../../icons/Email';
 import { motion } from 'framer-motion';
 import {
@@ -24,10 +22,8 @@ import {
   itemWrapperVariants,
   svgVariants,
 } from '../../../lib/framerVariants';
-import {
-  itemVariants,
-  navigationVariants,
-} from '../../../lib/framerVariants/aboutMeModalVariants';
+import { itemVariants } from '../../../lib/framerVariants/aboutMeModalVariants';
+import ModalNavigation from './ModalNavigation';
 
 type MoreAboutMeProps = {
   handleClick: () => void;
@@ -55,24 +51,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
         className={contentContainer}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={backWrapper}>
-          <motion.button
-            variants={navigationVariants}
-            type="button"
-            className={backBtn.base}
-            onClick={handleClick}
-          >
-            <ChevronRight />
-          </motion.button>
-          <motion.button
-            variants={navigationVariants}
-            type="button"
-            className={backBtn.text}
-            onClick={handleClick}
-          >
-            Back
-          </motion.button>
-        </div>
+        <ModalNavigation onClick={handleClick} />
         <motion.h1 variants={itemVariants} className={mainHeading}>
           Hello I&apos;m Kaloyan Atanasov, Front-End developer.
           <br /> I love problem solving and I like making cool interactive
