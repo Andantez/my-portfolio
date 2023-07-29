@@ -84,7 +84,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
               variants={itemVariants}
               className={articleContentWrapper}
             >
-              <h3 className={articleHeader}>My Hobbies</h3>
+              <h2 className={articleHeader}>My Hobbies</h2>
               <p className={articleItem}>
                 When I&apos;m not coding, I enjoy playing computer games and
                 watch movies. I also recently took on reading again which was a
@@ -98,7 +98,7 @@ const AboutMeModal = ({ handleClick }: MoreAboutMeProps) => {
               variants={itemVariants}
               className={articleContentWrapper}
             >
-              <h3 className={articleHeader}>Skills</h3>
+              <h2 className={articleHeader}>Skills</h2>
               <ul className={skillsUL}>
                 {skillList.map(({ name, icon: Icon }) => {
                   return <ProjectStack key={name} name={name} Icon={Icon} />;
