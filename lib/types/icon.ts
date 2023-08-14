@@ -6,5 +6,5 @@ export type IconImgProps = {
 };
 
 export type ScreenTypeProps = {
-  screenType: 'mobile' | 'desktop';
+  screenType?: 'mobile' | 'desktop';
 };

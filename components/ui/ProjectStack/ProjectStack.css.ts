@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { fs100,  fwBold, textColor } from '../../../styles/vars.css';
+import { fs100, fwBold, textColor } from '../../../styles/vars.css';
 
 export const stackWrapper = style({
   display: 'grid',

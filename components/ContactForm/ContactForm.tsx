@@ -159,7 +159,7 @@ const ContactForm = (): JSX.Element => {
             )}
           </div>
         </div>
-        <Button type="submit" disabled={isSubmitting}>
+        <Button variant="withBorder" type="submit" disabled={isSubmitting}>
           {isSubmitting ? 'Sending your message...' : 'Send your message'}
         </Button>
       </form>

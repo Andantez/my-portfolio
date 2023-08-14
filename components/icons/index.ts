@@ -21,3 +21,7 @@ export { default as CSS } from './CSS';
 export { default as JavaScript } from './JavaScript';
 export { default as Check } from './Check';
 export { default as Arrow } from './Arrow';
+export { default as Git } from './Git';
+export { default as ChevronRight } from './ChevronRight';
+export { default as ChevronLeft } from './ChevronLeft';
+export { default as Email } from './Email';

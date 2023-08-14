@@ -9,3 +9,9 @@ export {
   initialAnimationContainer,
   fadeOut,
 } from './initialAnimationVariants';
+export {
+  aboutModalContainerVariants,
+  svgVariants,
+  itemVariants,
+  itemWrapperVariants,
+} from './aboutMeModalVariants';
