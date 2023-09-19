@@ -9,7 +9,6 @@ import {
   titleTextColor,
 } from '../../styles/vars.css';
 
-// This is temporary.
 export const notificationContainer = style({
   position: 'fixed',
   inset: 0,
@@ -18,7 +17,7 @@ export const notificationContainer = style({
   textAlign: 'center',
   fontFamily: 'var(--ff-text)',
   backdropFilter: 'blur(7px)',
-  background: 'rgb(235, 235, 235, 0.8)',
+  background: 'rgb(48, 48, 48, .8)',
   zIndex: 1,
   color: textColor,
 });
